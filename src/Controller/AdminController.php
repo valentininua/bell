@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class IndexController extends AbstractController
+class AdminController extends AbstractController
 {
     /**
      * @return Response
@@ -14,6 +14,6 @@ class IndexController extends AbstractController
      */
     public function index()
     {
-        return $this->render('index/index.html.twig');
+        return $this->render('admin/admin.html.twig');
     }
 }

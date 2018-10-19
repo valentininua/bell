@@ -4,4 +4,4 @@ app_index:
     controller: App\Controller\IndexController::index
 app_admin:
     path: /admin/
-    controller: App\Controller\IndexController::admin
+    controller: App\Controller\AdminController::index

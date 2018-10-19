@@ -1,0 +1,60 @@
+{% extends 'index/base.html.twig' %}
+
+{% block body %}
+    <div class="text-center py-5"
+         style="background-image: url('/main/site-assets/cover_curve.jpg');background-position:center bottom;background-size:cover;">
+        <div class="container py-4 mt-4">
+            <div class="row">
+                <div class="col-md-12 text-white">
+                    <h1 class="mb-2 display-5">ИНВЕСТИРУЙТЕ УВЕРЕННО</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Покупайте акции с высоким потенциалом дохода.</h2>
+                    <p class="lead mb-5">Получайте дополнительную прибыль и тратьте её на то, что приносит Вам
+                        радость&nbsp;</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 p-4">
+                    <a title="консервативный" onclick="alert('консервативный портфель')" style="cursor:pointer">
+                        <div class="card bg-light p-4 border-0 pop-up">
+                            <div class="card-block my-3"><img class="img-fluid d-block mb-3 mx-auto" src="/main/img/1.jpg"
+                                                              width="70" alt="mac logo">
+                                <h3 class="mb-4"><b>Консервативный</b></h3>
+                                <p class="border border-primary mx-3 p-2 mb-0">Консервативный </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 p-4">
+                    <a title="Cбалансированный" onclick="" style="cursor:pointer">
+                        <div class="card p-4 bg-light border-0 pop-up">
+                            <div class="card-block my-3"><img class="img-fluid d-block mb-3 mx-auto" src="/main/img/2.png"
+                                                              width="70" alt="windows logo">
+                                <h3 class="mb-4"><b>Сбалансированный</b></h3>
+                                <p class="border border-primary mx-3 p-2 mb-0">сбалансированный</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 p-4">
+                    <a id="агрессивный" title="агрессивный" onclick="" style="cursor:pointer">
+                        <div class="card p-4 bg-light border-0 pop-up">
+                            <div class="card-block my-3"><img class="img-fluid d-block mb-3 mx-auto" src="/main/img/3.png"
+                                                              width="70" alt="linux logo">
+                                <h3 class="mb-4"><b>Агрессивный</b></h3>
+                                <p class="border border-primary mx-3 p-2 mb-0">агрессивный </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
