@@ -28,3 +28,7 @@ php bin/console doctrine:schema:update --force
 
 composer update
 
+
+
+-bash-4.2$ ln -s ./public/main/ ./main
+-bash-4.2$ ln -s ./public/materialadmin ./materialadmin
