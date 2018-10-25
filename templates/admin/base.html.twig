@@ -51,56 +51,70 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="headerbar-right">
             <ul class="header-nav header-nav-options">
-                <li>
-                    <!-- Search form -->
-                    <form class="navbar-search" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="headerSearch" placeholder="Enter your keyword">
-                        </div>
-                        <button type="submit" class="btn btn-icon-toggle ink-reaction"><i class="fa fa-search"></i></button>
-                    </form>
-                </li>
+                {#<li>#}
+                    {#<!-- Search form -->#}
+                    {#<form class="navbar-search" role="search">#}
+                        {#<div class="form-group">#}
+                            {#<input type="text" class="form-control" name="headerSearch" placeholder="Enter your keyword">#}
+                        {#</div>#}
+                        {#<button type="submit" class="btn btn-icon-toggle ink-reaction"><i class="fa fa-search"></i></button>#}
+                    {#</form>#}
+                {#</li>#}
 
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <li class="dropdown hidden-xs">
-                        <a href="javascript:void(0);" class="btn btn-icon-toggle btn-default" data-toggle="dropdown">
-                            <i class="fa fa-area-chart"></i>
-                        </a>
-                        <ul class="dropdown-menu animation-expand">
-                            <li class="dropdown-header">Мои Активы</li>
-                            <li class="dropdown-progress">
-                                <a href="javascript:void(0);">
-                                    <div class="dropdown-label">
-                                        <span class="text-light">Консервативный</span>
-                                        <strong class="pull-right">93%</strong>
-                                    </div>
-                                    <div class="progress"><div class="progress-bar progress-bar-danger" style="width: 93%"></div></div>
-                                </a>
-                            </li><!--end .dropdown-progress -->
-                            <li class="dropdown-progress">
-                                <a href="javascript:void(0);">
-                                    <div class="dropdown-label">
-                                        <span class="text-light">Сбалансированный</span>
-                                        <strong class="pull-right">30%</strong>
-                                    </div>
-                                    <div class="progress"><div class="progress-bar progress-bar-success" style="width: 30%"></div></div>
-                                </a>
-                            </li><!--end .dropdown-progress -->
-                            <li class="dropdown-progress">
-                                <a href="javascript:void(0);">
-                                    <div class="dropdown-label">
-                                        <span class="text-light">Агрессивный</span>
-                                        <strong class="pull-right">74%</strong>
-                                    </div>
-                                    <div class="progress"><div class="progress-bar progress-bar-warning" style="width: 74%"></div></div>
-                                </a>
-                            </li><!--end .dropdown-progress -->
-                        </ul><!--end .dropdown-menu -->
-                    </li><!--end .dropdown -->
-                {% endif %}
+                {#{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}#}
+                    {#<li class="dropdown hidden-xs">#}
+                        {#<a href="javascript:void(0);" class="btn btn-icon-toggle btn-default" data-toggle="dropdown">#}
+                            {#<i class="fa fa-area-chart"></i>#}
+                        {#</a>#}
+                        {#<ul class="dropdown-menu animation-expand">#}
+                            {#<li class="dropdown-header">Мои Активы</li>#}
+                            {#<li class="dropdown-progress">#}
+                                {#<a href="javascript:void(0);">#}
+                                    {#<div class="dropdown-label">#}
+                                        {#<span class="text-light">Консервативный</span>#}
+                                        {#<strong class="pull-right">93%</strong>#}
+                                    {#</div>#}
+                                    {#<div class="progress"><div class="progress-bar progress-bar-danger" style="width: 93%"></div></div>#}
+                                {#</a>#}
+                            {#</li><!--end .dropdown-progress -->#}
+                            {#<li class="dropdown-progress">#}
+                                {#<a href="javascript:void(0);">#}
+                                    {#<div class="dropdown-label">#}
+                                        {#<span class="text-light">Сбалансированный</span>#}
+                                        {#<strong class="pull-right">30%</strong>#}
+                                    {#</div>#}
+                                    {#<div class="progress"><div class="progress-bar progress-bar-success" style="width: 30%"></div></div>#}
+                                {#</a>#}
+                            {#</li><!--end .dropdown-progress -->#}
+                            {#<li class="dropdown-progress">#}
+                                {#<a href="javascript:void(0);">#}
+                                    {#<div class="dropdown-label">#}
+                                        {#<span class="text-light">Агрессивный</span>#}
+                                        {#<strong class="pull-right">74%</strong>#}
+                                    {#</div>#}
+                                    {#<div class="progress"><div class="progress-bar progress-bar-warning" style="width: 74%"></div></div>#}
+                                {#</a>#}
+                            {#</li><!--end .dropdown-progress -->#}
+                        {#</ul><!--end .dropdown-menu -->#}
+                    {#</li><!--end .dropdown -->#}
+                {#{% endif %}#}
             </ul><!--end .header-nav-options -->
             {% if user is defined %}
                 <ul class="header-nav header-nav-profile">
+                    <li>
+                        <a href="#" title="Баланс" style="top: 11px;">
+                            <span class="badge style-danger pull-right" style="background-color: #3682f4;">
+                                <i class="md md-account-balance-wallet" style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;"></i>
+                                {% if user is defined %}
+                                    {{ user.balance }}
+                                {% else %}
+                                    0
+                                {% endif %}
+                                RUB
+                            </span>
+                        </a>
+                    </li>
+
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
                             <div>
@@ -120,10 +134,9 @@
                         </a>
                         <ul class="dropdown-menu animation-dock">
                             {#<li class="dropdown-header">Config</li>#}
-                            <li><a href="#"> Баланс <span class="badge style-danger pull-right" style="background-color: #3682f4;">12 000.00 $</span></a></li>
                             <li><a href="/profile/">Мой профиль</a></li>
                             <li><a href="/admin/">Кабинет</a></li>
-                            {#<li><a href="#/news">Hовости</a></li>#}
+                            <li><a href="#/verify">Верификация аккаунта</a></li>
                             <li class="divider"></li>
                             <li><a href="/logout"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
                         </ul><!--end .dropdown-menu -->
@@ -138,13 +151,15 @@
                     </div>
                  </div><!--end .dropdown-menu -->
             {% endif %}
-            {#<ul class="header-nav header-nav-toggle">#}
-                {#<li>#}
-                    {#<a class="btn btn-icon-toggle btn-default" href="#offcanvas-search" data-toggle="offcanvas" data-backdrop="false">#}
-                        {#<i class="fa fa-ellipsis-v"></i>#}
-                    {#</a>#}
-                {#</li>#}
-            {#</ul><!--end .header-nav-toggle -->#}
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <ul class="header-nav header-nav-toggle">
+                    <li>
+                        <a class="btn btn-icon-toggle btn-default" href="#offcanvas-search" data-toggle="offcanvas" data-backdrop="false">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </a>
+                    </li>
+                </ul><!--end .header-nav-toggle -->
+            {% endif %}
         </div><!--end #header-navbar-collapse -->
     </div>
 </header>
@@ -425,24 +440,43 @@
     <!-- END MENUBAR -->
 
     {#<!-- BEGIN OFFCANVAS RIGHT -->#}
-    {#<div class="offcanvas">#}
+    <div class="offcanvas">
 
-        {#<!-- BEGIN OFFCANVAS SEARCH -->#}
-        {#<div id="offcanvas-search" class="offcanvas-pane width-8">#}
-            {#<div class="offcanvas-head">#}
-                {#<header class="text-primary">История</header>#}
-                {#<div class="offcanvas-tools">#}
-                    {#<a class="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas">#}
-                        {#<i class="md md-close"></i>#}
-                    {#</a>#}
-                {#</div>#}
-            {#</div>#}
-            {#<div class="offcanvas-body no-padding">#}
-                {#<ul class="list ">#}
-                    {#<li class="tile divider-full-bleed">#}
-                        {#<div class="tile-content">#}
-                            {#<div class="tile-text"><strong>19 Октября 2018</strong></div>#}
-                        {#</div>#}
+        <!-- BEGIN OFFCANVAS SEARCH -->
+        <div id="offcanvas-search" class="offcanvas-pane width-8">
+            <div class="offcanvas-head">
+                <header class="text-primary">История</header>
+                <div class="offcanvas-tools">
+                    <a class="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas">
+                        <i class="md md-close"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="offcanvas-body no-padding">
+                <ul class="list ">
+                    <li class="tile divider-full-bleed">
+                        <div class="tile-content">
+                            <div class="tile-text">
+                                <strong>Последний вход в кабинет</strong>
+                                {% if user is defined %}
+                                    <small>{{ user.lastLogin.date }}</small>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </li>
+
+                    {#<li class="tile">#}
+                        {#<a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">#}
+                            {#<div class="tile-icon">#}
+                                {#<img src="#/materialadmin/assets/img/avatar4.jpg?1404026791" alt="" />#}
+                            {#</div>#}
+                            {#<div class="tile-text">#}
+                                {#Вход в кабинет#}
+                                {#{% if user is defined %}#}
+                                {#<small>  {{ user.lastLogin.date }}</small>#}
+                                {#{% endif %} #}
+                            {#</div>#}
+                        {#</a>#}
                     {#</li>#}
 
                     {#{% for i in 0..2 %}#}
@@ -459,10 +493,10 @@
                     {#</li>#}
                     {#{% endfor %}#}
 
-                {#</ul>#}
-            {#</div><!--end .offcanvas-body -->#}
-        {#</div><!--end .offcanvas-pane -->#}
-        {#<!-- END OFFCANVAS SEARCH -->#}
+                </ul>
+            </div><!--end .offcanvas-body -->
+        </div><!--end .offcanvas-pane -->
+        <!-- END OFFCANVAS SEARCH -->
 
         {#<!-- BEGIN OFFCANVAS CHAT -->#}
         {#<div id="offcanvas-chat" class="offcanvas-pane style-default-light width-12">#}
@@ -544,8 +578,8 @@
         {#</div><!--end .offcanvas-pane -->#}
         {#<!-- END OFFCANVAS CHAT -->#}
 
-    {#</div><!--end .offcanvas-->#}
-    {#<!-- END OFFCANVAS RIGHT -->#}
+    </div><!--end .offcanvas-->
+    <!-- END OFFCANVAS RIGHT -->
 
 </div><!--end #base-->
 <!-- END BASE -->

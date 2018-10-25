@@ -19,9 +19,36 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+    * @var string
+    * @ORM\Column(type="decimal", precision=65, scale=2)
+    */
+    protected $balance;
+
+    /**
+     * @return string
+     */
+    public function getBalance()
+    {
+        return $this->balance;
+    }
+
+    /**
+     * @param string $balance
+     * @return $this
+     */
+    public function setBalance($balance)
+    {
+        $this->balance = $balance;
+        return $this;
+    }
+
     public function __construct()
     {
         parent::__construct();
         // your own logic
     }
+
+
+
 }

@@ -15,9 +15,10 @@ class AdminController extends AbstractController
     public function index()
     {
         $user = $this->getUser();
+       // var_dump($user->balance);exit;
+
         return $this->render('admin/admin.html.twig', array(
             'user' => $user,
-            'balance' =>  "$ 12 000.00",
         ));
     }
 }
