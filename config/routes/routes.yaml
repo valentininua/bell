@@ -5,6 +5,9 @@ app_index:
 app_index_about:
     path: /about
     controller: App\Controller\IndexController::about
+app_index_howto:
+    path: /howto
+    controller: App\Controller\IndexController::howto
 app_admin:
     path: /admin/
     controller: App\Controller\AdminController::index
