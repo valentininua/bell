@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- CSS dependencies -->
     <link rel="stylesheet" href="/main/css/font-awesome.min.css" type="text/css">
     <link rel='stylesheet' type='text/css' href='/main/css/style.css'/>
@@ -51,6 +52,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md fixed-top navbar-light bg-white">
+
         <div class="container">
             <a class="navbar-brand" href="/" title=" home" id="Navbar index">
                 <img src="/main/img/logo/alarm.png" class="d-inline-block" alt=" logo" style="padding-bottom: 5px;"
@@ -61,24 +63,37 @@
             </button>
             <div class="collapse navbar-collapse text-center justify-content-end" id="navbar">
 
+
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="/howto" title="О проекте">Как это работает</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="/about" title="О проекте">О проекте</a>
+                    </li>
+                </ul>
+
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <ul class="navbar-nav">
                         <li class="nav-item mx-1">
-                            <a class="nav-link" href="/logout" title=" contents library"
+                            <a class="nav-link" href="/logout" title="Выйти из системы"
                                id="Navbar templates">Выйти из системы</a>
                         </li>
                     </ul>
-                    <a  a href="/admin/" class="btn btn-secondary mx-2" href="signup" id="Navbar download" title="register">
+                    <a  a href="/admin/" class="btn btn-secondary mx-2" href="signup" id="Navbar download" title="Кабинет">
                         <b>Кабинет</b>
                     </a>
                 {% else %}
                     <ul class="navbar-nav">
                         <li class="nav-item mx-1">
-                            <a class="nav-link" href="/admin/" title=" contents library"
+                            <a class="nav-link" href="/admin/" title="Войти в систем"
                                id="Navbar templates">Войти в систему</a>
                         </li>
                     </ul>
-                    <a  a href="/register/" class="btn btn-secondary mx-2" href="signup" id="Navbar download" title="register">
+                    <a  a href="/register/" class="btn btn-secondary mx-2" href="signup" id="Navbar download" title="Зарегистрироваться">
                         <b>Зарегистрироваться</b>
                     </a>
                 {% endif %}
@@ -91,7 +106,7 @@
     <footer class="text-center text-lg-left pt-4 bg-dark">
         <div class="container">
             <div class="row">
-                <div class="pt-2 col-lg-3"><a href="index.html" id="Footer logo" title=" home">
+                <div class="pt-2 col-lg-3"><a href="index.html" id="Footer logo" title="home">
                         <img class="img-fluid d-block mb-2 mx-auto" src="/main/img/logo/alarm.png" width="70" alt=" logo">
                         <h4 class="text-lg-center text-white mb-">BigBell</h4>
                         <!-- <p class="text-lg-center text-white">
@@ -120,5 +135,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+
+
 </body>
 </html>

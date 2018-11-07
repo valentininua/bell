@@ -16,4 +16,13 @@ class IndexController extends AbstractController
     {
         return $this->render('index/index.html.twig');
     }
+
+    /**
+     * @return Response
+     * @throws \Exception
+     */
+    public function about()
+    {
+        return $this->render('index/about.html.twig');
+    }
 }

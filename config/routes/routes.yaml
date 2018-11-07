@@ -2,6 +2,9 @@
 app_index:
     path: /
     controller: App\Controller\IndexController::index
+app_index_about:
+    path: /about
+    controller: App\Controller\IndexController::about
 app_admin:
     path: /admin/
     controller: App\Controller\AdminController::index
