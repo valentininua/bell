@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # install mysql and give password to installer
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password ${DBPASSWORD}"
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password ${DBPASSWORD}"
