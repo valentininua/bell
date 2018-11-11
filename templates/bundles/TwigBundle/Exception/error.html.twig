@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}404 — {% endblock %}
+{% block bodyclass %}error-404{% endblock %}
+
+{% block body %}
+    <main class="d-flex align-items-center justify-content-center flex-column">
+        <div class="container">
+            <div class="block-narrow d-flex justify-content-end">
+                <div>
+                    <h1 class="px-2 py-1 text-nowrap">ERROR {{ status_code }}</h1>
+                    <p class="px-2 text-white-shadowed">
+                        Something is broken.<br/>
+                        Please let us know what you were doing<br/>
+                        when this error occurred.<br/>
+                        We will fix it as soon as possible.<br/>
+                        Sorry for any inconvenience caused.
+                    </p>
+                    <div class="px-2 text-white-shadowed">
+                        <a class="link link-double" href="#">back to home</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+{% endblock %}
