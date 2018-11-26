@@ -8,6 +8,9 @@ app_index_about:
 app_index_howto:
     path: /howto
     controller: App\Controller\IndexController::howto
+app_index_agreement:
+    path: /agreement
+    controller: App\Controller\IndexController::agreement
 app_admin:
     path: /admin/
     controller: App\Controller\AdminController::index
