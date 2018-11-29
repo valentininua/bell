@@ -21,9 +21,9 @@ class User extends BaseUser
 
     /**
     * @var string
-    * @ORM\Column(type="decimal", precision=65, scale=2)
+    * @ORM\Column(type="decimal", precision=65, scale=2, options={"default" : 0})
     */
-    protected $balance;
+    protected $balance = 0;
 
     /**
      * @return string
@@ -48,7 +48,5 @@ class User extends BaseUser
         parent::__construct();
         // your own logic
     }
-
-
 
 }

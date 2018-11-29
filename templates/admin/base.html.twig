@@ -99,6 +99,7 @@
                     {#</li><!--end .dropdown -->#}
                 {#{% endif %}#}
             </ul><!--end .header-nav-options -->
+
             {% if user is defined %}
                 <ul class="header-nav header-nav-profile">
                     <li>
@@ -459,7 +460,9 @@
                             <div class="tile-text">
                                 <strong>Последний вход в кабинет</strong>
                                 {% if user is defined %}
-                                    <small>{{ user.lastLogin.date }}</small>
+                                    {% if user.lastLogin is defined %}
+                                        {#<small>{{ user.lastLogin.date }}</small>#}
+                                    {% endif %}
                                 {% endif %}
                             </div>
                         </div>

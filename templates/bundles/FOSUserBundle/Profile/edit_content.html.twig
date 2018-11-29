@@ -1,8 +1,40 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+<div class="card contain-sm style-transparent">
+    <div class="card-body">
+        <div class="row">
+
+            {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+            {% if not form.vars.valid %}
+                <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span>Error:</span>
+                    {{ form_errors(form.email) }}
+                    {{ form_errors(form.username) }}
+                    {{ form_errors(form.current_password ) }}
+                </div>
+            {% endif %}
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"></span>
+                {{ form_widget(form.email , {'attr': {'class': 'form-control','placeholder':'Email'}}) }}
+            </div>
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"></span>
+                {{ form_widget(form.username , {'attr': {'class': 'form-control','placeholder':'Username'}}) }}
+            </div>
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"></span>
+                {{ form_widget(form.current_password , {'attr': {'class': 'form-control','placeholder':'current password'}}) }}
+            </div>
+
+            <div class="input-group input-group-lg form-group">
+                <span class="input-group-addon"> </span>
+                <input class="btn btn-default btn-success"  style=" margin-top: 11px;"  type="submit" value="{{ 'profile.edit.submit'|trans }}"/>
+            </div>
+
+            {{ form_end(form) }}
+
+        </div>
     </div>
-{{ form_end(form) }}
+</div>
