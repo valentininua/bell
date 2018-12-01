@@ -9,7 +9,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="card">
                         <button type="button" class=" btn btn-block ink-reaction btn-default-bright"  data-toggle="modal" data-target="#ConservativeModal">
-                            Консервативный 30
+                            Консервативный
                         </button>
                     </div><!--end .card -->
                 </div><!--end .col -->
@@ -18,7 +18,7 @@
                 <!-- BEGIN BUTTON -->
                 <div class="col-md-3 col-sm-6">
                     <div class="card">
-                        <button type="button" class=" btn btn-block ink-reaction btn-info " data-toggle="modal" data-target="#BalancedModal" >Умеренный+</button>
+                        <button type="button" class=" btn btn-block ink-reaction btn-info " data-toggle="modal" data-target="#AggressiveModal" >Агрессивный</button>
                     </div><!--end .card -->
                 </div><!--end .col -->
                 <!-- END BUTTON -->
@@ -26,7 +26,7 @@
                 <!-- BEGIN BUTTON -->
                 <div class="col-md-3 col-sm-6">
                     <div class="card">
-                        <button type="button" class="btn btn-block ink-reaction btn-warning"  data-toggle="modal" data-target="#GuaranteedModal" >IPO </button>
+                        <button type="button" class="btn btn-block ink-reaction btn-warning"  data-toggle="modal" data-target="#IPOModal" >IPO </button>
                     </div><!--end .card -->
                 </div><!--end .col -->
                 <!-- END BUTTON -->
@@ -160,7 +160,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"> Консервативный 30 </h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> Консервативный </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -171,20 +171,12 @@
                         <div class="col-lg-12">
                             <h4>Консервативный </h4>
                         </div><!--end .col -->
-                        <div class="col-lg-3 col-md-4">
-                            <article class="margin-bottom-xxl">
-                                <p>
-                                    Консервативный - это ... .... .... ... ... ...... .... .... ... ... ..., ...  ...
-                                    ... .... .... ... ... ... ,... .... .... ... ... ...,... .... .... ... ... ...
-                                </p>
-                            </article>
-                        </div><!--end .col -->
-                        <div class="col-lg-offset-1 col-md-8">
+                        <div class="">
                             <div class="card">
                                 <div class="card-body">
                                     <form class="form">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="spinner-decimal" value="0.96"/>
+                                            <input type="text" class="form-control" id="valueConservativeModal"  placeholder="0" />
                                             <label>Сума инвестирования</label>
                                         </div>
                                     </form>
@@ -195,18 +187,19 @@
                     <!-- END SPINNERS -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn ink-reaction btn-raised btn-primary">Инвестировать</button>
+                    <button type="button" class="btn ink-reaction btn-raised btn-primary" onclick="App.Invest('Conservative') ">Инвестировать</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    <a href="#" class="btn btn-link" >Подробней</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="BalancedModal" tabindex="-1" role="dialog" aria-labelledby="BalancedModalLabel" aria-hidden="true">
+    <div class="modal fade" id="AggressiveModal" tabindex="-1" role="dialog" aria-labelledby="AggressiveModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">     Умеренный+  </h5>
+                    <h5 class="modal-title">    Агрессивный  </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -215,22 +208,14 @@
                     <!-- BEGIN SPINNERS -->
                     <div class="row">
                         <div class="col-lg-12">
-                            <h4>Умеренный</h4>
+                            <h4>Агрессивный</h4>
                         </div><!--end .col -->
-                        <div class="col-lg-3 col-md-4">
-                            <article class="margin-bottom-xxl">
-                                <p>
-                                    Умеренный - это ... .... .... ... ... ...... .... .... ... ... ..., ...  ...
-                                    ... .... .... ... ... ... ,... .... .... ... ... ...,... .... .... ... ... ...
-                                </p>
-                            </article>
-                        </div><!--end .col -->
-                        <div class="col-lg-offset-1 col-md-8">
+                        <div class="">
                             <div class="card">
                                 <div class="card-body">
                                     <form class="form">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="spinner-decimal" value="0.96"/>
+                                            <input type="text" class="form-control" id="valueAggressiveModal" placeholder="0" />
                                             <label>Сума инвестирования</label>
                                         </div>
                                     </form>
@@ -241,19 +226,20 @@
                     <!-- END SPINNERS -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn ink-reaction btn-raised btn-primary">Инвестировать</button>
+                    <button type="button" class="btn ink-reaction btn-raised btn-primary" onclick="App.Invest('Aggressive')" >Инвестировать</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    <a href="#" class="btn btn-link">Подробней</a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="GuaranteedModal" tabindex="-1" role="dialog" aria-labelledby="AggressiveModalLabel" aria-hidden="true">
+    <div class="modal fade" id="IPOModal" tabindex="-1" role="dialog" aria-labelledby="IPOModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">     IPO  </h5>
+                    <h5 class="modal-title" id="IPOModalLabel">     IPO  </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -264,20 +250,12 @@
                         <div class="col-lg-12">
                             <h4> IPO </h4>
                         </div><!--end .col -->
-                        <div class="col-lg-3 col-md-4">
-                            <article class="margin-bottom-xxl">
-                                <p>
-                                    IPO  - это ... .... .... ... ... ...... .... .... ... ... ..., ...  ...
-                                    ... .... .... ... ... ... ,... .... .... ... ... ...,... .... .... ... ... ...
-                                </p>
-                            </article>
-                        </div><!--end .col -->
-                        <div class="col-lg-offset-1 col-md-8">
+                        <div class="">
                             <div class="card">
                                 <div class="card-body">
                                     <form class="form">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="spinner-decimal" value="0.96"/>
+                                            <input type="text" class="form-control"  id="valueIPOModal" placeholder="0" />
                                             <label>Сума инвестирования</label>
                                         </div>
                                     </form>
@@ -288,8 +266,9 @@
                     <!-- END SPINNERS -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn ink-reaction btn-raised btn-primary">Инвестировать</button>
+                    <button type="button" class="btn ink-reaction btn-raised btn-primary" onclick="App.Invest('IPO') " >Инвестировать</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    <a href="#" class="btn btn-link">Подробней</a>
                 </div>
             </div>
         </div>

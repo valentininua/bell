@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <title>BigBellAdmin</title>
-
     <!-- BEGIN META -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +24,26 @@
     <script type="text/javascript" src="/materialadmin/assets/js/libs/utils/html5shiv.js?1403934957"></script>
     <script type="text/javascript" src="/materialadmin/assets/js/libs/utils/respond.min.js?1403934956"></script>
     <![endif]-->
+    <script type="text/javascript" src="/js/currency.js"></script>
+    <script>
+        var App = {
+            Invest : function (id) {
+                var idValue = document.getElementById( 'value' + id + 'Modal'  ).value;
+                var currencyBalance = currency(App.balance).subtract(idValue)
+                if( currencyBalance >=0) {
+                    // $.post( "/admin/ajax/invest", { idValue: idValue, id: id }, function( e ) {
+                        document.getElementById('balance').innerHTML = currency(currencyBalance, { separator: ' ' }).format();
+                        App.balance = currencyBalance;
+                    $('#' + id + 'Modal').modal('hide');
+                    // })
+                } else {
+                    alert('Недостаточно денег на счете')
+                }
+            },
+            balance: currency({% if user is defined %}{{ user.balance }}{% else %}0{% endif %}).format(),
+        };
+    </script>
+
 </head>
 <body class="menubar-hoverable header-fixed ">
 
@@ -106,11 +125,13 @@
                         <a href="#" title="Баланс" style="top: 11px;">
                             <span class="badge style-danger pull-right" style="background-color: #3682f4;">
                                 <i class="md md-account-balance-wallet" style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;"></i>
-                                {% if user is defined %}
-                                    {{ user.balance }}
-                                {% else %}
-                                    0
-                                {% endif %}
+                                    <span id="balance">
+                                        {% if user is defined %}
+                                            {{ user.balance }}
+                                        {% else %}
+                                            0
+                                        {% endif %}
+                                    </span>
                                 RUB
                             </span>
                         </a>
