@@ -1,7 +1,7 @@
 {% extends 'admin/base.html.twig' %}
 
 {% block body %}
-    <section>
+    <section  style="padding-top: 44px;padding-bottom: 44px;">
         <div class="section-body">
             <div class="row">
 
@@ -102,7 +102,7 @@
                 {#<!-- END ALERT - TIME ON SITE -->#}
 
             </div><!--end .row -->
-            <div class="row">
+            <div class="row" style="padding-top: 40px;">
 
                 <!-- BEGIN SITE ACTIVITY -->
                 <div class="_col-md-9">
@@ -125,17 +125,17 @@
 
 
 
-                                    Консервативный  <strong> {{ report.conservative  }} RUB </strong>
+                                    Консервативный  <strong id="balance-Conservative">{{ report.conservative }}</strong> RUB
                                     <span class="pull-right text-success text-sm">0% <i class="md md-trending-up"></i></span>
                                     <div class="progress progress-hairline">
                                         <div class="progress-bar progress-bar-primary-dark" style="width:4%"></div>
                                     </div>
-                                    Оптимальный <strong> {{ report.optimum  }} RUB </strong>
+                                    Оптимальный <strong id="balance-Optimal">{{ report.optimum }}</strong> RUB
                                     <span class="pull-right text-success text-sm">0% <i class="md md-trending-up"></i></span>
                                     <div class="progress progress-hairline">
                                         <div class="progress-bar progress-bar-primary-dark" style="width:4%"></div>
                                     </div>
-                                    IPO <strong> {{ report.ipo  }} RUB </strong>
+                                    IPO <strong id="balance-IPO">{{ report.ipo }}</strong> RUB
                                     <span class="pull-right text-danger text-sm">0% <i class="md md-trending-down"></i></span>
                                     <div class="progress progress-hairline">
                                         <div class="progress-bar progress-bar-danger" style="width:4%"></div>
@@ -145,7 +145,7 @@
                                     {#<div class="progress progress-hairline">#}
                                         {#<div class="progress-bar progress-bar-primary-dark" style="width:63%"></div>#}
                                     {#</div>#}
-                                    Свободные средства <strong id="available_funds"> {{ report.available_funds  }} RUB </strong>
+                                    Свободные средства <strong id="available_funds">{{ report.available_funds  }}</strong> RUB
                                     <span class="pull-right text-success text-sm">0% <i class="md md-trending-up"></i></span>
                                     <div class="progress progress-hairline">
                                         <div class="progress-bar progress-bar-primary-dark" style="width:4%"></div>
@@ -221,7 +221,7 @@
                                 <div class="card-body">
                                     <form class="form">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="valueAggressiveModal" placeholder="0" />
+                                            <input type="text" class="form-control" id="valueOptimalModal" placeholder="0" />
                                             <label>Сума инвестирования</label>
                                         </div>
                                     </form>

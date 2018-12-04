@@ -29,8 +29,13 @@
         var App = {
             Invest : function (id) {
                 var idValue = document.getElementById( 'value' + id + 'Modal'  ).value;
+
                 var currencyBalance = currency(App.balance).subtract(idValue)
                 if( currencyBalance >=0) {
+
+                    document.getElementById('balance-'+ id ).innerHTML = currency( document.getElementById('value'+ id +'Modal').value )
+                        .add( document.getElementById('balance-'+ id ).innerHTML ).format();
+
                     // $.post( "/admin/ajax/invest", { idValue: idValue, id: id }, function( e ) {
                     document.getElementById('balance').innerHTML = currency(currencyBalance, { separator: ' ' }).format();
                     document.getElementById('available_funds').innerHTML = currency(currencyBalance, { separator: ' ' }).format();
@@ -140,7 +145,7 @@
                         </a>
                     </li>
 
-                    <li class="dropdown">
+                    <li class="dropdown" style=" top: 2px;">
                         <a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
                             <div>
                                 <span class="profile-info">
