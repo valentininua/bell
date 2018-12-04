@@ -5,7 +5,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-use   App\Services\ReportService;
+use App\Services\ReportService;
 
 class AdminController extends AbstractController
 {
@@ -28,16 +28,12 @@ class AdminController extends AbstractController
      * @return Response
      * @throws \Exception
      */
-    public function index(  )
+    public function index()
     {
-
-        #$this->reportService->tests();
-
         $user = $this->getUser();
-       // var_dump($user->balance);exit;
-
         return $this->render('admin/admin.html.twig', array(
             'user' => $user,
+            'report'  => $this->reportService->getReport($user)
         ));
     }
 }

@@ -20,7 +20,7 @@
                 <!-- BEGIN BUTTON -->
                 <div class="col-md-4">
                     <div class="card">
-                        <button type="button" class=" btn btn-block ink-reaction btn-info " data-toggle="modal" data-target="#AggressiveModal" >Агрессивный</button>
+                        <button type="button" class=" btn btn-block ink-reaction btn-info " data-toggle="modal" data-target="#OptimalModal" >Оптимальный</button>
                     </div><!--end .card -->
                 </div><!--end .col -->
                 <!-- END BUTTON -->
@@ -122,30 +122,33 @@
                                     <header>Отчёт</header>
                                 </div>
                                 <div class="card-body height-8">
-                                    <strong>214</strong> Консервативный
-                                    <span class="pull-right text-success text-sm">0,18% <i class="md md-trending-up"></i></span>
+
+
+
+                                    Консервативный  <strong> {{ report.conservative  }} RUB </strong>
+                                    <span class="pull-right text-success text-sm">0% <i class="md md-trending-up"></i></span>
                                     <div class="progress progress-hairline">
-                                        <div class="progress-bar progress-bar-primary-dark" style="width:43%"></div>
+                                        <div class="progress-bar progress-bar-primary-dark" style="width:4%"></div>
                                     </div>
-                                    756 Сбалансированный
-                                    <span class="pull-right text-success text-sm">0,68% <i class="md md-trending-up"></i></span>
+                                    Оптимальный <strong> {{ report.optimum  }} RUB </strong>
+                                    <span class="pull-right text-success text-sm">0% <i class="md md-trending-up"></i></span>
                                     <div class="progress progress-hairline">
-                                        <div class="progress-bar progress-bar-primary-dark" style="width:11%"></div>
+                                        <div class="progress-bar progress-bar-primary-dark" style="width:4%"></div>
                                     </div>
-                                    291 IPO
-                                    <span class="pull-right text-danger text-sm">21,08% <i class="md md-trending-down"></i></span>
+                                    IPO <strong> {{ report.ipo  }} RUB </strong>
+                                    <span class="pull-right text-danger text-sm">0% <i class="md md-trending-down"></i></span>
                                     <div class="progress progress-hairline">
-                                        <div class="progress-bar progress-bar-danger" style="width:93%"></div>
+                                        <div class="progress-bar progress-bar-danger" style="width:4%"></div>
                                     </div>
                                     {#32,301 Баланс#}
                                     {#<span class="pull-right text-success text-sm">0,18% <i class="md md-trending-up"></i></span>#}
                                     {#<div class="progress progress-hairline">#}
                                         {#<div class="progress-bar progress-bar-primary-dark" style="width:63%"></div>#}
                                     {#</div>#}
-                                    Свободные средства
-                                    <span class="pull-right text-success text-sm">0,18% <i class="md md-trending-up"></i></span>
+                                    Свободные средства <strong id="available_funds"> {{ report.available_funds  }} RUB </strong>
+                                    <span class="pull-right text-success text-sm">0% <i class="md md-trending-up"></i></span>
                                     <div class="progress progress-hairline">
-                                        <div class="progress-bar progress-bar-primary-dark" style="width:47%"></div>
+                                        <div class="progress-bar progress-bar-primary-dark" style="width:4%"></div>
                                     </div>
                                 </div><!--end .card-body -->
                             </div><!--end .col -->
@@ -198,11 +201,11 @@
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="AggressiveModal" tabindex="-1" role="dialog" aria-labelledby="AggressiveModalLabel" aria-hidden="true">
+    <div class="modal fade" id="OptimalModal" tabindex="-1" role="dialog" aria-labelledby="OptimalModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">    Агрессивный  </h5>
+                    <h5 class="modal-title">    Оптимальный  </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -211,7 +214,7 @@
                     <!-- BEGIN SPINNERS -->
                     <div class="row">
                         <div class="col-lg-12">
-                            <h4>Агрессивный</h4>
+                            <h4>Оптимальный</h4>
                         </div><!--end .col -->
                         <div class="">
                             <div class="card">
@@ -229,7 +232,7 @@
                     <!-- END SPINNERS -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn ink-reaction btn-raised btn-primary" onclick="App.Invest('Aggressive')" >Инвестировать</button>
+                    <button type="button" class="btn ink-reaction btn-raised btn-primary" onclick="App.Invest('Optimal')" >Инвестировать</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
                     <a href="#" class="btn btn-link">Подробней</a>
                 </div>

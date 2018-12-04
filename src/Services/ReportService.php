@@ -6,17 +6,14 @@ namespace App\Services;
 
 class ReportService
 {
-
-
-    public function __construct()
+    public function getReport($user)
     {
+        return[
+            'conservative' => 0,
+            'optimum' => 0,
+            'ipo' => 0,
+            'available_funds' => $user->getBalance(),
+        ];
+
     }
-
-    public function tests()
-    {
-        exit(' test S ');
-    }
-
-
-
 }
