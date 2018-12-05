@@ -36,13 +36,13 @@
                     document.getElementById('balance-'+ id ).innerHTML = currency( document.getElementById('value'+ id +'Modal').value )
                         .add( document.getElementById('balance-'+ id ).innerHTML ).format();
 
-                    // $.post( "/admin/ajax/invest", { idValue: idValue, id: id }, function( e ) {
+                    $.post( "/admin/ajax/invest", { idValue: idValue, id: id }, function( e ) {
                     document.getElementById('balance').innerHTML = currency(currencyBalance, { separator: ' ' }).format();
                     document.getElementById('available_funds').innerHTML = currency(currencyBalance, { separator: ' ' }).format();
 
                     App.balance = currencyBalance;
                     $('#' + id + 'Modal').modal('hide');
-                    // })
+                    });
                 } else {
                     alert('Недостаточно денег на счете')
                 }

@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-// use App\Entity\Report;
+use App\Entity\Report;
 
 use App\Repository\ReportRepository;
 
@@ -32,5 +32,5 @@ class ReportService
       }
       return $arrOutput;
     }
-    
+
 }

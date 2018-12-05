@@ -7,6 +7,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 use App\Services\ReportService;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
+
+use Symfony\Component\HttpFoundation\Request;
+
 class AdminController extends AbstractController
 {
 
@@ -35,5 +39,27 @@ class AdminController extends AbstractController
             'user' => $user,
             'report'  => $this->reportService->getReport($user)
         ));
+    }
+    /**
+     * @return Response
+     * @throws \Exception
+     */
+    public function ajaxInvest()
+    {
+        //        $user = $this->getUser();
+        //        $request = Request::createFromGlobals();
+        //        $this->getDoctrine()->getManager();
+        //
+        //        $Report = new Report();
+        //
+        //
+        ////        $this->reportService->setReport([
+        ////           'user' => $user,
+        ////            'post' =>[
+        ////                'idValue' => 1,//$request->query->post('idValue'),
+        ////                'id' => 2,//$request->query->post('id')
+        ////            ]
+        ////        ]);
+        return new  JsonResponse([1]);
     }
 }
