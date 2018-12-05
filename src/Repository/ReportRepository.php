@@ -14,9 +14,19 @@ class ReportRepository extends ServiceEntityRepository
         parent::__construct($registry, Report::class);
     }
 
-    public function test()
+    public function getBalanceReport($id): array
     {
-        exit('  xxxx  ');
+        return $this->createQueryBuilder("r")
+            ->select('
+                SUM(r.balanceIpo) as ipo, 
+                SUM(r.balanceConservative) as conservative, 
+                SUM(r.balanceOptimum) as optimum, 
+                SUM(r.currentAccount) as available_funds
+            ')
+            ->andWhere('r.uid = :reportUid')
+            ->setParameter('reportUid', $id)
+            ->getQuery()
+            ->getResult()[0];
     }
 
 }

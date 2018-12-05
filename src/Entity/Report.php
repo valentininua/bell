@@ -39,13 +39,33 @@ class Report
      * @var string
      * @ORM\Column(type="decimal", precision=65, scale=2, options={"default" : 0} , nullable=true)
      */
-    protected $balanceAggressive;
+    protected $balanceOptimum;
 
     /**
      * @var string
      * @ORM\Column(type="decimal", precision=65, scale=2, options={"default" : 0}, nullable=true)
      */
     protected $currentAccount;
+
+    /**
+     * @ORM\Column(type="integer", options={"default" : 0}, nullable=true)
+     */
+    protected $approved;
+
+    /**
+     * @ORM\Column(type="datetime", columnDefinition="DATETIME on update CURRENT_TIMESTAMP")
+     */
+    private $updatedAt;
+    /**
+     * @var \DateTime
+     *@ORM\Column(name="created_at", type="datetime", options={"default": "CURRENT_TIMESTAMP"})
+     */
+    private $createdAt;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
 
     /**
      * @return mixed
@@ -98,7 +118,7 @@ class Report
     /**
      * @return string
      */
-    public function getBalanceAggressive(): string
+    public function getBalanceOptimum(): string
     {
         return $this->balanceAggressive;
     }
@@ -106,7 +126,7 @@ class Report
     /**
      * @param string $balanceAggressive
      */
-    public function setBalanceAggressive(string $balanceAggressive): void
+    public function setBalanceOptimum(string $balanceAggressive): void
     {
         $this->balanceAggressive = $balanceAggressive;
     }
@@ -126,7 +146,5 @@ class Report
     {
         $this->currentAccount = $currentAccount;
     }
-
-
 
 }

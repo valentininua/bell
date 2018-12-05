@@ -4,16 +4,33 @@ namespace App\Services;
 
 // use App\Entity\Report;
 
+use App\Repository\ReportRepository;
+
 class ReportService
 {
-    public function getReport($user)
-    {
-        return[
-            'conservative' => 0,
-            'optimum' => 0,
-            'ipo' => 0,
-            'available_funds' => $user->getBalance(),
-        ];
 
+    /**
+     * @var ReportRepository
+     */
+    private $report;
+
+    public function __construct( ReportRepository $report )
+    {
+        $this->report = $report;
     }
+
+    /**
+     * @param $user
+     * @return array
+     */
+    public function getReport($user):array
+    {
+      $arr = $this->report->getBalanceReport($user->getId());
+      $arrOutput = [];
+      foreach ($arr as $k => $v) {
+          $arrOutput[$k] = $v??0;
+      }
+      return $arrOutput;
+    }
+    
 }

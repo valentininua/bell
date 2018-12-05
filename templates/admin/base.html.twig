@@ -47,7 +47,7 @@
                     alert('Недостаточно денег на счете')
                 }
             },
-            balance: currency({% if user is defined %}{{ user.balance }}{% else %}0{% endif %}).format(),
+            balance: currency({% if report.available_funds is defined %}{{ report.available_funds }}{% else %}0{% endif %}).format(),
         };
     </script>
 
@@ -134,10 +134,10 @@
                                 <i class="md md-account-balance-wallet" style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;"></i>
                                     Свободные средства
                                     <span id="balance">
-                                        {% if user is defined %}
-                                            {{ user.balance }}
+                                        {% if report.available_funds %}
+                                            {{ report.available_funds }}
                                         {% else %}
-                                            0
+                                            0.00
                                         {% endif %}
                                     </span>
                                 RUB
