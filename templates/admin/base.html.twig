@@ -134,8 +134,8 @@
                                 <i class="md md-account-balance-wallet" style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;"></i>
                                     Свободные средства
                                     <span id="balance">
-                                        {% if report.available_funds %}
-                                            {{ report.available_funds }}
+                                        {% if report.available_funds is defined %}
+                                           {{ report.available_funds }}
                                         {% else %}
                                             0.00
                                         {% endif %}
@@ -490,7 +490,11 @@
                                 <strong>Последний вход в кабинет</strong>
                                 {% if user is defined %}
                                     {% if user.lastLogin is defined %}
-                                        {#<small>{{ user.lastLogin.date }}</small>#}
+                                        {% if user.lastLogin is defined %}
+                                            {% if user.lastLogin.date is defined %}
+                                                <small>{{ user.lastLogin.date }}</small>
+                                            {% endif %}
+                                        {% endif %}
                                     {% endif %}
                                 {% endif %}
                             </div>
