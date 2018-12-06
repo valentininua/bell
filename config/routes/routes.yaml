@@ -14,6 +14,9 @@ app_index_agreement:
 app_admin:
     path: /admin/
     controller: App\Controller\AdminController::index
+app_admin_withdraw:
+    path: /admin/withdraw
+    controller: App\Controller\AdminController::withdraw
 app_admin_ajax_invest:
     path: /admin/ajax/invest
     controller: App\Controller\AdminController::ajaxInvest

@@ -81,4 +81,9 @@ class AdminController extends AbstractController
         return new  JsonResponse([true]);
     }
 
+    public function withdraw()
+    {
+        return $this->render('index/index.html.twig');
+    }
+
 }
