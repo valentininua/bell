@@ -36,8 +36,8 @@
                     document.getElementById('balance-'+ id ).innerHTML = currency( document.getElementById('value'+ id +'Modal').value )
                         .add( document.getElementById('balance-'+ id ).innerHTML ).format();
 
-                    if( currency(idValue).intValue < 600000  ){
-                        alert(' Минимальная сумма инвестиций 6 000 руб');
+                    if( currency(idValue).intValue < 10000  ){
+                        alert(' Минимальная сумма инвестиций  100 USD');
                         return;
                     }
 
@@ -144,7 +144,7 @@
                                             0.00
                                         {% endif %}
                                     </span>
-                                RUB
+                                USD
                             </span>
                         </a>
                     </li>

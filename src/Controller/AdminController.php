@@ -49,7 +49,7 @@ class AdminController extends AbstractController
      */
     public function ajaxInvest( Request $request)
     {
-        if ((int) $request->get('idValue') >= 6000) {
+        if ((int) $request->get('idValue') >= 100) {
             // todo::check balance before save !!!!
             $user = $this->getUser();
             $report = new Report();

@@ -126,9 +126,9 @@ class Report
     /**
      * @param string $balanceAggressive
      */
-    public function setBalanceOptimum(string $balanceAggressive): void
+    public function setBalanceOptimum(string $balanceOptimum): void
     {
-        $this->balanceAggressive = $balanceAggressive;
+        $this->balanceOptimum = $balanceOptimum;
     }
 
     /**
