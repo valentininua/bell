@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Symfony\Component\HttpFoundation\Request;
 
+use App\Entity\Report;
+
 class AdminController extends AbstractController
 {
 
@@ -40,26 +42,43 @@ class AdminController extends AbstractController
             'report'  => $this->reportService->getReport($user)
         ));
     }
+
     /**
-     * @return Response
-     * @throws \Exception
+     * @param Request $request
+     * @return JsonResponse
      */
-    public function ajaxInvest()
+    public function ajaxInvest( Request $request)
     {
-        //        $user = $this->getUser();
-        //        $request = Request::createFromGlobals();
-        //        $this->getDoctrine()->getManager();
-        //
-        //        $Report = new Report();
-        //
-        //
-        ////        $this->reportService->setReport([
-        ////           'user' => $user,
-        ////            'post' =>[
-        ////                'idValue' => 1,//$request->query->post('idValue'),
-        ////                'id' => 2,//$request->query->post('id')
-        ////            ]
-        ////        ]);
-        return new  JsonResponse([1]);
+        if ((int) $request->get('idValue') >= 6000) {
+            // todo::check balance before save !!!!
+            $user = $this->getUser();
+            $report = new Report();
+
+            $em = $this->getDoctrine()->getManager();
+
+            if ($request->get('id') === 'Conservative') {
+                $report->setUid($user->getId());
+                $report->setBalanceConservative((int)$request->get('idValue'));
+                $report->setCurrentAccount("-" . (int)$request->get('idValue'));
+                $em->persist($report);
+                $em->flush();
+            }
+            if ($request->get('id') === 'Optimal') {
+                $report->setUid($user->getId());
+                $report->setBalanceOptimum((int)$request->get('idValue'));
+                $report->setCurrentAccount("-" . (int)$request->get('idValue'));
+                $em->persist($report);
+                $em->flush();
+            }
+            if ($request->get('id') === 'IPO') {
+                $report->setUid($user->getId());
+                $report->setBalanceIpo((int)$request->get('idValue'));
+                $report->setCurrentAccount("-" . (int)$request->get('idValue'));
+                $em->persist($report);
+                $em->flush();
+            }
+        }
+        return new  JsonResponse([true]);
     }
+
 }

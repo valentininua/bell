@@ -17,3 +17,4 @@ app_admin:
 app_admin_ajax_invest:
     path: /admin/ajax/invest
     controller: App\Controller\AdminController::ajaxInvest
+    methods:  [POST]
