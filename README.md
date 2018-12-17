@@ -33,3 +33,6 @@ composer update
 -bash-4.2$ ln -s ./public/main/ ./main
 
 -bash-4.2$ ln -s ./public/materialadmin ./materialadmin
+
+-bash-4.2$ ln -s ./public/js ./js  
+-bash-4.2$ ln -s ./public/squadfree ./squadfree  
