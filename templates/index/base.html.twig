@@ -1,148 +1,313 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSS dependencies -->
-    <link rel="stylesheet" href="/main/css/font-awesome.min.css" type="text/css">
-    <link rel='stylesheet' type='text/css' href='/main/css/style.css'/>
-
-    <!-- PAGE settings -->
-    <link rel="icon" href="/main/img/alarm7.png">
-    <title>The Big Bell::{% block title %}Учитесь зарабатывать прямо сейчас!{% endblock %}</title>
-    <meta name="description" content="Bigbell">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
     <meta name="author" content="">
-    <!-- Twitter -->
-    <meta name="twitter:site" content="@">
-    <meta name="twitter:creator" content="@">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="bigbell">
-    <meta name="twitter:description" content="Big bell">
-    <meta name="twitter:image" content="/main/img/alarm4.png">
-    <!-- Facebook -->
-    <meta property="og:url" content="https://bigbell.net">
-    <meta property="og:title" content="Big Bell">
-    <meta property="og:description" content="Big Bell">
-    <meta property="og:image" content="/main/img/alarm4.png">
-    <meta property="og:image:secure_url" content="img/alarm4.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <!-- Navbar script -->
-    <script src='/main/js/navbar-ontop.js'></script>
-    <style>
-        *[data-os] {
-            display: none;
-        }
 
-        .mac *[data-os='mac'] {
-            display: inline-block;
-        }
+    <title>GlobalBigBell ::{% block title %}Учитесь зарабатывать прямо сейчас!{% endblock %}</title>
+    <title></title>
 
-        .windows *[data-os='windows'] {
-            display: inline-block;
-        }
+    <!-- Bootstrap Core CSS -->
+    <link href="/squadfree/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
-        .linux *[data-os='linux'] {
-            display: inline-block;
-        }
-    </style>
+    <!-- Fonts -->
+    <link href="/squadfree/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/squadfree/css/animate.css" rel="stylesheet"/>
+    <!-- Squad theme CSS -->
+    <link href="/squadfree/css/style.css" rel="stylesheet">
+    <link href="/squadfree/color/default.css" rel="stylesheet">
+
+    {#<!-- =======================================================#}
+    {#Theme Name: Squadfree#}
+    {#Theme URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/#}
+    {#Author: BootstrapMade#}
+    {#Author URL: https://bootstrapmade.com#}
+    {#======================================================= -->#}
+
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-md fixed-top navbar-light bg-white">
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<!-- Preloader -->
+<div id="preloader">
+    <div id="load"></div>
+</div>
 
-        <div class="container">
-            <a class="navbar-brand" href="/" title=" home" id="Navbar index">
-                <img src="/main/img/logo/alarm.png" class="d-inline-block" alt=" logo" style="padding-bottom: 5px;"
-                     width="25"> BigBell </a>
-            <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse"
-                    data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
             </button>
-            <div class="collapse navbar-collapse text-center justify-content-end" id="navbar">
+            <a class="navbar-brand" href="/">
+                <h1>GlobalBigBell</h1>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        {#<li class="active"><a href="#intro">Home</a></li>#}
+                        <li><a href="/#about">ПОКУПАЙТЕ</a></li>
+                        <li><a href="/#service">ПОЧЕМУ МЫ</a></li>
+                        <li><a href="/#contact">КОНТАКТЫ</a></li>
+                    </ul>
+                </li>
 
 
-                <ul class="navbar-nav">
-                    <li class="nav-item mx-1">
-                        <a class="nav-link" href="/howto" title="О проекте">Как это работает</a>
-                    </li>
-                </ul>
+                <li><a href="/howto" title="О проекте">Как это работает</a></li>
+                <li>
+                    <a class="nav-link" href="/agreement" title="Соглашение"> Соглашение </a>
+                </li>
+                <li>
+                    <a href="/about" title="О проекте">О проекте</a>
+                </li>
 
-                <ul class="navbar-nav">
-                    <li class="nav-item mx-1">
-                        <a class="nav-link" href="/agreement" title="Соглашение"> Соглашение </a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav">
-                    <li class="nav-item mx-1">
-                        <a class="nav-link" href="/about" title="О проекте">О проекте</a>
-                    </li>
-                </ul>
 
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <ul class="navbar-nav">
-                        <li class="nav-item mx-1">
-                            <a class="nav-link" href="/logout" title="Выйти из системы"
-                               id="Navbar templates">Выйти из системы</a>
-                        </li>
-                    </ul>
-                    <a  a href="/admin/" class="btn btn-secondary mx-2" href="signup" id="Navbar download" title="Кабинет">
-                        <b>Кабинет</b>
-                    </a>
+
+                    <li>
+                        <a href="/logout" title="Выйти из системы">Выйти из системы</a>
+                    </li>
+                    <li>
+                        <a a href="/admin/" title="Кабинет">
+                            <b>Кабинет</b>
+                        </a>
+                    </li>
                 {% else %}
-                    <ul class="navbar-nav">
-                        <li class="nav-item mx-1">
-                            <a class="nav-link" href="/admin/" title="Войти в систем"
-                               id="Navbar templates">Войти в систему</a>
-                        </li>
-                    </ul>
-                    <a  a href="/register/" class="btn btn-secondary mx-2" href="signup" id="Navbar download" title="Зарегистрироваться">
-                        <b>Зарегистрироваться</b>
-                    </a>
+                    <li>
+                        <a class="nav-link" href="/admin/" title="Войти в систем"
+                           id="Navbar templates">Войти в систему</a>
+                    </li>
+                    <li>
+                        <a href="/register/" title="Зарегистрироваться">
+                            <b>Зарегистрироваться</b>
+                        </a>
+                    </li>
                 {% endif %}
-            </div>
+
+
+            </ul>
         </div>
-    </nav>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+
+<style>
+
+
+    .intro {
+        -webkit-box-shadow: inset 0px 0px 85px rgba(0,0,0,0.4);
+        -moz-box-shadow:    inset 0px 0px 85px rgba(0,0,0,0.4);
+        box-shadow:         inset 0px 0px 85px rgba(0,0,0,0.4);
+
+        line-height: 0;         /* ensure no space between bottom */
+
+        display: inline-block;  /* don't go wider than image */
+    }
+    .intro img {
+        position: relative;
+        z-index: -1;            /* position beneath */
+    }
+</style>
+
+
 
 {% block body %}{% endblock %}
 
-    <footer class="text-center text-lg-left pt-4 bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="pt-2 col-lg-3"><a href="index.html" id="Footer logo" title="home">
-                        <img class="img-fluid d-block mb-2 mx-auto" src="/main/img/logo/alarm.png" width="70" alt=" logo">
-                        <h4 class="text-lg-center text-white mb-">BigBell</h4>
-                        <!-- <p class="text-lg-center text-white">
-                          <small>2018.</small>
-                        </p> -->
-                    </a></div>
-                <div class="col-lg-4"></div>
-                <div class="col-lg-5">
-                    <div class="row ">
-                         <!-- todo -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="wow shake" data-wow-delay="0.4s">
+                    <div class="page-scroll marginbot-30">
+                        <a href="#intro" id="totop" class="btn btn-circle">
+                            <i class="fa fa-angle-double-up animated"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="row text-white">
-                <div class="col-md-12">
-                    <p class="text-center mt-4 text-muted">
-                        © 2018 Предупреждение: Торговля финансовыми инструментами является рискованным видом деятельности и
-                        может принести не только прибыль, но и убытки. Размер возможных потерь ограничен величиной депозита.
-                        Заполняя форму регистрации на этой странице, вы соглашаетесь на обработку персональных данных.
-                    </p>
+                <p>&copy; GlobalBigBell.com . All rights reserved.</p>
+                <div class="credits">
+
+                    © 2018 Предупреждение: Торговля финансовыми инструментами является рискованным видом деятельности и
+                    может принести не только прибыль, но и убытки. Размер возможных потерь ограничен величиной депозита.
+                    Заполняя форму регистрации на этой странице, вы соглашаетесь на обработку персональных данных.
+
                 </div>
             </div>
         </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    </div>
+</footer>
 
-
+<!-- Core JavaScript Files -->
+<script src="/squadfree/js/jquery.min.js"></script>
+<script src="/squadfree/js/bootstrap.min.js"></script>
+<script src="/squadfree/js/jquery.easing.min.js"></script>
+<script src="/squadfree/js/jquery.scrollTo.js"></script>
+<script src="/squadfree/js/wow.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/squadfree/js/custom.js"></script>
+<script src="/squadfree/contactform/contactform.js"></script>
 
 </body>
+
 </html>
+
+
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+    {#<meta charset="utf-8">#}
+    {#<meta name="viewport" content="width=device-width, initial-scale=1">#}
+
+    {#<!-- CSS dependencies -->#}
+    {#<link rel="stylesheet" href="/main/css/font-awesome.min.css" type="text/css">#}
+    {#<link rel='stylesheet' type='text/css' href='/main/css/style.css'/>#}
+
+    {#<!-- PAGE settings -->#}
+    {#<link rel="icon" href="/main/img/alarm7.png">#}
+    {#<title>The Big Bell::{% block title %}Учитесь зарабатывать прямо сейчас!{% endblock %}</title>#}
+    {#<meta name="description" content="Bigbell">#}
+    {#<meta name="author" content="">#}
+    {#<!-- Twitter -->#}
+    {#<meta name="twitter:site" content="@">#}
+    {#<meta name="twitter:creator" content="@">#}
+    {#<meta name="twitter:card" content="summary">#}
+    {#<meta name="twitter:title" content="bigbell">#}
+    {#<meta name="twitter:description" content="Big bell">#}
+    {#<meta name="twitter:image" content="/main/img/alarm4.png">#}
+    {#<!-- Facebook -->#}
+    {#<meta property="og:url" content="https://bigbell.net">#}
+    {#<meta property="og:title" content="Big Bell">#}
+    {#<meta property="og:description" content="Big Bell">#}
+    {#<meta property="og:image" content="/main/img/alarm4.png">#}
+    {#<meta property="og:image:secure_url" content="img/alarm4.png">#}
+    {#<meta property="og:image:type" content="image/png">#}
+    {#<meta property="og:image:width" content="1200">#}
+    {#<meta property="og:image:height" content="630">#}
+    {#<!-- Navbar script -->#}
+    {#<script src='/main/js/navbar-ontop.js'></script>#}
+    {#<style>#}
+        {#*[data-os] {#}
+            {#display: none;#}
+        {#}#}
+
+        {#.mac *[data-os='mac'] {#}
+            {#display: inline-block;#}
+        {#}#}
+
+        {#.windows *[data-os='windows'] {#}
+            {#display: inline-block;#}
+        {#}#}
+
+        {#.linux *[data-os='linux'] {#}
+            {#display: inline-block;#}
+        {#}#}
+    {#</style>#}
+{#</head>#}
+
+{#<body>#}
+    {#<nav class="navbar navbar-expand-md fixed-top navbar-light bg-white">#}
+
+        {#<div class="container">#}
+            {#<a class="navbar-brand" href="/" title=" home" id="Navbar index">#}
+                {#<img src="/main/img/logo/alarm.png" class="d-inline-block" alt=" logo" style="padding-bottom: 5px;"#}
+                     {#width="25"> BigBell </a>#}
+            {#<button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse"#}
+                    {#data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">#}
+                {#<span class="navbar-toggler-icon"></span>#}
+            {#</button>#}
+            {#<div class="collapse navbar-collapse text-center justify-content-end" id="navbar">#}
+
+
+                {#<ul class="navbar-nav">#}
+                    {#<li class="nav-item mx-1">#}
+                        {#<a class="nav-link" href="/howto" title="О проекте">Как это работает</a>#}
+                    {#</li>#}
+                {#</ul>#}
+
+                {#<ul class="navbar-nav">#}
+                    {#<li class="nav-item mx-1">#}
+                        {#<a class="nav-link" href="/agreement" title="Соглашение"> Соглашение </a>#}
+                    {#</li>#}
+                {#</ul>#}
+
+                {#<ul class="navbar-nav">#}
+                    {#<li class="nav-item mx-1">#}
+                        {#<a class="nav-link" href="/about" title="О проекте">О проекте</a>#}
+                    {#</li>#}
+                {#</ul>#}
+
+                {#{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}#}
+                    {#<ul class="navbar-nav">#}
+                        {#<li class="nav-item mx-1">#}
+                            {#<a class="nav-link" href="/logout" title="Выйти из системы"#}
+                               {#id="Navbar templates">Выйти из системы</a>#}
+                        {#</li>#}
+                    {#</ul>#}
+                    {#<a  a href="/admin/" class="btn btn-secondary mx-2" href="signup" id="Navbar download" title="Кабинет">#}
+                        {#<b>Кабинет</b>#}
+                    {#</a>#}
+                {#{% else %}#}
+                    {#<ul class="navbar-nav">#}
+                        {#<li class="nav-item mx-1">#}
+                            {#<a class="nav-link" href="/admin/" title="Войти в систем"#}
+                               {#id="Navbar templates">Войти в систему</a>#}
+                        {#</li>#}
+                    {#</ul>#}
+                    {#<a  a href="/register/" class="btn btn-secondary mx-2" href="signup" id="Navbar download" title="Зарегистрироваться">#}
+                        {#<b>Зарегистрироваться</b>#}
+                    {#</a>#}
+                {#{% endif %}#}
+            {#</div>#}
+        {#</div>#}
+    {#</nav>#}
+
+{#{% block body %}{% endblock %}#}
+
+    {#<footer class="text-center text-lg-left pt-4 bg-dark">#}
+        {#<div class="container">#}
+            {#<div class="row">#}
+                {#<div class="pt-2 col-lg-3"><a href="index.html" id="Footer logo" title="home">#}
+                        {#<img class="img-fluid d-block mb-2 mx-auto" src="/main/img/logo/alarm.png" width="70" alt=" logo">#}
+                        {#<h4 class="text-lg-center text-white mb-">BigBell</h4>#}
+                        {#<!-- <p class="text-lg-center text-white">#}
+                          {#<small>2018.</small>#}
+                        {#</p> -->#}
+                    {#</a></div>#}
+                {#<div class="col-lg-4"></div>#}
+                {#<div class="col-lg-5">#}
+                    {#<div class="row ">#}
+                         {#<!-- todo -->#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+            {#<div class="row text-white">#}
+                {#<div class="col-md-12">#}
+                    {#<p class="text-center mt-4 text-muted">#}
+                        {#© 2018 Предупреждение: Торговля финансовыми инструментами является рискованным видом деятельности и#}
+                        {#может принести не только прибыль, но и убытки. Размер возможных потерь ограничен величиной депозита.#}
+                        {#Заполняя форму регистрации на этой странице, вы соглашаетесь на обработку персональных данных.#}
+                    {#</p>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</footer>#}
+    {#<script src="https://code.jquery.com/jquery-3.2.1.js" crossorigin="anonymous"></script>#}
+    {#<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"#}
+            {#crossorigin="anonymous"></script>#}
+    {#<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>#}
+
+
+
+{#</body>#}
+{#</html>#}
