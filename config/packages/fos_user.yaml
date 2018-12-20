@@ -7,4 +7,4 @@ fos_user:
         sender_name: "admin@bigbell.net"
     registration:
         confirmation:
-            enabled: true
+            enabled: false
