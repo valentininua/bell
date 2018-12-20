@@ -33,3 +33,6 @@ app_payeer_fail:
 app_payeer_status:
     path: /payeer/status
     controller: App\Controller\PayeerController::status
+app_admin_verify:
+    path: /admin/verify
+    controller: App\Controller\AdminController::verify

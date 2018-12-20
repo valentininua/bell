@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Psr\Container\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -81,9 +82,20 @@ class AdminController extends AbstractController
         return new  JsonResponse([true]);
     }
 
+    /**
+     * @return Response
+     */
     public function withdraw()
     {
         return $this->render('index/index.html.twig');
+    }
+
+    /**
+     * @return Response
+     */
+    public function verify()
+    {
+        return $this->render('admin/verify.html.twig');
     }
 
 }

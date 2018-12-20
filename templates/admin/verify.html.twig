@@ -1,0 +1,37 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block body %}
+    <section  style="padding-top: 44px;padding-bottom: 44px;">
+        <div class="section-body">
+            <div class="row" >
+                <!-- BEGIN SITE ACTIVITY -->
+                <div class="_col-md-9">
+                    <div class="card ">
+                        <div>
+                            <div class="_col-md-4">
+                                <div class="card-head">
+                                    <header>Верификация аккаунта </header>
+                                </div>
+                                <div class="card-body">
+                                    <div class="alert alert-danger" role="alert">Не  верифицирован</div>
+                                    <div>
+                                        <p> Обязательные требования к документам </p>
+                                        <p> Скан-копии или фотографии должны быть сделаны с оригинала, в хорошем качестве, все детали документов четко отображены.</p>
+                                        <p> цветные скан копии или фотографии, выполненные на однотонном фоне.</p>
+                                        <p> отображены целиком; обрезание краёв документа не допускается, все 4 (четыре) угла документа должны быть видны</p>
+                                        <p> при этом не должны содержать посторонних предметов, объектов или надписей, которых нет на оригинале документа (например, скрепок, карандашей, пальцев и т.д.)</p>
+                                        <p> отредактированные в графическом редакторе ИЛИ содержащие артефакты сканирования/фотографирования(след от вспышки, размытие) - не принимаются</p>
+                                        <p> Acceptable file formats are jpg, or png; from 500kb up to 5Mb.</p>
+                                        <p> выслать все документы на адрес globalbigbell@rambler.ru</p>
+                                        <p> с email с которого вы зарегестрировались в системе</p>
+                                    </div>
+                                </div><!--end .card-body -->
+                            </div><!--end .col -->
+                        </div><!--end .row -->
+                    </div><!--end .card -->
+                </div><!--end .col -->
+                <!-- END SITE ACTIVITY -->
+            </div><!--end .row -->
+        </div><!--end .section-body -->
+    </section>
+{% endblock %}
