@@ -61,7 +61,7 @@
                     </ul>
                 </li>
 
-
+                <li><a href="/training" title="обучение" class="btn btn-success" >Oбучение</a></li>
                 <li><a href="/howto" title="О проекте">Как это работает</a></li>
                 <li>
                     <a class="nav-link" href="/agreement" title="Соглашение"> Соглашение </a>
@@ -73,24 +73,30 @@
 
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
+
                     <li>
-                        <a href="/logout" title="Выйти из системы">Выйти из системы</a>
-                    </li>
-                    <li>
-                        <a a href="/admin/" title="Кабинет">
+                        <a a href="/admin/" title="Кабинет" class="btn btn-info" >
                             <b>Кабинет</b>
                         </a>
                     </li>
-                {% else %}
+
                     <li>
-                        <a class="nav-link" href="/admin/" title="Войти в систем"
-                           id="Navbar templates">Войти в систему</a>
+                        <a href="/logout" title="Выйти из системы" class="btn btn-danger">Выйти из системы</a>
                     </li>
+
+                {% else %}
+
                     <li>
                         <a href="/register/" title="Зарегистрироваться">
                             <b>Зарегистрироваться</b>
                         </a>
                     </li>
+
+                    <li>
+                        <a class="nav-link" href="/admin/" title="Войти в систем"
+                           id="Navbar templates">Войти в систему</a>
+                    </li>
+
                 {% endif %}
 
 
