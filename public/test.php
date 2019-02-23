@@ -1,10 +1,10 @@
 <?php
-$m_shop = '';
+$m_shop = '698901819';
 $m_orderid = '1';
-$m_amount = number_format(100, 2, '.', '');
+$m_amount = number_format(1000, 2, '.', '');
 $m_curr = 'USD';
 $m_desc = base64_encode('Test');
-$m_key = 'Ваш секретный ключ';
+$m_key = '123';
 
 $arHash = array(
     $m_shop,
@@ -16,9 +16,9 @@ $arHash = array(
 
 /*
 $arParams = array(
-	'success_url' => 'http:///new_success_url',
-	//'fail_url' => 'http:///new_fail_url',
-	//'status_url' => 'http:///new_status_url',
+	'success_url' => 'http://globalbigbell.com/new_success_url',
+	//'fail_url' => 'http://globalbigbell.com/new_fail_url',
+	//'status_url' => 'http://globalbigbell.com/new_status_url',
 	'reference' => array(
 		'var1' => '1',
 		//'var2' => '2',
@@ -28,7 +28,7 @@ $arParams = array(
 	),
 );
 
-$key = md5(''.$m_orderid);
+$key = md5('Ключ для шифрования дополнительных параметров'.$m_orderid);
 
 $m_params = urlencode(base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $key, json_encode($arParams), MCRYPT_MODE_ECB)));
 

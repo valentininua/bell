@@ -1,0 +1,68 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block body %}
+
+
+    <div class="row card">
+        <div class="_col-md-4">
+            <div class="card-head">
+                <header></header>
+            </div>
+            <div class="card-body height-8">
+
+                <center>
+                    {% if confirm == 1%}
+
+
+
+                        {% if error|length > 0 %}
+
+                            {% for err in error %}
+                                <p> <spam  class="badge style-danger">  ERROR: {{ err }}</spam></p>
+                            {% endfor %}
+                        {% else %}
+                            Запрос  отправлен в обработку,деньги поступят на Ваш счет в течении 10 дней <br /><br />
+                        {% endif %}
+
+                        <button class="btn btn-primary"   onclick="window.location.href='{{ path('app_admin') }}'" >на главную</button>
+                    {% else %}
+                        {% if money < 100 %}
+                            Сумма должна быть не меньше 100.00 USD
+                        {% else %}
+                            <table class="table table-condensed">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Номер счета, e-mail или телефон в https://payeer.com/</th>
+                                    <th>Сумма</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="success">
+                                    <th scope="row"></th>
+                                    <td>{{ accountNumber }}</td>
+                                    <td>{{ money }} $</td>
+                                    <td>
+                                        <form method="post" action="{{ path('app_admin_withdraw_confirm') }}">
+                                            <input type="hidden" name="confirm" value="1">
+                                            <input type="hidden" name="accountNumber" value="{{ accountNumber }}">
+                                            <input type="hidden" name="money" value="{{ money }}">
+                                            <input type="submit" class="btn btn-primary" name="m_process" value="confirm"/>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-primary"   onclick="window.location.href='{{ path('app_admin') }}'" style="background-color: #a8360a;">отмена</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        {% endif %}
+                    {% endif %}
+                </center>
+            </div><!--end .card-body -->
+        </div><!--end .col -->
+    </div>
+{% endblock %}
+

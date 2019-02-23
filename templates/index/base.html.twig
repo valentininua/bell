@@ -52,7 +52,7 @@
             <ul class="nav navbar-nav">
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Для Вас <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         {#<li class="active"><a href="#intro">Home</a></li>#}
                         <li><a href="/#about">ПОКУПАЙТЕ</a></li>
@@ -61,45 +61,39 @@
                     </ul>
                 </li>
 
-                <li><a href="/training" title="обучение" class="btn btn-success" >Oбучение</a></li>
-                <li><a href="/howto" title="О проекте">Как это работает</a></li>
-                <li>
-                    <a class="nav-link" href="/agreement" title="Соглашение"> Соглашение </a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Основное <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/training" title="обучение" class="btn btn-success" >Oбучение</a></li>
+                        <li><a href="/howto" title="О проекте">Как это работает</a></li>
+                        <li>
+                            <a class="nav-link" href="/agreement" title="Соглашение"> Соглашение </a>
+                        </li>
+                        <li>
+                            <a href="/about" title="О проекте">О проекте</a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="/about" title="О проекте">О проекте</a>
-                </li>
-
-
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-
-
                     <li>
-                        <a a href="/admin/" title="Кабинет" class="btn btn-info" >
+                        <a href="/admin/" title="Кабинет" class="btn btn-info" >
                             <b>Кабинет</b>
                         </a>
                     </li>
-
                     <li>
                         <a href="/logout" title="Выйти из системы" class="btn btn-danger">Выйти из системы</a>
                     </li>
-
                 {% else %}
-
                     <li>
                         <a href="/register/" title="Зарегистрироваться">
                             <b>Зарегистрироваться</b>
                         </a>
                     </li>
-
                     <li>
                         <a class="nav-link" href="/admin/" title="Войти в систем"
                            id="Navbar templates">Войти в систему</a>
                     </li>
-
                 {% endif %}
-
-
             </ul>
         </div>
         <!-- /.navbar-collapse -->

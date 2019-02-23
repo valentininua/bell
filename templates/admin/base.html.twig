@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>BigBellAdmin</title>
+    <title>GlobalBigBellAdmin</title>
     <!-- BEGIN META -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,7 +72,7 @@
                 <li class="header-nav-brand" >
                     <div class="brand-holder">
                         <a href="/">
-                            <span class="text-lg text-bold text-primary">BigBell ADMIN</span>
+                            <span class="text-lg text-bold text-primary">GlobalBigBell ADMIN</span>
                         </a>
                     </div>
                 </li>
@@ -130,7 +130,17 @@
                 {#{% endif %}#}
             </ul><!--end .header-nav-options -->
 
-            {% if user is defined %}
+
+
+            {#{{ dump(user) }}#}
+
+
+            {#{{ dump( is_granted("IS_AUTHENTICATED_REMEMBERED") ) }}#}
+
+
+
+
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 <ul class="header-nav header-nav-profile">
                     <li>
                         <a href="#" title="Баланс" style="top: 11px;">
@@ -144,7 +154,7 @@
                                             0.00
                                         {% endif %}
                                     </span>
-                                USD
+                                 USD
                             </span>
                         </a>
                     </li>
@@ -310,14 +320,36 @@
                     </a>
                     <!--start submenu -->
                     <ul>
-                        <li><a href="/admin/#/top-up-account" ><span  onclick="alert('Для пополнения напишите письмо на адрес globalbigbell@rambler.ru  , мы Вам предоставим реквезиты ');" class="title">Пополнить</span></a>
-                        <li><a href="/admin/#/admin/withdraw" ><span  onclick="alert('Для вывода напишите письмо на адрес globalbigbell@rambler.ru с Вашими реквезитами  ');"  class="title">Вывести</span></a>
+                        <li><a href="/admin/add" ><span class="title">Пополнить</span></a>
+                        <li><a href="/admin/withdraw" ><span  class="title">Вывести</span></a>
+
+
+
                         {#<li><a href="#/materialadmin/html/tables/static.html" ><span class="title">Static Tables</span></a></li>#}
                         {#<li><a href="#/materialadmin/html/tables/dynamic.html" ><span class="title">Dynamic Tables</span></a></li>#}
                         {#<li><a href="#/materialadmin/html/tables/responsive.html" ><span class="title">Responsive Table</span></a></li>#}
                     </ul><!--end /submenu -->
                 </li><!--end /menu-li -->
                 <!-- END TABLES -->
+
+
+
+
+                <li class="gui-folder">
+                    <a>
+                        <div class="gui-icon"><span class="glyphicon glyphicon-list-alt"></span></div>
+                        <span class="title">Ссылки</span>
+                    </a>
+                    <!--start submenu -->
+                    <ul>
+                        <li><a  target="_blank" href=" https://my.broker.ru/login/" ><span class="title">Broker</span></a></li>
+                        <li><a target="_blank" href="https://payeer.com" ><span class="title">Payeer</span></a></li>
+
+                    </ul><!--end /submenu -->
+                </li><!--end /menu-li -->
+
+
+
 
                 {#<!-- BEGIN FORMS -->#}
                 {#<li class="gui-folder">#}

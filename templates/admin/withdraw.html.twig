@@ -1,0 +1,37 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block body %}
+
+    <div class="row card">
+        <div class="_col-md-4">
+            <div class="card-head">
+                <header>Вывести деньги</header>
+
+                <span class="badge style-danger " style="background-color: #f44336;">
+                    Деньги поступят на Ваш счет в <a href="https://payeer.com/">https://payeer.com/</a>
+                </span>
+
+            </div>
+            <div class="card-body height-8">
+                <center>
+                    <form method="post" action="{{ path('app_admin_withdraw_confirm') }}">
+                        <div class="form-row">
+                            <div class="form-group _col-md-6">
+                                <label>Номер счета, e-mail или телефон в <a href="https://payeer.com/">https://payeer.com/</a> </label>
+                                <input class="form-control" type="text" name="accountNumber" placeholder="P1000000" maxlength="100" autocomplete="off" value="" kl_vkbd_parsed="true">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group _col-md-6">
+                                <label>Сума пополнения</label>
+                                <input type="number" min="100.00" max="1000000.00" step="0.01" class="form-control"  name="money"  placeholder="$">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary"> Дальше </button>
+                    </form>
+                </center>
+            </div><!--end .card-body -->
+        </div><!--end .col -->
+    </div>
+
+{% endblock %}

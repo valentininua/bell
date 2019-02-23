@@ -14,28 +14,26 @@ app_index_agreement:
 app_admin:
     path: /admin/
     controller: App\Controller\AdminController::index
-app_admin_withdraw:
-    path: /admin/withdraw
-    controller: App\Controller\AdminController::withdraw
+app_admin_add:
+    path: /admin/add/
+    controller: App\Controller\AdminController::add
+app_admin_add_confirm:
+    path: /admin/add/confirm/
+    controller: App\Controller\AdminController::addConfirm
+    methods:  [POST]
 app_admin_ajax_invest:
     path: /admin/ajax/invest
     controller: App\Controller\AdminController::ajaxInvest
     methods:  [POST]
-app_payeer_index:
-    path: /payeer/
-    controller: App\Controller\PayeerController::index
-app_payeer_success:
-    path: /payeer/success
-    controller: App\Controller\PayeerController::success
-app_payeer_fail:
-    path: /payeer/fail
-    controller: App\Controller\PayeerController::fail
-app_payeer_status:
-    path: /payeer/status
-    controller: App\Controller\PayeerController::status
 app_admin_verify:
     path: /admin/verify
     controller: App\Controller\AdminController::verify
 app_training:
     path: /training
     controller: App\Controller\IndexController::training
+app_admin_withdraw:
+    path: /admin/withdraw
+    controller: App\Controller\AdminController::withdraw
+app_admin_withdraw_confirm:
+    path: /admin/withdraw/confirm
+    controller: App\Controller\AdminController::withdrawConfirm
