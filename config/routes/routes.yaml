@@ -37,3 +37,6 @@ app_admin_withdraw:
 app_admin_withdraw_confirm:
     path: /admin/withdraw/confirm
     controller: App\Controller\AdminController::withdrawConfirm
+app_admin_training:
+    path: /admin/training
+    controller: App\Controller\AdminController::training
