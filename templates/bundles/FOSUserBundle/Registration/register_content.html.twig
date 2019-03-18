@@ -3,8 +3,9 @@
 <div class="card contain-sm style-transparent">
     <div class="card-body">
         <div class="row">
+            {#{{ referral }}#}
 
-            {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+            {{ form_start(form, {'method': 'post', 'action':  path('fos_user_registration_register', {'r': referral})    , 'attr': {'class': 'fos_user_registration_register'}}) }}
 
             {% if not form.vars.valid %}
             <div class="alert alert-danger" role="alert">

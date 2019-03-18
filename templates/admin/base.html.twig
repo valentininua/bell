@@ -670,6 +670,36 @@
 </div><!--end #base-->
 <!-- END BASE -->
 
+
+
+
+<style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(45, 74, 71, 0.61);
+        color: white;
+        text-align: center;
+    }
+</style>
+
+
+<div class="footer">
+    <div>
+        <span>
+            {% if user is defined %}
+                Ваша реферальная ссылка  http://globalbigbell.com/register/r?={{ user.id }}
+            {% endif %}
+        </span>
+    </div>
+</div>
+
+
+
+
+
 <!-- BEGIN JAVASCRIPT -->
 <script src="/materialadmin/assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
 <script src="/materialadmin/assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
