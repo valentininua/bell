@@ -3,13 +3,48 @@
 <div class="fos_user_user_show">
     <div class="col-lg-offset-1 col-md-8">
         <div class="card">
+
             <div class="card-body no-padding">
+
+                <div class="input-group input-group-lg" style="left: 11px;">
+                    <span> <h2>  Мой профиль </h2>  </span>
+                </div>
                 <ul class="list">
                     <li class="tile">
                         <a class="tile-content ink-reaction">
-                            <div class="tile-text">{{ 'profile.show.username'|trans }}: {{ user.username }}</div>
+                            <div class="tile-text">Имя: {{ user.username }}</div>
                         </a>
                     </li>
+                    <li class="tile">
+                        <a class="tile-content ink-reaction">
+                            <div class="tile-text">Фамилия: {{ user.middlename }}</div>
+                        </a>
+                    </li>
+                    <li class="tile">
+                        <a class="tile-content ink-reaction">
+                            <div class="tile-text">Отчество: {{ user.surname }}</div>
+                        </a>
+                    </li>
+
+                    <li class="tile">
+                        <a class="tile-content ink-reaction">
+                            <div class="tile-text">Отчество: {{ user.surname }}</div>
+                        </a>
+                    </li>
+                    {% if  user.dateofbirth %}
+                        <li class="tile">
+                            <a class="tile-content ink-reaction">
+                                <div class="tile-text">Дата рождения: {{ user.dateofbirth.date|date("m/d/Y")  }}</div>
+                            </a>
+                        </li>
+                    {% endif %}
+                    <li class="tile">
+                        <a class="tile-content ink-reaction">
+                            <div class="tile-text">Телефон: {{ user.phone }}</div>
+                        </a>
+                    </li>
+
+
                     <li class="tile">
                         <a class="tile-content ink-reaction">
                             <div class="tile-text">{{ 'profile.show.email'|trans }}: {{ user.email }}</div>
@@ -18,10 +53,13 @@
                 </ul>
                 <div class="input-group input-group-lg form-group">
                     <span class="input-group-addon"> </span>
-                    <a class="btn btn-default btn-success" href="/profile/edit" role="button"  style=" margin-top: 11px;" >{{ 'edit'|trans }}</a>
+                    <a class="btn btn-default btn-success" href="/profile/edit" role="button"  style=" margin-top: 11px;" >{{ 'Rедактировать профиль'|trans }}</a>
+                    <span class="input-group-addon"> </span>
+                    <a class="btn btn-default " href="/profile/change-password" role="button"  style=" margin-top: 11px;" >{{ 'Rедактировать пароль'|trans }}</a>
                 </div>
             </div><!--end .card-body -->
         </div><!--end .card -->
     </div>
 </div>
+
 
