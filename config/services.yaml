@@ -32,3 +32,7 @@ services:
     App\Controller\RegistrationController:
         arguments:
             $formFactory: '@fos_user.registration.form.factory'
+    app.form.registration:
+        class: App\Form\RegistrationType
+        tags:
+            - { name: form.type, alias: app_user_registration }

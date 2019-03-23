@@ -2,8 +2,19 @@
 
 <div class="card contain-sm style-transparent">
     <div class="card-body">
+
+        <div class="input-group input-group-lg">
+            <span> <h2> Регистрация </h2>  </span>
+        </div>
+
+        {% if referral %}
+            <span class="badge style-danger " style="background-color: #60a49c;">
+                   Вы регестрируетесь по реферальной программе:
+                   <span id="balance"> {{ referral }} </span>
+            </span>
+        {% endif %}
+
         <div class="row">
-            {#{{ referral }}#}
 
             {{ form_start(form, {'method': 'post', 'action':  path('fos_user_registration_register', {'r': referral})    , 'attr': {'class': 'fos_user_registration_register'}}) }}
 
@@ -20,21 +31,53 @@
 
             <div class="input-group input-group-lg">
                 <span class="input-group-addon"></span>
-                {{ form_widget(form.email , {'attr': {'class': 'form-control','placeholder':'Email'}}) }}
-            </div>
-            <div class="input-group input-group-lg">
-                <span class="input-group-addon"></span>
-                {{ form_widget(form.username , {'attr': {'class': 'form-control','placeholder':'Username'}}) }}
-            </div>
-            <div class="input-group input-group-lg">
-                <span class="input-group-addon"></span>
-                {{ form_widget(form.plainPassword.first , {'attr': {'class': 'form-control','placeholder':'Password'}}) }}
+                {{ form_widget(form.username , {'attr': {'class': 'form-control','placeholder':'Имя'}}) }}
             </div>
 
             <div class="input-group input-group-lg">
                 <span class="input-group-addon"></span>
-                {{ form_widget(form.plainPassword.second , {'attr': {'class': 'form-control','placeholder':' Repeat Password' }}) }}
+                {{ form_widget(form.middlename , {'attr': {'class': 'form-control','placeholder':'Фамилия'}}) }}
             </div>
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"></span>
+                {{ form_widget(form.surname , {'attr': {'class': 'form-control','placeholder':'Отчество'}}) }}
+            </div>
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon " style="
+                    border-left-width: 25px;
+                    font-size:1.3em;
+                    border-bottom-color: rgba(12, 12, 12, 0.12);
+                    background: transparent;
+                    border-top: inherit;
+                ">Дата рождения</span>
+                {{ form_widget(form.dateofbirth , {'attr': {'class': 'form-control','placeholder':'Дата рождения'}}) }}
+            </div>
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"></span>
+                {{ form_widget(form.phone , {'attr': {'class': 'form-control','placeholder':'Телефон'}}) }}
+            </div>
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"></span>
+                {{ form_widget(form.email , {'attr': {'class': 'form-control','placeholder':'Email'}}) }}
+            </div>
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"></span>
+                {{ form_widget(form.plainPassword.first , {'attr': {'class': 'form-control','placeholder':'Пароль'}}) }}
+            </div>
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"></span>
+                {{ form_widget(form.plainPassword.second , {'attr': {'class': 'form-control','placeholder':' Повторите пароль' }}) }}
+            </div>
+
+
+
+
+
 
         <div class="input-group input-group-lg form-group">
                 <span class="input-group-addon"> </span>
