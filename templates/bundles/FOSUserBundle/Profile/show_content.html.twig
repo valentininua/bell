@@ -1,65 +1,98 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<div class="fos_user_user_show">
-    <div class="col-lg-offset-1 col-md-8">
-        <div class="card">
 
-            <div class="card-body no-padding">
+<!-- BEGIN OFFCANVAS LEFT -->
+<div class="offcanvas">
+</div><!--end .offcanvas-->
+<!-- END OFFCANVAS LEFT -->
 
-                <div class="input-group input-group-lg" style="left: 11px;">
-                    <span> <h2>  Мой профиль </h2>  </span>
+
+
+<!-- BEGIN PROFILE HEADER -->
+<section class="full-bleed">
+    <div class="section-body style-default-dark force-padding text-shadow">
+        <div class="img-backdrop" style="background-image: url('/main/img/Cap-Dep-3.jpg')"></div>
+        <div class="overlay overlay-shade-top stick-top-left height-3"></div>
+        <div class="row">
+            <div class="col-md-3 col-xs-5">
+                 <h3> Мой профиль </h3> <br/>
+            </div><!--end .col -->
+        </div><!--end .row -->
+    </div><!--end .section-body -->
+</section>
+<!-- END PROFILE HEADER  -->
+
+<section>
+    <div class="section-body no-margin">
+        <div class="row">
+            <div class="">
+                <!-- BEGIN ENTER MESSAGE -->
+                <div class="form">
+                    <div class="card no-margin">
+                        <div class="card-body">
+                            <div class="form-group floating-label">
+                                <!-- ======================================= -->
+                                    <ul class="list">
+                                        <li class="tile">
+                                            <a class="tile-content ink-reaction">
+                                                <div class="tile-text">Псевдоним: {{ user.username }}</div>
+                                            </a>
+                                        </li>
+                                        <li class="tile">
+                                            <a class="tile-content ink-reaction">
+                                                <div class="tile-text">Имя: {{ user.name }}</div>
+                                            </a>
+                                        </li>
+                                        <li class="tile">
+                                            <a class="tile-content ink-reaction">
+                                                <div class="tile-text">Фамилия: {{ user.middlename }}</div>
+                                            </a>
+                                        </li>
+                                        <li class="tile">
+                                            <a class="tile-content ink-reaction">
+                                                <div class="tile-text">Отчество: {{ user.surname }}</div>
+                                            </a>
+                                        </li>
+
+                                        <li class="tile">
+                                            <a class="tile-content ink-reaction">
+                                                <div class="tile-text">Отчество: {{ user.surname }}</div>
+                                            </a>
+                                        </li>
+                                        {% if  user.dateofbirth %}
+                                            <li class="tile">
+                                                <a class="tile-content ink-reaction">
+                                                    <div class="tile-text">Дата рождения: {{ user.dateofbirth.date|date("m/d/Y")  }}</div>
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                        <li class="tile">
+                                            <a class="tile-content ink-reaction">
+                                                <div class="tile-text">Телефон: {{ user.phone }}</div>
+                                            </a>
+                                        </li>
+                                        <li class="tile">
+                                            <a class="tile-content ink-reaction">
+                                                <div class="tile-text">{{ 'profile.show.email'|trans }}: {{ user.email }}</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="input-group input-group-lg form-group">
+                                        <span class="input-group-addon"> </span>
+                                        <a class="btn btn-default btn-success" href="/profile/edit" role="button"  style=" margin-top: 11px;" > <i class="md md-settings"></i> {{ 'Rедактировать профиль'|trans }}</a>
+                                        <span class="input-group-addon"> </span>
+                                        <a class="btn btn-default " href="/profile/change-password" role="button"  style=" margin-top: 11px;" > <i class="md md-settings"></i> {{ 'Rедактировать пароль'|trans }}</a>
+                                    </div>
+                                <!-- ======================================= -->
+                            </div>
+                        </div><!--end .card-body -->
+                    </div><!--end .card -->
                 </div>
-                <ul class="list">
-                    <li class="tile">
-                        <a class="tile-content ink-reaction">
-                            <div class="tile-text">Имя: {{ user.username }}</div>
-                        </a>
-                    </li>
-                    <li class="tile">
-                        <a class="tile-content ink-reaction">
-                            <div class="tile-text">Фамилия: {{ user.middlename }}</div>
-                        </a>
-                    </li>
-                    <li class="tile">
-                        <a class="tile-content ink-reaction">
-                            <div class="tile-text">Отчество: {{ user.surname }}</div>
-                        </a>
-                    </li>
-
-                    <li class="tile">
-                        <a class="tile-content ink-reaction">
-                            <div class="tile-text">Отчество: {{ user.surname }}</div>
-                        </a>
-                    </li>
-                    {% if  user.dateofbirth %}
-                        <li class="tile">
-                            <a class="tile-content ink-reaction">
-                                <div class="tile-text">Дата рождения: {{ user.dateofbirth.date|date("m/d/Y")  }}</div>
-                            </a>
-                        </li>
-                    {% endif %}
-                    <li class="tile">
-                        <a class="tile-content ink-reaction">
-                            <div class="tile-text">Телефон: {{ user.phone }}</div>
-                        </a>
-                    </li>
-
-
-                    <li class="tile">
-                        <a class="tile-content ink-reaction">
-                            <div class="tile-text">{{ 'profile.show.email'|trans }}: {{ user.email }}</div>
-                        </a>
-                    </li>
-                </ul>
-                <div class="input-group input-group-lg form-group">
-                    <span class="input-group-addon"> </span>
-                    <a class="btn btn-default btn-success" href="/profile/edit" role="button"  style=" margin-top: 11px;" >{{ 'Rедактировать профиль'|trans }}</a>
-                    <span class="input-group-addon"> </span>
-                    <a class="btn btn-default " href="/profile/change-password" role="button"  style=" margin-top: 11px;" >{{ 'Rедактировать пароль'|trans }}</a>
-                </div>
-            </div><!--end .card-body -->
-        </div><!--end .card -->
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
+
 
 

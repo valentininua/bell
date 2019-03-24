@@ -18,11 +18,10 @@ class RegistrationType extends AbstractType
         $builder->add('phone');
         $builder->add('surname');
         $builder->add('middlename');
+        $builder->add('name');
 
         $builder->add('dateofbirth', DateType::class, [
             'widget' => 'single_text',
-//            'format' => 'yyyy-MM-dd',
-//            'placeholder' => 'efef'
         ]);
 
     }

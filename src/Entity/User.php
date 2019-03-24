@@ -39,6 +39,11 @@ class User extends BaseUser
     protected $middlename;
 
     /**
+     *@ORM\Column(type="string", nullable=true)
+     */
+    protected $name;
+
+    /**
      * @var \DateTime
      *@ORM\Column(name="date_of_birth", type="datetime", nullable=true)
      */
@@ -148,6 +153,22 @@ class User extends BaseUser
     public function setSurname($surname): void
     {
         $this->surname = $surname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name): void
+    {
+        $this->name = $name;
     }
 
 }
