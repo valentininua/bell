@@ -40,3 +40,6 @@ app_admin_withdraw_confirm:
 app_admin_training:
     path: /admin/training
     controller: App\Controller\AdminController::training
+app_index_contactform:
+    path: /contactform
+    controller: App\Controller\IndexController::contactform

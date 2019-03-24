@@ -19,6 +19,12 @@
     </section>
     <!-- /Section: intro -->
 
+    <marquee style="background-color: #4e4a4a;"  >
+        {% for key,value  in exchangeRates %}
+            <span style=" padding-right: 22px; color: #fff2cc "> <b>{{ key }}</b>  {{  value }}</span>
+        {% endfor %}
+    </marquee>
+
     <!-- Section: about -->
     <section id="about" class="home-section text-center">
         <div class="heading-about">
@@ -256,7 +262,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <button type="submit" class="btn btn-skin pull-right" id="btnContactUs">
-                                        Send Message</button>
+                                        Отправить сообщение</button>
                                 </div>
                             </div>
                         </form>
@@ -265,7 +271,7 @@
 
                 <div class="col-lg-4">
                     <div class="widget-contact">
-                        <h5>Main Office</h5>
+                        <h5>Главный офис</h5>
 
                         <address>
                             <strong>Squas Design, Inc.</strong><br>
@@ -279,7 +285,7 @@
 
                         <address>
                             <strong>Email</strong><br>
-                            <a href="mailto:info@globalbigbell.com">info@globalbigbell.com</a>
+                            <a href="mailto:globalbigbell@rambler.ru">globalbigbell@rambler.ru</a>
                         </address>
                         {#<address>#}
                             {#<strong>We're on social networks</strong><br>#}

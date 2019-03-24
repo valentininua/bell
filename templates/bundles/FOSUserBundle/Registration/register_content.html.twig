@@ -7,6 +7,22 @@
             <span> <h2> Регистрация </h2>  </span>
         </div>
 
+
+        <script>
+            /**
+             * @param element
+             */
+            function toggleCheckbox(element)
+            {
+                if (element.checked) {
+                    document.getElementById("submitButton").disabled = false;
+                } else {
+                    document.getElementById("submitButton").disabled = true;
+                }
+            }
+        </script>
+
+
         {% if referral %}
             <span class="badge style-danger " style="background-color: #60a49c;">
                    Вы регестрируетесь по реферальной программе:
@@ -77,15 +93,17 @@
                 <span class="input-group-addon"></span>
                 {{ form_widget(form.plainPassword.second , {'attr': {'class': 'form-control','placeholder':' Повторите пароль' }}) }}
             </div>
-
-
-
-
-
-
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"></span>
+                <input type="checkbox"   autocomplete="off"     onchange="toggleCheckbox(this)">
+               <i>
+                   Я принимаю условия Пользовательского соглашения и даю своё согласие http://globalbigbell.com
+                   на обработку моей персональной информации на условиях, определенных Политикой конфиденциальности.
+               </i>
+            </div>
         <div class="input-group input-group-lg form-group">
                 <span class="input-group-addon"> </span>
-            <input class="btn btn-default btn-success"  style=" margin-top: 11px;"  type="submit" value="{{ 'registration.submit'|trans }}"/>
+            <input  disabled id="submitButton" class="btn btn-default btn-success"  style=" margin-top: 11px;"  type="submit" value="{{ 'registration.submit'|trans }}"/>
         </div>
 
         {{ form_end(form) }}
