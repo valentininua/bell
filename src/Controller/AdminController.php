@@ -10,7 +10,7 @@ use App\Services\ReportService;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use App\Entity\{Report,Withdraw};
+use App\Entity\{Report,Withdraw, Training};
 
 class AdminController extends AbstractController
 {
@@ -215,9 +215,14 @@ class AdminController extends AbstractController
     public function training()
     {
         $user = $this->getUser();
+        // Training
+        $repository = $this->getDoctrine()->getRepository(Training::class);
+        $training = $repository->findBy(array('uid' => (int) $user->getId() ));
+
         return $this->render('admin/training.html.twig', array(
             'user' => $user,
-            'report' => $this->reportService->getReport($user)
+            'report' => $this->reportService->getReport($user),
+            'training' => $training,
         ));
     }
 
