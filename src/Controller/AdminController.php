@@ -265,8 +265,12 @@ class AdminController extends AbstractController
      * @return Response
      */
     public function payeer()
-    {$user = $this->getUser();
-        return $this->render('admin/payeer.html.twig');
+    {
+        $user = $this->getUser();
+        return $this->render('admin/payeer.html.twig',
+            [
+                'user' => $user
+            ]);
     }
 
 }
