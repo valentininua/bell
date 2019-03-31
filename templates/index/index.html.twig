@@ -2,14 +2,18 @@
 {% block body %}
 
 
-
+<style>
+    .intro .slogan h2 ,.section-heading h2 {
+        font-size: 35px;
+    }
+</style>
 
     <!-- Section: intro -->
     <section id="intro" class="intro">
 
         <div class="slogan">
-            <h2 style="font-size: 40px;">Инвестиционный клуб <br /> globalbigbell  </h2>
-            <h4>Сообщество единомышленников, целью которого является совместное инвестирование</h4>
+            <h2>Инвестиционный клуб <br /> global big bell  </h2>
+            <h4>Сообщество единомышленников, целью которого является совместное инвестирование и обучение </h4>
         </div>
         <div class="page-scroll">
             <a href="#about" class="btn btn-circle">
@@ -33,10 +37,10 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="wow bounceInDown" data-wow-delay="0.4s">
                             <div class="section-heading">
-                                <h4>Покупайте акции с высоким потенциалом дохода.</h4>
+                                <h4>Иивестируйте в активы с высоким потенциалом роста </h4>
                                 <i class="fa fa-2x fa-angle-down"></i>
                                 <br/>
-                                <p>Получайте дополнительную прибыль и тратьте её на то, что приносит Вам радость</p>
+                                <p>Проинвестировать</p>
                             </div>
                         </div>
                     </div>
@@ -76,12 +80,12 @@
                     <div class="wow bounceInUp" data-wow-delay="0.2s">
                         <div class="team boxed-grey">
                             <div class="inner">
-                                <h5>Консервативный</h5>
+                                <h5>Робототезированая торговля <br />   (валютый робот)</h5>
                                 {#<p class="subtitle">Pixel Crafter</p>#}
                                 <div class="avatar">
                                     <center>
                                         <img src="/main/img/_1.png"  style=" width: 172px;"  alt="" class="img-responsive img-circle" />
-                                    </center>
+                                    </center><br />
                                 </div>
                             </div>
                         </div>
@@ -91,7 +95,7 @@
                     <div class="wow bounceInUp" data-wow-delay="0.5s">
                         <div class="team boxed-grey">
                             <div class="inner">
-                                <h5>Оптимальный</h5>
+                                <h5>Робототезированая торговля  <br /> (криптовалютый робот)</h5>
                                 {#<p class="subtitle">Ruby on Rails</p>#}
                                 <div class="avatar">
                                     <center>
@@ -301,30 +305,30 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">
-                                            Name</label>
-                                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                            Ваше имя </label>
+                                        <input type="text" name="name" class="form-control" id="name"   data-rule="minlen:4" data-msg="Пожалуйста, введите не менее 4 символов" />
                                         <div class="validation"></div>
                                     </div>
                                     <div class="form-group">
                                         <label for="email">
-                                            Email Address</label>
+                                            АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ</label>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                                            <input type="email" class="form-control" name="email" id="email"   data-rule="email" data-msg="Пожалуйста, введите действительный адрес электронной почты" />
                                             <div class="validation"></div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="subject">
-                                            Subject</label>
-                                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                            Тема сообщения </label>
+                                        <input type="text" class="form-control" name="subject" id="subject"   data-rule="minlen:4" data-msg="Пожалуйста, введите не менее 8 символов субъекта" />
                                         <div class="validation"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">
-                                            Message</label>
-                                        <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                                            Сообщение</label>
+                                        <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Пожалуйста, напишите что-нибудь для нас" placeholder="Пожалуйста, напишите Ваше cообщение"></textarea>
                                         <div class="validation"></div>
                                     </div>
                                 </div>

@@ -72,7 +72,7 @@
                 <li class="header-nav-brand" >
                     <div class="brand-holder">
                         <a href="/">
-                            <span class="text-lg text-bold text-primary">GlobalBigBell ADMIN</span>
+                            <span class="text-lg text-bold text-primary">Global Big Bell</span>
                         </a>
                     </div>
                 </li>
@@ -141,7 +141,28 @@
 
 
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+
+
+
+
+
+
+
+
+
                 <ul class="header-nav header-nav-profile">
+
+                    <li>
+
+
+                        <a href="#" title=" Вы не резидент клуба " style="top: 11px;">
+                            <span class="badge style-danger pull-right" style="background-color: #ff1515;">
+                                 Вы не резидент клуба
+                            </span>
+                        </a>
+
+                    </li>
                     <li>
                         <a href="#" title="Баланс" style="top: 11px;">
                             <span class="badge style-danger pull-right" style="background-color: #60a49c;">
@@ -149,7 +170,7 @@
                                     Свободные средства
                                     <span id="balance">
                                         {% if report.available_funds is defined %}
-                                           {{ report.available_funds }}
+                                            {{ report.available_funds }}
                                         {% else %}
                                             0.00
                                         {% endif %}
@@ -157,6 +178,9 @@
                                  USD
                             </span>
                         </a>
+
+
+
                     </li>
 
                     <li class="dropdown" style=" top: 2px;">
@@ -184,7 +208,7 @@
                             <li><a href="/#contact">Форма обратной связи</a></li>
 
                             <li class="divider"></li>
-                            <li><a href="/logout"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
+                            <li><a href="/logout"><i class="fa fa-fw fa-power-off text-danger"></i> Выйти </a></li>
                         </ul><!--end .dropdown-menu -->
                     </li><!--end .dropdown -->
                 </ul><!--end .header-nav-profile -->
@@ -253,7 +277,7 @@
                 <li>
                     <a href="/admin/" class="active">
                         <div class="gui-icon"><i class="md md-home"></i></div>
-                        <span class="title">Приборная доска</span>
+                        <span class="title">Меню</span>
                     </a>
                 </li><!--end /menu-li -->
                 <!-- END DASHBOARD -->
