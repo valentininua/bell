@@ -52,4 +52,6 @@ app_index_payeer_fail:
 app_index_payeer_status:
     path: /payeer/status
     controller: App\Controller\AdminController::payeer
-
+app_index_thailandPropertyInvestments:
+    path: /thailand/property-investments
+    controller: App\Controller\AdminController::thailandPropertyInvestments

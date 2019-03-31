@@ -273,4 +273,17 @@ class AdminController extends AbstractController
             ]);
     }
 
+
+    /**
+     * @return Response
+     */
+    public function thailandPropertyInvestments()
+    {
+        $user = $this->getUser();
+        return $this->render('admin/thailandPropertyInvestments.html.twig',
+            [
+                'user' => $user
+            ]);
+    }
+
 }

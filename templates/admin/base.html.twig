@@ -746,7 +746,9 @@
     <div>
         <span>
             {% if user is defined %}
-                Ваша реферальная ссылка  http://globalbigbell.com/register/?r={{ user.id }}
+                {% if user.id is defined %}
+                    Ваша реферальная ссылка  http://globalbigbell.com/register/?r={{ user.id }}
+                {% endif %}
             {% endif %}
         </span>
     </div>
