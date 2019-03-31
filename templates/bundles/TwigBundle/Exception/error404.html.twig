@@ -1,32 +1,63 @@
-{% extends 'index/base.html.twig' %}
+{% extends 'admin/base.html.twig' %}
 
 {% block title %}404 — {% endblock %}
 
 {% block body %}
-    <div class="text-center py-5"
-         style="background-image: url('/main/site-assets/cover_curve.jpg');background-position:center bottom;background-size:cover;">
-        <div class="container py-4 mt-4">
-            <div class="row">
-                <div class="col-md-12 text-white">
-                    <h1 class="mb-2 display-5">404</h1>
-                </div>
+    {#<div class="text-center py-5"#}
+         {#style="background-image: url('/main/site-assets/cover_curve.jpg');background-position:center bottom;background-size:cover;">#}
+        {#<div class="container py-4 mt-4">#}
+            {#<div class="row">#}
+                {#<div class="col-md-12 text-white">#}
+                    {#<h1 class="mb-2 display-5">404</h1>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+    {#<div class="text-center section py-5">#}
+        {#<div class="container">#}
+            {#<div class="row">#}
+                {#<div class="col-md-12">#}
+                     {#<h1 class="mb-2 display-5">Not Found</h1>#}
+                    {#<p class="px-2 text-white-shadowed">#}
+                        {#Something is broken.<br/>#}
+                        {#Please let us know what you were doing<br/>#}
+                        {#when this error occurred.<br/>#}
+                        {#We will fix it as soon as possible.<br/>#}
+                        {#Sorry for any inconvenience caused.#}
+                    {#</p>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+
+
+
+
+    <!-- BEGIN CONTENT-->
+    <div id="content">
+
+        <!-- BEGIN 404 MESSAGE -->
+        <section>
+            <div class="section-header">
+                <ol class="breadcrumb">
+
+                    <li class="active">404</li>
+                </ol>
             </div>
-        </div>
-    </div>
-    <div class="text-center section py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                     <h1 class="mb-2 display-5">Not Found</h1>
-                    <p class="px-2 text-white-shadowed">
-                        Something is broken.<br/>
-                        Please let us know what you were doing<br/>
-                        when this error occurred.<br/>
-                        We will fix it as soon as possible.<br/>
-                        Sorry for any inconvenience caused.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+            <div class="section-body contain-lg">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h1><span class="text-xxxl text-light">404 <i class="fa fa-search-minus text-primary"></i></span></h1>
+                        <h2 class="text-light">Данная страница не существует</h2>
+                    </div><!--end .col -->
+                </div><!--end .row -->
+            </div><!--end .section-body -->
+        </section>
+        <!-- END 404 MESSAGE -->
+
+
+
+    </div><!--end #content-->
+    <!-- END CONTENT -->
+
 {% endblock %}
