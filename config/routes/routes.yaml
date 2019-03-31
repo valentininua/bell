@@ -43,3 +43,13 @@ app_admin_training:
 app_index_contactform:
     path: /contactform
     controller: App\Controller\IndexController::contactform
+app_index_payeer_success:
+    path: /payeer/success
+    controller: App\Controller\AdminController::payeer
+app_index_payeer_fail:
+    path: /payeer/fail
+    controller: App\Controller\AdminController::payeer
+app_index_payeer_status:
+    path: /payeer/status
+    controller: App\Controller\AdminController::payeer
+
