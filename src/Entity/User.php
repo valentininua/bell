@@ -27,6 +27,16 @@ class User extends BaseUser
     protected $referralLink;
 
 
+    /**
+     * @ORM\Column(type="integer", options={"default" : 0}, nullable=true)
+     */
+    protected $isresident;
+
+
+    /**
+     * @ORM\Column(type="integer", options={"default" : 0}, nullable=true)
+     */
+    protected $isverify;
 
     /**
      *@ORM\Column(type="string", nullable=true)
@@ -170,5 +180,40 @@ class User extends BaseUser
     {
         $this->name = $name;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIsresident()
+    {
+        return $this->isresident;
+    }
+
+    /**
+     * @param mixed $isresident
+     */
+    public function setIsresident($isresident): void
+    {
+        $this->isresident = $isresident;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsverify()
+    {
+        return $this->isverify;
+    }
+
+    /**
+     * @param mixed $isverify
+     */
+    public function setIsverify($isverify): void
+    {
+        $this->isverify = $isverify;
+    }
+
+
+
 
 }

@@ -71,7 +71,7 @@
                 </li>
                 <li class="header-nav-brand" >
                     <div class="brand-holder">
-                        <a href="/">
+                        <a href="/admin/">
                             <span class="text-lg text-bold text-primary">Global Big Bell</span>
                         </a>
                     </div>
@@ -142,25 +142,28 @@
 
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-
-
-
-
-
-
-
-
-
                 <ul class="header-nav header-nav-profile">
 
                     <li>
+                        {% if user is defined %}
+                            {% if user.isresident == 1 %}
 
+                            <a href="#" title=" Вы не резидент клуба " style="top: 11px;">
+                                <span class="badge style-danger pull-right" style="background-color: #969834;">
+                                     <i  style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;" class="md md-verified-user"></i> Вы резидент клуба
+                                </span>
+                            </a>
 
-                        <a href="#" title=" Вы не резидент клуба " style="top: 11px;">
-                            <span class="badge style-danger pull-right" style="background-color: #ff1515;">
-                                 Вы не резидент клуба
-                            </span>
-                        </a>
+                            {% else %}
+
+                                <a href="#" title=" Вы не резидент клуба " style="top: 11px;">
+                                <span class="badge style-danger pull-right" style="background-color: #ff1515;">
+                                      <i  style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;" class="md md-report-problem"></i>  Вы не резидент клуба
+                                </span>
+                                </a>
+
+                            {% endif %}
+                        {% endif %}
 
                     </li>
                     <li>
@@ -204,7 +207,7 @@
                             {#<li class="dropdown-header">Config</li>#}
                             <li><a href="/profile/">Мой профиль</a></li>
                             <li><a href="/admin/">Кабинет</a></li>
-                            <li><a href="/admin/verify">Верификация аккаунта</a></li>
+                            <li><a href="/admin/verify"> <i  style=" {% if user is defined %} color: {% if user.isverify == 0 %}  #f00000; {% else %} #73b967; {% endif %} {% endif %} padding-right: 1px; padding-left: 0px; padding-bottom: 1px;" class="md md-verified-user"></i> Верификация аккаунта</a></li>
                             <li><a href="/#contact">Форма обратной связи</a></li>
 
                             <li class="divider"></li>
@@ -364,12 +367,17 @@
 
                 <li class="gui-folder">
                     <a>
-                        <div class="gui-icon"><span class="glyphicon glyphicon-list-alt"></span></div>
+                        <div class="gui-icon"> <i class="md md-school"></i> </div>
                         <span class="title">Обучение</span>
                     </a>
                     <!--start submenu -->
                     <ul>
-                        <li><a  target="_blank" href="/admin/training" ><span class="title">Обучение</span></a></li>
+
+                        <li>
+                            <a  target="_blank" href="/admin/training" > <span class="title"> <i class="md md-movie-creation" style=" margin-top: 0px; margin-bottom: 0px; "></i>
+                                    <span> Видео </span> </span>
+                            </a>
+                        </li>
 
                     </ul><!--end /submenu -->
 

@@ -35,10 +35,45 @@ class AdminController extends AbstractController
     public function index()
     {
         $user = $this->getUser();
+
+        if (!$user) {
+            return $this->render('index/index.html.twig');
+        }
+
+        $money = 75;
+
+        $m_shop = getenv('m_shop');
+        $m_orderid = (int) $user->getId();
+        $m_amount = number_format($money, 2, '.', '');
+        $m_curr = getenv('USD');
+        $m_desc = base64_encode('Вступительный взнос (Entrance fee) ' .  'id' . $user->getId() . " , Email " . $user->getEmail() . ' ');
+        $m_key = getenv('m_key');
+
+        $arHash = array(
+            $m_shop,
+            $m_orderid,
+            $m_amount,
+            $m_curr,
+            $m_desc
+        );
+
+        $arHash[] = $m_key;
+        $sign = strtoupper(hash('sha256', implode(':', $arHash)));
+
         return $this->render('admin/admin.html.twig', array(
             'user' => $user,
             'report' => $this->reportService->getReport($user),
+
+            'money' => $money,
+            'm_shop' => $m_shop,
+            'm_orderid' => $m_orderid,
+            'm_amount' => $m_amount,
+            'm_curr' => $m_curr,
+            'm_desc' => $m_desc,
+            'sign' => $sign,
         ));
+
+
     }
 
     /**
