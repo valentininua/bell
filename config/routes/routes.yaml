@@ -4,7 +4,7 @@ app_index:
     controller: App\Controller\IndexController::index
 app_index_about:
     path: /about
-    controller: App\Controller\IndexController::about
+    controller: App\Controller\AdminController::about
 app_index_howto:
     path: /howto
     controller: App\Controller\IndexController::howto

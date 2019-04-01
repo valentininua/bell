@@ -57,17 +57,6 @@ class IndexController extends AbstractController
         return $this->json(['status' => 'true']);
     }
 
-
-
-    /**
-     * @return Response
-     * @throws \Exception
-     */
-    public function about()
-    {
-        return $this->render('index/about.html.twig');
-    }
-
     /**
      * @return Response
      * @throws \Exception

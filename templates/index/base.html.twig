@@ -42,7 +42,7 @@
                 <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="/">
-                <img src="/main/img/logo.png" style="width: 100px;"/>
+                <img src="/main/img/logo.png" style="width: 60px;"/>
                 {#<h1>GlobalBigBell</h1>#}
             </a>
         </div>
@@ -52,48 +52,141 @@
             <ul class="nav navbar-nav">
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Для Вас <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Услуги Клиентам <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        {#<li class="active"><a href="#intro">Home</a></li>#}
-                        <li><a href="/#about">ПОКУПАЙТЕ</a></li>
-                        <li><a href="/#service">Услуги Клиентам</a></li>
-                        <li><a href="/#contact">КОНТАКТЫ</a></li>
+                        <li><a href="/services/individual-management">Индивидуальное доверительное управление</a></li>
+                        <li><a href="/services/robotic-trading">Роботизированная торговля</a></li>
+                        <li><a href="/services/ipo">Американские первичные акции (IPO)</a></li>
+                        <li><a href="/services/thailand/property-investments">Инвестиции в недвижимость Тайланда</a></li>
+                        <li><a href="/services/cars">Доходные автомобили Тайланда</a></li>
                     </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> О компании <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+
+                        <li><a href="/about">Global Big Bell</a></li>
+                        {#<li><a href="#">Отличия от других проектов</a></li>#}
+                        {#<li><a href="#">Страхование капитала</a></li>#}
+                        {#<li><a href="#">Виды наших финансовых инструментов</a></li>#}
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+
+
+                    <a href="/admin/training" class="dropdown-toggle" > Обучение </a>
+
+
+
+                    {#<a href="/training" class="dropdown-toggle" > Обучение </a>#}
+                    {#<ul class="dropdown-menu">#}
+
+                    {#</ul>#}
+                </li>
+                {#<li class="dropdown">#}
+                    {#<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Инвестиции в Тайланд <b class="caret"></b></a>#}
+                    {#<ul class="dropdown-menu">#}
+
+                    {#</ul>#}
+                {#</li>#}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Инструкции <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a target="_blank" href="/docs/1.docx" title="Зарегистрироваться в Портфеле №1-Фондовый.docx"><span class="title">Зарегистрироваться в Портфеле №1-Фондовый.docx</span></a></li>
+                        <li><a target="_blank" href="/docs/2.docx" title="Сгенерировать ключи в Quik.docx"><span class="title">Сгенерировать ключи в Quik.docx</span></a></li>
+                        <li><a target="_blank" href="/docs/3.doc" title="Установка Quik.doc"><span class="title">Установка Quik.doc</span></a></li>
+
+                        <li><a target="_blank" href="/docs/referral_program.docx" title="referral_program.docx"><span class="title">Реферальная программа.docx</span></a></li>
+                        <li><a target="_blank" href="/docs/Instructions_How_to_pay_DUTY.docx" title="referral_program.docx"><span class="title">Инструкция Как оплатить DUTY.docx</span></a></li>
+
+
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/#contact" class="dropdown-toggle">Контакты  </a>
+                    {#<ul class="dropdown-menu">#}
+                        {#<li>#}
+                            {#<a href="/admin/" title="Выйти из системы"  >Мой кабинет</a>#}
+                        {#</li>#}
+                    {#</ul>#}
                 </li>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">О компании <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/training" title="обучение" class="btn btn-success" >Oбучение</a></li>
-                        <li><a href="/howto" title="О проекте">Как это работает</a></li>
-                        <li>
-                            <a class="nav-link" href="/agreement" title="Соглашение"> Соглашение </a>
-                        </li>
-                        <li>
-                            <a href="/about" title="О проекте">О проекте</a>
-                        </li>
-                    </ul>
-                </li>
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <li>
-                        <a href="/admin/" title="Кабинет" class="btn btn-info" >
-                            <b>Кабинет</b>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/logout" title="Выйти из системы" class="btn btn-danger">Выйти из системы</a>
+                    <li class="dropdown">
+                        <a href="/" class="dropdown-toggle" data-toggle="dropdown"> Кабинет <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/admin/" title="Выйти из системы"  >Мой кабинет</a>
+                            </li>
+                            <li>
+                                <a href="/logout" title="Выйти из системы"  >Выйти из системы</a>
+                            </li>
+                        </ul>
                     </li>
                 {% else %}
-                    <li>
-                        <a href="/register/" title="Зарегистрироваться">
-                            <b>Зарегистрироваться</b>
-                        </a>
+                    <li class="dropdown">
+                        <a href="/admin/" class="dropdown-toggle" data-toggle="dropdown">Войти <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>  <a href="/admin/" title="Выйти из системы"> Мой кабинет</a> </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a class="nav-link" href="/admin/" title="Войти в систем"
-                           id="Navbar templates">Войти в систему</a>
-                    </li>
+
                 {% endif %}
+
+                {##}
+                {#Услуги Клиентам#}
+                {#О компании#}
+                {#Обучение#}
+                {#Инвестиции в Тайланд#}
+                {#Инструкции#}
+                {#Контакты#}
+                {#Войти#}
+
+                {#<li class="dropdown">#}
+                    {#<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Для Вас <b class="caret"></b></a>#}
+                    {#<ul class="dropdown-menu">#}
+                        {#<li class="active"><a href="#intro">Home</a></li>#}
+                        {#<li><a href="/#about">ПОКУПАЙТЕ</a></li>#}
+                        {#<li><a href="/#service">Услуги Клиентам</a></li>#}
+                        {#<li><a href="/#contact">КОНТАКТЫ</a></li>#}
+                    {#</ul>#}
+                {#</li>#}
+
+                {#<li class="dropdown">#}
+                    {#<a href="#" class="dropdown-toggle" data-toggle="dropdown">О компании <b class="caret"></b></a>#}
+                    {#<ul class="dropdown-menu">#}
+                        {#<li><a href="/training" title="обучение" class="btn btn-success" >Oбучение</a></li>#}
+                        {#<li><a href="/howto" title="О проекте">Как это работает</a></li>#}
+                        {#<li>#}
+                            {#<a class="nav-link" href="/agreement" title="Соглашение"> Соглашение </a>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="/about" title="О проекте">О проекте</a>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</li>#}
+                {#{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}#}
+                    {#<li>#}
+                        {#<a href="/admin/" title="Кабинет" class="btn btn-info" >#}
+                            {#<b>Кабинет</b>#}
+                        {#</a>#}
+                    {#</li>#}
+                    {#<li>#}
+                        {#<a href="/logout" title="Выйти из системы" class="btn btn-danger">Выйти из системы</a>#}
+                    {#</li>#}
+                {#{% else %}#}
+                    {#<li>#}
+                        {#<a href="/register/" title="Зарегистрироваться">#}
+                            {#<b>Зарегистрироваться</b>#}
+                        {#</a>#}
+                    {#</li>#}
+                    {#<li>#}
+                        {#<a class="nav-link" href="/admin/" title="Войти в систем"#}
+                           {#id="Navbar templates">Войти в систему</a>#}
+                    {#</li>#}
+                {#{% endif %}#}
             </ul>
         </div>
         <!-- /.navbar-collapse -->

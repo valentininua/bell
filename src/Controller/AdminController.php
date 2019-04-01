@@ -272,4 +272,18 @@ class AdminController extends AbstractController
                 'user' => $user
             ]);
     }
+
+
+    /**
+     * @return Response
+     */
+    public function about()
+    {
+        $user = $this->getUser();
+        return $this->render('index/about.html.twig',[
+            'user' => $user
+        ]);
+    }
+
+
 }
