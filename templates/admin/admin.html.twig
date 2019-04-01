@@ -144,7 +144,7 @@
 
 
 
-                        <div class="row card">
+                        <div class="row card_">
                             <div class="_col-md-4">
 
                                 <div>
@@ -152,7 +152,7 @@
                                     <center>
                                         {% if true %}
 
-                                            <table class="table table-condensed">
+                                            <table class="table table-dark">
                                                 <thead>
                                                 <tr>
                                                     <th></th>
@@ -162,7 +162,7 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr class="success">
+                                                <tr class="">
                                                     <th scope="row"></th>
                                                     <td>{{ user.email }}</td>
                                                     <td> 75 $</td>
@@ -177,9 +177,9 @@
                                                             <input type="submit" class="btn btn-primary" name="m_process" value="ok"/>
                                                         </form>
                                                     </td>
-                                                    <td>
-                                                        <button class="btn btn-primary"   onclick="window.location.href='{{ path('app_admin') }}'" style="background-color: #a8360a;">отмена</button>
-                                                    </td>
+                                                    {#<td>#}
+                                                        {#<button class="btn btn-primary"   onclick="window.location.href='{{ path('app_admin') }}'" style="background-color: #a8360a;">отмена</button>#}
+                                                    {#</td>#}
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -559,5 +559,37 @@
         </div>
     </div>
     <!--  end PortfolioOneModal -->
+
+
+
+
+
+
+
+
+
+    {#<ul class="timeline">#}
+        {#<li class="timeline-inverted">#}
+            {#<div class="timeline-circ"></div>#}
+            {#<div class="timeline-entry">#}
+                {#<div class="card style-primary">#}
+                    {#<div class="card-body small-padding">#}
+                        {#..#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</li>#}
+        {#<li>#}
+            {#<div class="timeline-circ"></div>#}
+            {#<div class="timeline-entry">#}
+                {#<div class="card style-primary">#}
+                    {#<div class="card-body small-padding">#}
+                        {#..#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</li>#}
+        {#...#}
+    {#</ul>#}
 
 {% endblock %}

@@ -52,6 +52,21 @@ app_index_payeer_fail:
 app_index_payeer_status:
     path: /payeer/status
     controller: App\Controller\AdminController::payeer
-app_index_thailandPropertyInvestments:
-    path: /thailand/property-investments
-    controller: App\Controller\AdminController::thailandPropertyInvestments
+app_services_thailandPropertyInvestments:
+    path: /services/thailand/property-investments
+    controller: App\Controller\ServicesController::thailandPropertyInvestments
+app_services_ipo:
+    path: /services/ipo
+    controller: App\Controller\ServicesController::ipo
+app_services_robotic_trading:
+    path: /services/robotic-trading
+    controller: App\Controller\ServicesController::roboticTrading
+app_services_individual_management:
+    path: /services/individual-management
+    controller: App\Controller\ServicesController::individualManagement
+app_services_cars:
+    path: /services/cars
+    controller: App\Controller\ServicesController::cars
+
+
+
