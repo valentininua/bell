@@ -6,13 +6,13 @@
 */
 
 /* ==== Google font ==== */
-@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:700|Merriweather:400italic');
+@import url('https://fonts.googleapis.com/css?family=Arimo:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Arimo:700|Merriweather:400italic');
 
 
 body {
     width: 100%;
     height: 100%;
-    font-family: 'Lato',sans-serif;
+    font-family: 'Arimo',sans-serif;
 	font-weight: 300;
     color: #666;
     background-color: #fff;
@@ -31,7 +31,7 @@ h5,
 h6 {
     margin: 0 0 30px;
     text-transform: uppercase;
-    font-family: Montserrat,sans-serif;
+    font-family: Arimo,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -342,7 +342,7 @@ hr {
 	font-size: 60px;
 	line-height: 60px;
 	font-weight: 700;
-	font-family: Montserrat, sans-serif;
+	font-family: Arimo, sans-serif;
 	background-color: rgba(0, 0, 0, 0);
 	text-decoration: none;
 	text-transform: uppercase;
@@ -628,7 +628,7 @@ Parallax
 .btn {
 	border-radius: 0;
     text-transform: uppercase;
-    font-family: Montserrat,sans-serif;
+    font-family: Arimo,sans-serif;
     font-weight: 400;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
