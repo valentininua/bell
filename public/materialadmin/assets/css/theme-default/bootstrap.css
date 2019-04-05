@@ -1636,7 +1636,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Roboto", sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Arimo", sans-serif, Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.846153846;
   color: #313534;
@@ -6680,7 +6680,7 @@ button.close {
   z-index: 1070;
   display: block;
   visibility: visible;
-  font-family: "Roboto", sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Arimo", sans-serif, Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: normal;
   line-height: 1.4;
@@ -6787,7 +6787,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Roboto", sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Arimo", sans-serif, Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 1.846153846;
