@@ -77,6 +77,36 @@
                         </a>
                     </div>
                 </li>
+
+
+
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li>
+                        {% if user is defined %}
+                            {% if user.isresident == 1 %}
+
+                                <a href="#" title=" Вы не резидент клуба " style="top: 11px;">
+                                    <span class="badge style-danger pull-right" style="background-color: #969834;">
+                                         <i  style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;" class="md md-verified-user"></i> Вы резидент клуба
+                                    </span>
+                                </a>
+
+                            {% else %}
+
+                                <a href="#" title=" Вы не резидент клуба " style="top: 11px;">
+                                    <span class="badge style-danger pull-right" style="background-color: #ff1515;">
+                                          <i  style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;" class="md md-report-problem"></i>  Вы не резидент клуба
+                                    </span>
+                                </a>
+
+                            {% endif %}
+                        {% endif %}
+
+                    </li>
+                {% endif %}
+
+
+
             </ul>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -145,47 +175,66 @@
 
                 <ul class="header-nav header-nav-profile">
 
-                    <li>
-                        {% if user is defined %}
-                            {% if user.isresident == 1 %}
+                    {#<li>#}
+                        {#{% if user is defined %}#}
+                            {#{% if user.isresident == 1 %}#}
 
-                            <a href="#" title=" Вы не резидент клуба " style="top: 11px;">
-                                <span class="badge style-danger pull-right" style="background-color: #969834;">
-                                     <i  style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;" class="md md-verified-user"></i> Вы резидент клуба
-                                </span>
-                            </a>
+                            {#<a href="#" title=" Вы не резидент клуба " style="top: 11px;">#}
+                                {#<span class="badge style-danger pull-right" style="background-color: #969834;">#}
+                                     {#<i  style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;" class="md md-verified-user"></i> Вы резидент клуба#}
+                                {#</span>#}
+                            {#</a>#}
 
-                            {% else %}
+                            {#{% else %}#}
 
-                                <a href="#" title=" Вы не резидент клуба " style="top: 11px;">
-                                <span class="badge style-danger pull-right" style="background-color: #ff1515;">
-                                      <i  style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;" class="md md-report-problem"></i>  Вы не резидент клуба
-                                </span>
-                                </a>
+                                {#<a href="#" title=" Вы не резидент клуба " style="top: 11px;">#}
+                                {#<span class="badge style-danger pull-right" style="background-color: #ff1515;">#}
+                                      {#<i  style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;" class="md md-report-problem"></i>  Вы не резидент клуба#}
+                                {#</span>#}
+                                {#</a>#}
 
-                            {% endif %}
-                        {% endif %}
+                            {#{% endif %}#}
+                        {#{% endif %}#}
 
-                    </li>
-                    <li>
-                        <a href="#" title="Баланс" style="top: 11px;">
-                            <span class="badge style-danger pull-right" style="background-color: #60a49c;">
-                                <i class="md md-account-balance-wallet" style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;"></i>
-                                    Свободные средства
-                                    <span id="balance">
-                                        {% if report.available_funds is defined %}
-                                            {{ report.available_funds }}
-                                        {% else %}
-                                            0.00
-                                        {% endif %}
-                                    </span>
-                                 USD
-                            </span>
-                        </a>
+                    {#</li>#}
+                                <li>
 
 
 
-                    </li>
+                                    <a href="/admin/add/" class="btn btn-success btn-primary btn-labeled" style="background-color: #2196f3;">
+                                        Баланс
+                                        <span class="label label-warning">
+                                            <span id="balance">
+                                                 <i class="md md-account-balance-wallet" style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;"></i>
+                                                    {% if report.available_funds is defined %}
+                                                        {{ report.available_funds }}
+                                                    {% else %}
+                                                        0.00
+                                                    {% endif %}
+                                                    USD
+                                                </span>
+                                        </span>
+                                    </a>
+
+
+                                    {#<a href="#" title="Баланс" style="top: 11px;">#}
+                                        {#<span  data-toggle="tooltip" data-placement="bottom" title="Свободные средства" class="badge style-danger pull-right" style="background-color: #60a49c;">#}
+                                            {#<i class="md md-account-balance-wallet" style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;"></i>#}
+                                                {#Свободные средства#}
+                                                {#<span id="balance">#}
+                                                    {#{% if report.available_funds is defined %}#}
+                                                        {#{{ report.available_funds }}#}
+                                                    {#{% else %}#}
+                                                        {#0.00#}
+                                                    {#{% endif %}#}
+                                                {#</span>#}
+                                             {#USD#}
+                                        {#</span>#}
+                                    </a>
+
+
+
+                                </li>
 
                     <li class="dropdown" style=" top: 2px;">
                         <a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
@@ -205,12 +254,40 @@
                             </div>
                         </a>
                         <ul class="dropdown-menu animation-dock">
-                            {#<li class="dropdown-header">Config</li>#}
+
+                            <li>
+                            <a href="/admin/add/" title="Баланс" style="top: 11px;">
+                                Пополнить
+                                <span  data-toggle="tooltip" data-placement="bottom" title="Свободные средства" class="badge style-danger pull-right" style="background-color: #60a49c;">
+                                            <i class="md md-account-balance-wallet" style="padding-right: 1px; padding-left: 0px; padding-bottom: 1px;"></i>
+                                            {#Свободные средства#}
+                                            <span id="balance">
+                                                    {% if report.available_funds is defined %}
+                                                        {{ report.available_funds }}
+                                                    {% else %}
+                                                        0.00
+                                                    {% endif %}
+                                                </span>
+                                             USD
+                                        </span>
+                            </a>
+                            </li>
+
+
+
+
+
+
+                            <li class="dropdown-header">Меню</li>
                             <li><a href="/profile/">Мой профиль</a></li>
                             <li><a href="/admin/">Кабинет</a></li>
                             <li><a href="/admin/verify"> <i  style=" {% if user is defined %} color: {% if user.isverify == 0 %}  #f00000; {% else %} #73b967; {% endif %} {% endif %} padding-right: 1px; padding-left: 0px; padding-bottom: 1px;" class="md md-verified-user"></i> Верификация аккаунта</a></li>
                             <li><a href="/#contact">Форма обратной связи</a></li>
-
+                            <li>
+                                <a href="/admin/withdraw" title="Баланс" style="top: 11px;">
+                                    Вывести деньги
+                                </a>
+                            </li>
                             <li class="divider"></li>
                             <li><a href="/logout"><i class="fa fa-fw fa-power-off text-danger"></i> Выйти </a></li>
                         </ul><!--end .dropdown-menu -->
