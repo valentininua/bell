@@ -325,12 +325,60 @@
         transition: all 0.3s ease;
     }
 </style>
-{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-    <a href="/admin/add/" title="Хочу вступить в клуб" class="topbutton">Пополнить</a>
-{% else %}
-    <a href="/admin/" title="Хочу вступить в клуб" class="topbutton">Хочу вступить в клуб</a>
+{#{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}#}
+    {#<a href="/admin/add/" title="Хочу вступить в клуб" class="topbutton">Пополнить</a>#}
+{#{% else %}#}
+    {#<a href="/admin/" title="Хочу вступить в клуб" class="topbutton">Хочу вступить в клуб</a>#}
 
-{% endif %}
+{#{% endif %}#}
+
+
+
+
+
+
+
+
+
+
+<style>
+    #hp-ctn-howItWorks
+    {
+        cursor:pointer;
+        position:fixed;
+        top:10%;
+        right: 0px;
+        padding:0px;
+        margin:0px;
+        width: 40px;
+        /*height:160px;*/
+        background:#fcec00;
+        z-index:9999;
+        border-radius: 3px 0px 0px 3px;
+        color: #000;
+    }
+
+
+</style>
+<!-- How It Works Button -->
+<div id="hp-ctn-howItWorks">
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <div style="width: .7em;width: 1ch;text-align: center;word-wrap: break-word;padding-left: 15px;padding-top: 12px;padding-bottom: 12px;">Пополнить</div>
+    {% else %}
+        <div style="width: .7em;width: 1ch;text-align: center;word-wrap: break-word;padding-left: 15px;padding-top: 12px;padding-bottom: 12px;">Хочу вступить в клуб</div>
+    {% endif %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 
