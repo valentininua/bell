@@ -940,14 +940,11 @@
 
 
 
-{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-
-{% else %}
 
 
 <style>
     .topbutton {
-        z-index: 9999;
+        z-index: 999;
         width:200px;
         border:2px solid #ccc;
         background:#415437;
@@ -955,7 +952,7 @@
         padding:10px;
         position:fixed;
         bottom:5px;
-        left:5px;
+        left:85px;
         cursor:pointer;
         color:#fff;
         font-family:verdana;
@@ -986,6 +983,9 @@
         transition: all 0.3s ease;
     }
 </style>
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    <a href="/admin/add/" title="Хочу вступить в клуб" class="topbutton">Пополнить</a>
+{% else %}
 <a href="/admin/" title="Хочу вступить в клуб" class="topbutton">Хочу вступить в клуб</a>
 
 {% endif %}
