@@ -80,7 +80,28 @@
                                                 <div class="tile-text">{{ 'profile.show.email'|trans }}: {{ user.email }}</div>
                                             </a>
                                         </li>
+
+
+
+
+
+
+                                {% if user is defined %}
+                                    {% if user.id is defined %}
+
+
+                                        <li class="tile">
+                                            <a class="tile-content ink-reaction">
+                                                <div class="tile-text"> Ваша реферальная ссылка  http://globalbigbell.com/register/?r={{ user.id }}</div>
+                                            </a>
+                                        </li>
+
+
+                                    {% endif %}
+                                {% endif %}
+
                                     </ul>
+
                                     <div class="input-group input-group-lg form-group">
                                         <span class="input-group-addon"> </span>
                                         <a class="btn btn-default btn-success" href="/profile/edit" role="button"  style=" margin-top: 11px;" > <i class="md md-settings"></i> {{ 'Rедактировать профиль'|trans }}</a>

@@ -682,12 +682,18 @@
                 {#</li><!--end /menu-li -->#}
                 {#<!-- END LEVELS -->#}
 
+
+
+
+
+
             </ul><!--end .main-menu -->
             <!-- END MAIN MENU -->
 
             <div class="menubar-foot-panel">
                 <small class="no-linebreak hidden-folded">
-                    <span class="opacity-75">Copyright &copy; 2019</span> <strong>GlobalBigBell.com</strong>
+
+                    <span class="opacity-75">Copyright &copy; 2018</span> <strong>GlobalBigBell.com</strong>
                 </small>
             </div>
         </div><!--end .menubar-scroll-panel-->
@@ -861,17 +867,39 @@
 </style>
 
 
+{#<div class="footer">#}
+    {#<div>#}
+        {#<span>#}
+            {#{% if user is defined %}#}
+                {#{% if user.id is defined %}#}
+                    {#Ваша реферальная ссылка  http://globalbigbell.com/register/?r={{ user.id }}#}
+                {#{% endif %}#}
+            {#{% endif %}#}
+        {#</span>#}
+    {#</div>#}
+{#</div>#}
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="footer">
     <div>
         <span>
-            {% if user is defined %}
-                {% if user.id is defined %}
-                    Ваша реферальная ссылка  http://globalbigbell.com/register/?r={{ user.id }}
-                {% endif %}
-            {% endif %}
-        </span>
+
+        <p  style="font-size: 7px;padding-left: 400px;padding-right: 400px;">
+            © 2018 Предупреждение: Торговля на финансовых рынках (в частности торговля с использованием маржинальных инструментов) открывает широкие возможности, и позволяет инвесторам, готовым пойти на риск, получать высокую прибыль, но при этом несет в себе потенциально высокий уровень риска получения убытков. Поэтому перед началом торговли следует всесторонне рассмотреть вопрос о приемлемости проведения подобных операций с точки зрения имеющихся финансовых ресурсов и уровня знаний.
+        </p>
     </div>
 </div>
+
 
 
 
