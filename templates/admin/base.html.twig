@@ -942,6 +942,7 @@
 
 
 
+
 <style>
     .topbutton {
         z-index: 999;
@@ -951,7 +952,7 @@
         text-align:center;
         padding:10px;
         position:fixed;
-        bottom:5px;
+        bottom:22px;
         left:85px;
         cursor:pointer;
         color:#fff;
@@ -983,6 +984,7 @@
         transition: all 0.3s ease;
     }
 </style>
+
 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
     <a href="/admin/add/" title="Хочу вступить в клуб" class="topbutton">Пополнить</a>
 {% else %}
