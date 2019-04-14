@@ -3,6 +3,14 @@
 <div class="card contain-sm style-transparent">
     <div class="card-body">
         <div class="row">
+
+
+
+
+            <div class="alert alert-callout alert-info" >
+                Пожалуйста, проверьте, что вы на <b><span style="color: #448c47">https://</span>globalbigbell.com/</b>
+            </div>
+
             {% if error %}
                 <div class="alert alert-callout alert-info" style="color: #f00000;" >
                     <i class="md md-notifications pull-right text-danger"></i> {{ error.messageKey|trans(error.messageData, 'security') }}
