@@ -51,7 +51,15 @@ class RegistrationController extends Controller
     public function registerAction(Request $request)
     {
         $user = $this->userManager->createUser();
-        $referral = (int) $request->query->get('r');
+        $r = $request->query->get('r');
+        $referral = (int) $r;
+
+        if (null != $r ) {
+            $this->get('session')->set('referral', $referral);
+        } else {
+            $referral = $this->get('session')->get('referral');
+        }
+
         $user->setReferralLink($referral);
         $user->setEnabled(true);
         $event = new GetResponseUserEvent($user, $request);
