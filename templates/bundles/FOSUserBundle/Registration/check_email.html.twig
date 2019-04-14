@@ -3,5 +3,24 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-    <p>{{ 'registration.check_email'|trans({'%email%': user.email}) }}</p>
+    <div class="card">
+        <div>
+            <div class="nano-content" tabindex="0">
+                <div class="card-body height-6   style-default-bright" style="height: auto;">
+
+                    <center>
+                        <p>
+                            Письмо было отправлено на dадрес Email. Он содержит ссылку активации, которую вы должны нажать, чтобы активировать свою учетную запись.
+                        </p>
+                    </center>
+                </div>
+                <center>
+                    {#<p>{{ 'registration.check_email'|trans({'%email%': user.email}) }}</p>#}
+                </center>
+            </div>
+            <div class="nano-pane">
+                <div class="nano-slider" style="height: 45px; transform: translate(0px, 95px);"></div>
+            </div>
+        </div>
+    </div>
 {% endblock fos_user_content %}
