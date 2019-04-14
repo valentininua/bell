@@ -3,10 +3,10 @@ fos_user:
     firewall_name: main
     user_class: App\Entity\User
     from_email:
-        address: "admin@bigbell.net"
-        sender_name: "admin@bigbell.net"
+        address: "globalbigbell@rambler.ru"
+        sender_name: "globalbigbell@rambler.ru"
     registration:
         confirmation:
-            enabled: false
+            enabled: true
         form:
             type: App\Form\RegistrationType
