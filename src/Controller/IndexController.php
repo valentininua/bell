@@ -63,7 +63,8 @@ class IndexController extends AbstractController
      */
     public function howto()
     {
-        return $this->render('index/howto.html.twig');
+        $user = $this->getUser();
+        return $this->render('index/howto.html.twig' , array( 'user' => $user ));
     }
 
     /**
@@ -72,7 +73,8 @@ class IndexController extends AbstractController
      */
     public function agreement()
     {
-        return $this->render('index/agreement.html.twig');
+        $user = $this->getUser();
+        return $this->render('index/agreement.html.twig' , array( 'user' => $user ));
     }
 
     /**
@@ -80,7 +82,17 @@ class IndexController extends AbstractController
      */
     public function training()
     {
-        return $this->render('index/training.html.twig');
+        $user = $this->getUser();
+        return $this->render('index/training.html.twig' , array( 'user' => $user ));
+    }
+
+    /**
+     * @return Response
+     */
+    public function individualRobot()
+    {
+        $user = $this->getUser();
+        return $this->render('index/individualRobot.html.twig' , array( 'user' => $user ));
     }
 
 
