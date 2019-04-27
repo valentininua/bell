@@ -6,11 +6,11 @@ use Psr\Container\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-use App\Services\ReportService;
+use App\Services\{ReportService,UserService};
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use App\Entity\{Report,Withdraw, Training};
+use App\Entity\{Report,Withdraw, Training, User};
 
 class AdminController extends AbstractController
 {
@@ -20,12 +20,19 @@ class AdminController extends AbstractController
     private $reportService;
 
     /**
+     * @var UserService
+     */
+    private $userService;
+
+    /**
      * AdminController constructor.
      * @param ReportService $reportService
      */
-    public function __construct(ReportService $reportService)
+    public function __construct(ReportService $reportService , UserService  $userService )
     {
         $this->reportService = $reportService;
+        $this->userService = $userService;
+
     }
 
     /**
@@ -60,10 +67,10 @@ class AdminController extends AbstractController
         $arHash[] = $m_key;
         $sign = strtoupper(hash('sha256', implode(':', $arHash)));
 
+
         return $this->render('admin/admin.html.twig', array(
             'user' => $user,
             'report' => $this->reportService->getReport($user),
-
             'money' => $money,
             'm_shop' => $m_shop,
             'm_orderid' => $m_orderid,
@@ -71,9 +78,8 @@ class AdminController extends AbstractController
             'm_curr' => $m_curr,
             'm_desc' => $m_desc,
             'sign' => $sign,
+            'allUsers' => $this->userService->getTreeUsers(), // all users for tree
         ));
-
-
     }
 
     /**
