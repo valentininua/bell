@@ -9,12 +9,40 @@
 
 
         <script>
+            var checkboxStatus = 0;
             /**
              * @param element
              */
             function toggleCheckbox(element)
             {
+
+
                 if (element.checked) {
+                    ++checkboxStatus;
+                } else {
+                    --checkboxStatus;
+                }
+
+
+
+                // var tmp = false;
+                // checkbox.forEach(function(element) {
+                //     console.log(element);
+                //
+                //
+                // });
+
+                // for ( i = 0; i < checkbox.length; i ++ ) {
+                //     // if (false == checkbox[i]) {
+                //     //     document.getElementById("submitButton").disabled = true;
+                //     //     break;
+                //     // } else {
+                //     //     document.getElementById("submitButton").disabled = false;
+                //     // }
+                // }
+
+               // if (element.checked) {
+                if (2 == checkboxStatus ) {
                     document.getElementById("submitButton").disabled = false;
                 } else {
                     document.getElementById("submitButton").disabled = true;
@@ -99,14 +127,31 @@
             </div>
             <div class="input-group input-group-lg">
                 <span class="input-group-addon"></span>
-                <input type="checkbox"   autocomplete="off"     onchange="toggleCheckbox(this)">
+                <input type="checkbox"   autocomplete="off"    onchange="toggleCheckbox(this)">
                <i>
                    Я принимаю условия Пользовательского соглашения и даю своё согласие https://globalbigbell.com
                    на обработку моей персональной информации на условиях, определенных Политикой конфиденциальности.
-                   <a href="/docs/contract.docx" style="color:#0a6ebd ">Договор 1 </a>
+                   <a href="/docs/contract.docx" style="color:#0a6ebd ">Договор 1 </a> <br />
+
+
+
                    {#<a href="/docs/contract.docx" style="color:#0a6ebd ">Договор 2 </a>#}
                </i>
             </div>
+
+
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"></span>
+                <input type="checkbox"   autocomplete="off"     onchange="toggleCheckbox(this)">
+                <i>
+
+                    Я принимаю условия по декларации (уведомление) о рисках  <a href="/docs/declaration_of_risk.docx" style="color:#0a6ebd "> Скачать </a> <br />
+
+                    {#<a href="/docs/contract.docx" style="color:#0a6ebd ">Договор 2 </a>#}
+                </i>
+            </div>
+
         <div class="input-group input-group-lg form-group">
                 <span class="input-group-addon"> </span>
             <input  disabled id="submitButton" class="btn btn-default btn-success"  style=" margin-top: 11px;"  type="submit" value="{{ 'registration.submit'|trans }}"/>
