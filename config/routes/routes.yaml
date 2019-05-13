@@ -70,6 +70,7 @@ app_services_cars:
 app_index_individual_robot:
     path: /individual_robot
     controller: App\Controller\IndexController::individualRobot
-
-
+app_admin_doc:
+    path: /admin/doc/
+    controller: App\Controller\AdminController::doc
 
