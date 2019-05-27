@@ -106,6 +106,25 @@
                 {% endif %}
 
 
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li>
+                        {% if user is defined %}
+                            {% if user.isadmin == 1 %}
+
+                                <a href="/admin/admin/"   style="top: 11px;">
+                                    <span class="badge style-danger pull-right" style="background-color: #616dff;">
+                                         Я Аdmin
+                                    </span>
+                                </a>
+
+                            {% endif %}
+                        {% endif %}
+
+                    </li>
+                {% endif %}
+
+
+
 
             </ul>
         </div>

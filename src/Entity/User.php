@@ -36,6 +36,12 @@ class User extends BaseUser
     /**
      * @ORM\Column(type="integer", options={"default" : 0}, nullable=true)
      */
+    protected $isadmin;
+
+
+    /**
+     * @ORM\Column(type="integer", options={"default" : 0}, nullable=true)
+     */
     protected $isverify;
 
     /**
@@ -211,6 +217,22 @@ class User extends BaseUser
     public function setIsverify($isverify): void
     {
         $this->isverify = $isverify;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsadmin()
+    {
+        return $this->isadmin;
+    }
+
+    /**
+     * @param mixed $isadmin
+     */
+    public function setIsadmin($isadmin): void
+    {
+        $this->isadmin = $isadmin;
     }
 
 

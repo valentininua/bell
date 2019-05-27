@@ -303,4 +303,36 @@ class AdminController extends AbstractController
     }
 
 
+
+
+    /**
+     * @return Response
+     */
+    public function adminAdmin()
+    {
+        $user = $this->getUser();
+        if (1 !== (int) $user->getIsadmin()) {
+            return $this->redirectToRoute('app_index');
+        }
+        // TODO :: edit all
+        $report = $this->getDoctrine()->getRepository(Report::class);
+        $productReport = $report->findAll();
+
+
+        $reportUser = $this->getDoctrine()->getRepository(User::class);
+        $productUsers = $reportUser->findAll();
+
+//
+//        dump( $productReport );
+//        dump( $productUsers );
+
+        return $this->render('admin/adminAdmin.html.twig',[
+            'user' => $user,
+            'productReport' => $productReport,
+            'productUsers' => $productUsers,
+        ]);
+    }
+
+
+
 }

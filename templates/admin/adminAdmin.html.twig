@@ -1,0 +1,95 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block body %}
+
+
+
+<section  style="padding-top: 44px;padding-bottom: 44px;">
+    <div class="section-body">
+        <div class="row">
+
+
+
+
+        <div class="row">
+
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body no-padding">
+                    <div class="table-responsive no-margin">
+                        <table class="table table-striped no-margin">
+
+
+                            <tr>
+                                <td>  id  </td>
+                                <td> referralLink </td>
+                                <td>  isverify </td>
+                                <td>  surname </td>
+                                <td>  middlename  </td>
+                                <td>  name  </td>
+                                <td>  phone  </td>
+                                <td>  username  </td>
+                                <td>  usernameCanonical  </td>
+                                <td>  email  </td>
+                                <td>  emailCanonical  </td>
+                            </tr>
+
+
+                            {% for user in productUsers %}
+                                <tr>
+                                    <td> {{ user.id|e }} </td>
+                                    <td> {{ user.referralLink|e }} </td>
+                                    <td> {{ user.isverify|e }} </td>
+                                    <td> {{ user.surname|e }} </td>
+                                    <td> {{ user.middlename|e }} </td>
+                                    <td> {{ user.name|e }} </td>
+                                    <td> {{ user.phone|e }} </td>
+                                    <td> {{ user.username|e }} </td>
+                                    <td> {{ user.usernameCanonical|e }} </td>
+                                    <td> {{ user.email|e }} </td>
+                                    <td> {{ user.emailCanonical|e }} </td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+
+                        {#<br />#}
+                        {#<hr />#}
+                        {#инвестиции#}
+                        {#<br />#}
+
+
+                        {#<table class="table table-striped no-margin">#}
+
+                            {#{{ dump(productReport) }}#}
+                            {#{% for report in productReport %}#}
+                                {#<tr>#}
+                                    {#<td> {{ report.uid|e }} </td>#}
+                                    {#<td> {{ report.balanceIpo }} </td>#}
+                                    {#<td> {{ report.balanceConservative  }} </td>#}
+                                    {#<td> {{ report.balanceOptimum  }} </td>#}
+                                    {#<td> {{ report.currentAccount  }} </td>#}
+
+                                    {#<td> {{ report.created_at.date|e }} </td>#}
+
+                                {#</tr>#}
+                            {#{% endfor %}#}
+                        {#</table>#}
+                        {#{% for report in productReport %}#}
+                            {#<pre>#}
+                                {#{{  dump(report)  }}#}
+                            {#</pre>#}
+                        {#{% endfor %}#}
+
+                    </div><!--end .table-responsive -->
+                </div><!--end .card-body -->
+            </div><!--end .card -->
+        </div><!--end .col -->
+    </div>
+
+
+</div>
+    </div>
+</section>
+
+
+{% endblock %}
