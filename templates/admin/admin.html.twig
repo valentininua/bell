@@ -307,10 +307,57 @@
                                         {#<div class="progress-bar progress-bar-primary-dark" style="width:63%"></div>#}
                                     {#</div>#}
 
+                                    Свободные средства
+                                     {#<strong id="available_funds">{{ report.available_funds  }}</strong>  USD#}
 
 
 
-                                    Свободные средства <strong id="available_funds">{{ report.available_funds  }}</strong> USD
+
+
+
+
+
+                                        <div class="btn-group dropup  ">
+                                            <button type="button" class="btn ink-reaction btn-primary">  <strong id="available_funds">{{ report.available_funds  }}</strong>  USD  </button>
+                                            <button type="button" class="btn ink-reaction btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-up text-default-light"></i></button>
+                                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                                <li> <a href="#RUB"> {{ report.available_funds * exchangeRates.USD_RUB }}  RUB</a></li>
+                                                <li> <a href="#BTC"> {{ report.available_funds / exchangeRates.BTC_USD}}  BTC</a></li>
+                                                <li> <a href="#LTC"> {{ report.available_funds / exchangeRates.LTC_USD}}  LTC</a></li>
+                                                <li> <a href="#ETH"> {{ report.available_funds / exchangeRates.ETH_USD}}  ETH</a></li>
+                                                <li> <a href="#NEO"> {{ report.available_funds / exchangeRates.NEO_USD}}  NEO</a></li>
+                                                <li> <a href="#USDT"> {{ report.available_funds / exchangeRates.USDT_USD}}  USDT</a></li>
+                                            </ul>
+                                        </div><!--end .btn-group -->
+
+
+
+
+
+
+                                    {#<span class="pull-right text-success text-sm">#}
+
+                                        {#<button type="button" class="btn ink-reaction btn-raised btn-xs btn-primary">{{ report.available_funds * exchangeRates.USD_RUB }} RUB </button>#}
+
+                                         {#<button type="button" class="btn ink-reaction btn-raised btn-xs btn-primary">{{ report.available_funds * exchangeRates.USD_RUB }} RUB </button>#}
+                                        {#<button type="button" class="btn ink-reaction btn-raised btn-xs btn-primary">{{ report.available_funds * exchangeRates.USD_BTC }} USD_BTC </button>#}
+                                        {#<button type="button" class="btn ink-reaction btn-raised btn-xs btn-primary">{{ report.available_funds * exchangeRates.USD_LTC }} USD_LTC </button>#}
+                                        {#<button type="button" class="btn ink-reaction btn-raised btn-xs btn-primary">{{ report.available_funds * exchangeRates.USD_ETH }} USD_ETH </button>#}
+                                        {#<button type="button" class="btn ink-reaction btn-raised btn-xs btn-primary">{{ report.available_funds * exchangeRates.USD_NEO }} USD_NEO </button>#}
+
+
+                                    {#</span>#}
+
+
+
+
+
+
+
+
+                                    {#https://api.exmo.com/v1/trades/?pair=USD_RUB,USD_BTC,USD_LTC,USD_ETH,USD_NEO#}
+
+
                                     {#<span class="pull-right text-success text-sm">0% <i class="md md-trending-up"></i></span>#}
                                     <div class="progress progress-hairline">
                                         <div class="progress-bar progress-bar-primary-dark" style="width:0%"></div>

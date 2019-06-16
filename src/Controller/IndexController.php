@@ -17,7 +17,7 @@ class IndexController extends AbstractController
      */
     public function index()
     {
-        $exchangeRates = file_get_contents('https://api.exmo.com/v1/trades/?pair=BTC_USD,BTC_EUR,LTC_USD,ETH_USD,NEO_USD,USDT_USD');
+        $exchangeRates = file_get_contents('https://api.exmo.com/v1/trades/?pair=USD_RUB,BTC_USD,BTC_EUR,LTC_USD,ETH_USD,NEO_USD,USDT_USD');
         $exchangeRates = json_decode($exchangeRates);
 
         $exchangeRatesReturn = [];

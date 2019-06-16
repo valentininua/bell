@@ -24,6 +24,10 @@ class AdminController extends AbstractController
      */
     private $userService;
 
+
+
+
+
     /**
      * AdminController constructor.
      * @param ReportService $reportService
@@ -32,7 +36,6 @@ class AdminController extends AbstractController
     {
         $this->reportService = $reportService;
         $this->userService = $userService;
-
     }
 
     /**
@@ -67,8 +70,8 @@ class AdminController extends AbstractController
         $arHash[] = $m_key;
         $sign = strtoupper(hash('sha256', implode(':', $arHash)));
 
-
         return $this->render('admin/admin.html.twig', array(
+            'exchangeRates' => $this->userService->getExchangeRates(),
             'user' => $user,
             'report' => $this->reportService->getReport($user),
             'money' => $money,
