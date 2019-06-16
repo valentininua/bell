@@ -23,8 +23,11 @@ class ReportService
      * @param $user
      * @return array
      */
-    public function getReport($user):array
+    public function getReport($user = null):array
     {
+        if (!$user) {
+            return [];
+        }
       $arr = $this->report->getBalanceReport($user->getId());
       $arrOutput = [];
       foreach ($arr as $k => $v) {

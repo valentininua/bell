@@ -73,6 +73,9 @@ app_index_individual_robot:
 app_admin_doc:
     path: /admin/doc/
     controller: App\Controller\AdminController::doc
+app_admin_statistics_id:
+    path: /admin/statistics/{id}
+    controller: App\Controller\AdminController::statistics
 app_admin_admin:
     path: /admin/admin/
     controller: App\Controller\AdminController::adminAdmin

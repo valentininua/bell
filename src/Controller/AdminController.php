@@ -275,7 +275,8 @@ class AdminController extends AbstractController
         $user = $this->getUser();
         return $this->render('admin/payeer.html.twig',
             [
-                'user' => $user
+                'user' => $user,
+                'report' => $this->reportService->getReport($user),
             ]);
     }
 
@@ -287,7 +288,8 @@ class AdminController extends AbstractController
     {
         $user = $this->getUser();
         return $this->render('index/about.html.twig',[
-            'user' => $user
+            'user' => $user,
+            'report' => $this->reportService->getReport($user),
         ]);
     }
 
@@ -298,7 +300,8 @@ class AdminController extends AbstractController
     {
         $user = $this->getUser();
         return $this->render('admin/doc.html.twig',[
-            'user' => $user
+            'user' => $user,
+            'report' => $this->reportService->getReport($user),
         ]);
     }
 
@@ -328,11 +331,22 @@ class AdminController extends AbstractController
 
         return $this->render('admin/adminAdmin.html.twig',[
             'user' => $user,
+            'report' => $this->reportService->getReport($user),
             'productReport' => $productReport,
             'productUsers' => $productUsers,
         ]);
     }
 
+
+
+    public  function statistics($id=0)
+    {
+        $user = $this->getUser();
+        return $this->render('admin/statistics.html.twig',[
+            'user' => $user,
+            'report' => $this->reportService->getReport($user),
+        ]);
+    }
 
 
 }

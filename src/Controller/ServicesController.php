@@ -36,7 +36,8 @@ class ServicesController extends AbstractController
         $user = $this->getUser();
         return $this->render('services/thailandPropertyInvestments.html.twig',
             [
-                'user' => $user
+                'user' => $user,
+                'report' => $this->reportService->getReport($user),
             ]);
     }
 
@@ -48,7 +49,8 @@ class ServicesController extends AbstractController
         $user = $this->getUser();
         return $this->render('services/ipo.html.twig',
             [
-                'user' => $user
+                'user' => $user,
+                'report' => $this->reportService->getReport($user),
             ]);
     }
 
@@ -60,7 +62,8 @@ class ServicesController extends AbstractController
         $user = $this->getUser();
         return $this->render('services/roboticTrading.html.twig',
             [
-                'user' => $user
+                'user' => $user,
+                'report' => $this->reportService->getReport($user),
             ]);
     }
 
@@ -72,7 +75,8 @@ class ServicesController extends AbstractController
         $user = $this->getUser();
         return $this->render('services/individualManagement.html.twig',
             [
-                'user' => $user
+                'user' => $user,
+                'report' => $this->reportService->getReport($user),
             ]);
     }
 
@@ -85,7 +89,8 @@ class ServicesController extends AbstractController
         $user = $this->getUser();
         return $this->render('services/cars.html.twig',
             [
-                'user' => $user
+                'user' => $user,
+                'report' => $this->reportService->getReport($user),
             ]);
     }
 
