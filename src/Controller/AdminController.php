@@ -345,9 +345,19 @@ class AdminController extends AbstractController
     public  function statistics($id=0)
     {
         $user = $this->getUser();
+        $arr = [];
+        if (3 == $id) {
+            $arr = [
+                [
+                    "url"=>"/docs/statistic/1_IPOstatisticsJune2019.zip",
+                    "name"=>"Статистика IPO июнь 2019"
+                ]
+            ];
+        }
         return $this->render('admin/statistics.html.twig',[
             'user' => $user,
             'report' => $this->reportService->getReport($user),
+            'arr' => $arr,
         ]);
     }
 

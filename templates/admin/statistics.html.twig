@@ -47,21 +47,21 @@
                                             {#</td>#}
                                         {#</tr>#}
 
-
-
+                                        {% for _arr in arr %}
                                         <tr>
                                             <td><i class="md md-insert-drive-file"></i></td>
                                             <td>
                                                 <center>
-                                                    <a href="#/">  -  </a>
+                                                    <a href="{{ _arr.url|e }}">   {{ _arr.name|e }} </a>
                                                 </center>
                                             </td>
                                             <td>
                                                 <center>
-                                                    <a href="#/">  <span class="glyphicon glyphicon-download-alt"></span> </a>
+                                                    <a href="{{ _arr.url|e }}">  <span class="glyphicon glyphicon-download-alt"></span> </a>
                                                 </center>
                                             </td>
                                         </tr>
+                                        {% endfor %}
 
                                     </tbody>
                                 </table>
