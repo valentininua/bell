@@ -41,6 +41,14 @@ class Report
      */
     protected $balanceOptimum;
 
+
+
+    /**
+     * @var string
+     * @ORM\Column(type="decimal", precision=65, scale=2, options={"default" : 0} , nullable=true)
+     */
+    protected $balanceFive;
+
     /**
      * @var string
      * @ORM\Column(type="decimal", precision=65, scale=2, options={"default" : 0}, nullable=true)
@@ -146,5 +154,23 @@ class Report
     {
         $this->currentAccount = $currentAccount;
     }
+
+    /**
+     * @return string
+     */
+    public function getBalanceFive(): string
+    {
+        return $this->balanceFive;
+    }
+
+    /**
+     * @param string $balanceFive
+     */
+    public function setBalanceFive(string $balanceFive): void
+    {
+        $this->balanceFive = $balanceFive;
+    }
+
+
 
 }

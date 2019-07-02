@@ -18,6 +18,7 @@ class ReportRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder("r")
             ->select('
+                SUM(r.balanceFive) as five,
                 SUM(r.balanceIpo) as ipo, 
                 SUM(r.balanceConservative) as conservative, 
                 SUM(r.balanceOptimum) as optimum, 
