@@ -28,6 +28,12 @@ class User extends BaseUser
 
 
     /**
+     *@ORM\Column(type="string", options={"default" : 0}, nullable=true)
+     */
+    protected $bankcard;
+
+
+    /**
      * @ORM\Column(type="integer", options={"default" : 0}, nullable=true)
      */
     protected $isresident;
@@ -58,6 +64,9 @@ class User extends BaseUser
      *@ORM\Column(type="string", nullable=true)
      */
     protected $name;
+
+
+
 
     /**
      * @var \DateTime
@@ -234,6 +243,23 @@ class User extends BaseUser
     {
         $this->isadmin = $isadmin;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getBankcard()
+    {
+        return $this->bankcard;
+    }
+
+    /**
+     * @param mixed $bankcard
+     */
+    public function setBankcard($bankcard): void
+    {
+        $this->bankcard = $bankcard;
+    }
+
 
 
 
