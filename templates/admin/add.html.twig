@@ -22,13 +22,50 @@
             <ul class="card-head nav nav-tabs" data-toggle="tabs">
                 <li class=""> <a href="#first5"> <i class="fa fa-money"></i>  24paybank  </a></li>
                 <li class="active"><a href="#second5">  <i class="fa fa-money"></i> payeer </a></li>
+                <li><a href="#second6">  <i class="fa fa-money"></i> MKB </a></li>
                 {#<li class=""><a href="#third5">THE THIRD</a></li>#}
             </ul>
             <div class="card-body tab-content style-default-bright">
+
+
+
+
+
+
+
+
+                <div class="tab-pane" id="second6">
+                    <div class="row card">
+                        <div class="_col-md-4">
+                            <div class="card-head">
+
+                                <header> Пополнить  Банковской картой <img style=" width: 100px;" src="/main/img/mkblogo.svg" alt="MKB" title="MKB"/> </header>
+
+
+                            </div>
+                            <div class="card-body height-8">
+                                <center>
+
+
+<p>Внимание! Для совершения обмена в данном направлении требуется верификация карты. Выполнение этого правила необходимо, чтобы мошенники не совершали переводы без согласия владельца карты. Процесс верификации займет несколько минут и требуется лишь единожды на каждую новую карту.</p>
+<p><b> Требование к фотографии: </b></p>
+<p><b> На фотографии карты должно быть видно первые и последние 4 цифры карты, а также ФИО владельца, если карта именная. Остальные данные можно закрыть </b></p>
+<p><b> На заднем фоне (за картой) должен быть виден монитор с открытой вкладкой сайта http://globalbigbell.com  </b></p>
+<p><b> Bыслать все документы на адрес globalbigbell@rambler.ru с email с которого вы зарегестрировались в системе  </b></p>
+
+       <p><b> Также необходимо выполнить  верификацию аккаунта  <a href="https://globalbigbell.com/admin/verify" style="color: #0a6ebd">Верификация аккаунта</a>   </b> </p>
+
+                                    {#https://pay.mkb.ru/#}
+
+                                </center>
+                            </div><!--end .card-body -->
+                        </div><!--end .col -->
+                    </div>
+                </div>
+
+
+
                 <div class="tab-pane" id="first5">
-
-
-
 
 
                     <div class="row card">
@@ -42,7 +79,7 @@
                             <div class="card-body height-8">
                                 <center>
 
-                                    <span class="badge style-danger pull-right" style="background-color: #f44336;"> Пополнить банковской картой - в разработке </span>
+                                    <span class="badge style-danger pull-right" style="background-color: #f44336;"> в разработке </span>
 
 
                                     <form method="post" action="#{{ path('app_admin_add_confirm') }}">
