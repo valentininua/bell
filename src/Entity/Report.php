@@ -39,7 +39,7 @@ class Report
      * @var string
      * @ORM\Column(type="decimal", precision=65, scale=2, options={"default" : 0} , nullable=true)
      */
-    protected $balanceOptimum;
+    protected $balance04;
 
 
 
@@ -126,17 +126,18 @@ class Report
     /**
      * @return string
      */
-    public function getBalanceOptimum(): string
+    public function getBalance04(): string
     {
-        return $this->balanceAggressive;
+        return $this->balance04;
     }
 
+
     /**
-     * @param string $balanceAggressive
+     * @param string $balance04
      */
-    public function setBalanceOptimum(string $balanceOptimum): void
+    public function setBalance04(string $balance04): void
     {
-        $this->balanceOptimum = $balanceOptimum;
+        $this->balance04 = $balance04;
     }
 
     /**

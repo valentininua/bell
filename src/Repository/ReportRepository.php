@@ -21,7 +21,7 @@ class ReportRepository extends ServiceEntityRepository
                 SUM(r.balanceFive) as five,
                 SUM(r.balanceIpo) as ipo, 
                 SUM(r.balanceConservative) as conservative, 
-                SUM(r.balanceOptimum) as optimum, 
+                SUM(r.balance04) as balance04, 
                 SUM(r.currentAccount) as available_funds
             ')
             ->andWhere('r.uid = :reportUid')

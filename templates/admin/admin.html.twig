@@ -40,7 +40,7 @@
                 <!-- BEGIN BUTTON -->
                 <div class="col-md-3">
                     <div class="card">
-                        <button type="button" class=" btn btn-block ink-reaction btn-info " data-toggle="modal" data-target="#OptimalModal" >Криптовалютый робот</button>
+                        <button type="button" class=" btn btn-block ink-reaction btn-info " data-toggle="modal" data-target="#balance04Modal" >Хэдж-фонд</button>
                     </div><!--end .card -->
                 </div><!--end .col -->
                 <!-- END BUTTON -->
@@ -255,18 +255,22 @@
                                     <div class="progress progress-hairline">
                                         <div class="progress-bar progress-bar-primary-dark" style="width:0%"></div>
                                     </div>
-                                    Роботизированная торговля   (криптовалютый робот)  <strong id="balance-Optimal">{{ report.optimum }}</strong> USD
+                                    Хэдж-фонд <strong id="balance-balance04">{{ report.balance04 }}</strong> USD
 
 
                                     <span class="pull-right text-success text-sm">
 
-                                        <a href="/admin/statistics/2/" style="top: 11px;">
+                                        <a href="/admin/statistics/04" style="top: 11px;">
                                             <span class="badge style-danger pull-right" style="background-color: #49a99e;">
                                                  Статистика <i class="md md-trending-up"></i>
                                             </span>
                                         </a>
 
                                     </span>
+
+
+
+
 
 
                                     {#<span class="pull-right text-success text-sm">0% <i class="md md-trending-up"></i></span>#}
@@ -314,6 +318,49 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    {#Хэдж-фонд <strong id="balance-IPO">{{ report.ipo }}</strong> USD#}
+
+
+                                    {#<span class="pull-right text-success text-sm">#}
+
+                                        {#<a href="/admin/statistics/5/" style="top: 11px;">#}
+                                            {#<span class="badge style-danger pull-right" style="background-color: #49a99e;">#}
+                                                 {#Статистика <i class="md md-trending-up"></i>#}
+                                            {#</span>#}
+                                        {#</a>#}
+
+                                    {#</span>#}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                     <div class="progress progress-hairline">
                                         <div class="progress-bar progress-bar-danger" style="width:0%"></div>
                                     </div>
@@ -347,6 +394,12 @@
                                                 <li> <a href="#USDT"> {{ report.available_funds / exchangeRates.USDT_USD}}  USDT</a></li>
                                             </ul>
                                         </div><!--end .btn-group -->
+
+
+
+
+
+
 
 
 
@@ -546,11 +599,11 @@
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="OptimalModal" tabindex="-1" role="dialog" aria-labelledby="OptimalModalLabel" aria-hidden="true">
+    <div class="modal fade" id="balance04Modal" tabindex="-1" role="dialog" aria-labelledby="balance04ModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">    Роботизированная торговля   (криптовалютый робот)  </h5>
+                    <h5 class="modal-title">    Хэдж-фонд  </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -573,7 +626,7 @@
                                         </tr>
                                         <tr>
                                             <td>Oбъем услуг</td>
-                                            <td>Роботизированная торговля   (криптовалютый робот)</td>
+                                            <td>Хэдж-фонд</td>
                                         </tr>
                                         <tr>
                                             <td>Содержание</td>
@@ -585,7 +638,7 @@
 
                                     <form class="form">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="valueOptimalModal" placeholder="0" />
+                                            <input type="text" class="form-control" id="valuebalance04Modal" placeholder="0" />
                                             <label>Сума инвестирования $</label>
                                         </div>
                                     </form>
@@ -596,7 +649,7 @@
                     <!-- END SPINNERS -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn ink-reaction btn-raised btn-primary" onclick="App.Invest('Optimal')" > Купить (инвестировать) </button>
+                    <button type="button" class="btn ink-reaction btn-raised btn-primary" onclick="App.Invest('balance04')" > Купить (инвестировать) </button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
                     {#<a href="#" class="btn btn-link">Подробней</a>#}
                 </div>

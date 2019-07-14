@@ -105,9 +105,9 @@ class AdminController extends AbstractController
                 $em->persist($report);
                 $em->flush();
             }
-            if ($request->get('id') === 'Optimal') {
+            if ($request->get('id') === 'balance04') {
                 $report->setUid($user->getId());
-                $report->setBalanceOptimum((int)$request->get('idValue'));
+                $report->setBalance04((int)$request->get('idValue'));
                 $report->setCurrentAccount("-" . (int)$request->get('idValue'));
                 $em->persist($report);
                 $em->flush();
