@@ -116,14 +116,13 @@
                                                  {#<a href="https://pay.mkb.ru/" class="btn btn-success btn-primary btn-labeled" style="background-color: #2196f3;">  Пополнить ТУТ </a>#}
 
 
-                                                 <a href="#"  onclick='myWindow = window.open("https://pay.mkb.ru/","", "width=800, height=800"); if(!_hasPopupBlocker(myWindow) ) { location.href="https://pay.mkb.ru/"; } ' class="btn btn-success btn-primary btn-labeled" style="background-color: #2196f3;">  Пополнить ТУТ </a>
+                                                 <a href="#"  onclick='myWindow = window.open("https://pay.mkb.ru/","", "width=800, height=800"); if(_hasPopupBlocker(myWindow) ) { location.href="https://pay.mkb.ru/"; } ' class="btn btn-success btn-primary btn-labeled" style="background-color: #2196f3;">  Пополнить ТУТ </a>
 
 
 
 
 
                                     {% endif %}
-
 
 
 
