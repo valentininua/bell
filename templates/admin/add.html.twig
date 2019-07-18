@@ -20,7 +20,7 @@
     <div class="_col-md-6">
         <div class="card tabs-left style-default-light">
             <ul class="card-head nav nav-tabs" data-toggle="tabs">
-                <li class=""> <a href="#first5"> <i class="fa fa-money"></i>  24paybank  </a></li>
+                {#<li class=""> <a href="#first5"> <i class="fa fa-money"></i>  24paybank  </a></li>#}
                 <li class="active"><a href="#second5">  <i class="fa fa-money"></i> payeer </a></li>
                 <li><a href="#second6">  <i class="fa fa-money"></i> MKB </a></li>
                 {#<li class=""><a href="#third5">THE THIRD</a></li>#}
@@ -139,66 +139,39 @@
 
 
 
-                <div class="tab-pane" id="first5">
+                {#<div class="tab-pane" id="first5">#}
 
 
-                    <div class="row card">
-                        <div class="_col-md-4">
-                            <div class="card-head">
+                    {#<div class="row card">#}
+                        {#<div class="_col-md-4">#}
+                            {#<div class="card-head">#}
 
-                                <header> Пополнить <img style=" width: 100px;" src="https://24paybank.org/res/24paybank/i/logo.png" alt="Обменник" title="Обменять"/> </header>
-
-
-                            </div>
-                            <div class="card-body height-8">
-                                <center>
-
-                                    <span class="badge style-danger pull-right" style="background-color: #f44336;"> в разработке </span>
+                                {#<header> Пополнить <img style=" width: 100px;" src="https://24paybank.org/res/24paybank/i/logo.png" alt="Обменник" title="Обменять"/> </header>#}
 
 
-                                    <form method="post" action="#{{ path('app_admin_add_confirm') }}">
-                                        <div class="form-row">
-                                            <div class="form-group _col-md-6">
-                                                <label for="inputEmail4">Сума пополнения</label>
-                                                <input disabled type="number" min="100.00" max="1000000.00" step="0.01" class="form-control"  name="money"  placeholder="$">
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary"> Дальше </button>
-                                    </form>
-                                </center>
-                            </div><!--end .card-body -->
-                        </div><!--end .col -->
-                    </div>
+                            {#</div>#}
+                            {#<div class="card-body height-8">#}
+                                {#<center>#}
+
+                                    {#<span class="badge style-danger pull-right" style="background-color: #f44336;"> в разработке </span>#}
 
 
+                                    {#<form method="post" action="#{{ path('app_admin_add_confirm') }}">#}
+                                        {#<div class="form-row">#}
+                                            {#<div class="form-group _col-md-6">#}
+                                                {#<label for="inputEmail4">Сума пополнения</label>#}
+                                                {#<input disabled type="number" min="100.00" max="1000000.00" step="0.01" class="form-control"  name="money"  placeholder="$">#}
+                                            {#</div>#}
+                                        {#</div>#}
+                                        {#<button type="submit" class="btn btn-primary"> Дальше </button>#}
+                                    {#</form>#}
+                                {#</center>#}
+                            {#</div><!--end .card-body -->#}
+                        {#</div><!--end .col -->#}
+                    {#</div>#}
+ {##}
 
-
-                    {#<strong>#}
-                        {#<span>Кошелёк для получения , будет предоставлен по запросу в чате </span>#}
-                        {#<button onclick="alert('заявка отправлена в работу занимает около 24 часов');"> Получить номер кушелька </button>#}
-
-
-                    {#</strong>#}
-
-
-                    {#<br />#}
-
-
-                    {#<strong>#}
-                        {#<span> В разработке  </span> <br />#}
-                        {#скоро Вы сможете делать оплаты банковской картой#}
-                    {#</strong>#}
-
-
-                    {#<br />#}
-
-
-                    {#<a href="https://24paybank.org/?rid=15619056314142">#}
-                        {#<img src="https://24paybank.org/res/24paybank/banners/24paybank/240x100.jpg" alt="Обменник" title="Обменять"/>#}
-                    {#</a>#}
-
-
-                </div>
+                {#</div>#}
                 <div class="tab-pane active" id="second5">
 
                     <div class="row card">
