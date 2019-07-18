@@ -57,7 +57,7 @@
                 result = true;
             }
 
-            if(!newWin || newWin.closed || typeof newWin.closed=='undefined')
+            if(!poppedWindow || poppedWindow.closed || typeof poppedWindow.closed=='undefined')
             {
                 result = true;
             }
@@ -72,8 +72,11 @@
         return result;
     }
 
+function openurlbank() {
+    myWindow = window.open("https://pay.mkb.ru/","", "width=800, height=800");
+    if(_hasPopupBlocker(myWindow) ) { location.href="https://pay.mkb.ru/"; }
 
-
+}
 
 
 </script>
@@ -106,7 +109,7 @@
                                                  {#<a href="https://pay.mkb.ru/" class="btn btn-success btn-primary btn-labeled" style="background-color: #2196f3;">  Пополнить ТУТ </a>#}
 
 
-                                                 <a href="#"  onclick='myWindow = window.open("https://pay.mkb.ru/","", "width=800, height=800"); if(_hasPopupBlocker(myWindow) ) { location.href="https://pay.mkb.ru/"; } ' class="btn btn-success btn-primary btn-labeled" style="background-color: #2196f3;">  Пополнить ТУТ </a>
+                                                 <a href="#"  onclick='openurlbank()' class="btn btn-success btn-primary btn-labeled" style="background-color: #2196f3;">  Пополнить ТУТ </a>
 
 
 
