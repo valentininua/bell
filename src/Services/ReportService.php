@@ -36,4 +36,52 @@ class ReportService
       return $arrOutput;
     }
 
+    /**
+     * @param $user
+     * @return array
+     */
+    public function getBalanceAllReport($user = null)
+    {
+        if (!$user) {
+            return 0;
+        }
+        return $this->report->getBalanceAllReport($user->getId());
+    }
+
+    /**
+     * @param $user
+     * @return array
+     */
+    public function getProfitAllReport($user = null)
+    {
+        if (!$user) {
+            return 0;
+        }
+        return $this->report->getProfitAllReport($user->getId());
+    }
+    /**
+     * @param $user
+     * @return array
+     */
+    public function getProfitSummAllReport($user = null)
+    {
+        if (!$user) {
+            return 0;
+        }
+        $arr = $this->report->getProfitAllReport($user->getId());
+
+        $summ = 0;
+        foreach ($arr as $key=>$value) {
+            $summ += $value->getBalanceIpo();
+            $summ +=  $value->getBalanceConservative();
+            $summ +=  $value->getBalanceFive();
+            $summ +=  $value->getBalance04();
+
+        }
+        return $summ;
+    }
+
+
+
+
 }

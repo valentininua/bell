@@ -214,8 +214,136 @@
 
             <div class="row" style="padding-top: 40px;">
 
+
+
+
+
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+                <script type="text/javascript">
+
+
+                    google.charts.load('current', {'packages':['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Месяц', 'IPO' , "Валютый робот", "getBalanceFive","getBalance04" ],
+                            ['',0,0,0,0],
+                            {% for profit in profitAll %}
+                                [
+                                    '{{ profit.getCreatedAt().date|date("m/d/Y")  }}',
+                                    {{profit.getBalanceIpo()|number_format}},
+                                    {{ profit.getBalanceConservative()|number_format }},
+                                    {{ profit.getBalanceFive()|number_format }},
+                                    {{ profit.getBalance04()|number_format }},
+                                ],
+                            {% endfor %}
+                        ]);
+                        var options = {
+                            title: 'Кривая доходности',
+                            curveType: 'function',
+                            legend: { position: 'bottom' }
+                        };
+
+                        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+                        chart.draw(data, options);
+                    }
+                </script>
+
+
+
+                <!-- BEGIN OFFCANVAS LEFT -->
+                <div class="offcanvas">
+
+                    <!-- BEGIN OFFCANVAS DEMO LEFT -->
+                    <div id="offcanvas-demo-left" class="offcanvas-pane style-accent-dark width-9" style="background-color: #585858; border-color: #000000;">
+                        <div class="offcanvas-head">
+                            <header> Доход </header>
+                            <div class="offcanvas-tools">
+                                <a class="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas">
+                                    <i class="md md-close"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="offcanvas-body">
+                            {#<p>#}
+                                {#Ваша прибыль:#}
+                            {#</p>#}
+                            {#<p>#}
+                                {#Close this off-canvas by clicking on the backdrop or press the close button in the upper right corner.#}
+                            {#</p>#}
+                            {#<p>&nbsp;</p>#}
+                            {#<h4>Some details</h4>#}
+                            {#<ul class="list-divided">#}
+                                {#<li><strong>Width</strong><br/><span class="opacity-75">240px</span></li>#}
+                                {#<li><strong>Height</strong><br/><span class="opacity-75">100%</span></li>#}
+                                {#<li><strong>Body scroll</strong><br/><span class="opacity-75">disabled</span></li>#}
+                                {#<li><strong>Background color</strong><br/><span class="opacity-75">Default</span></li>#}
+                            {#</ul>#}
+
+
+
+
+
+                            <ul class="list-divided">
+
+                            {% for profit in profitAll %}
+
+
+                                <li>{{ profit.getIsprofit()  }}</li>
+                                <li>{{ profit.getBalanceIpo()  }}</li>
+                                <li>{{ profit.getBalanceConservative() }}</li>
+                                <li>{{ profit.getBalance04() }}</li>
+                                <li>{{ profit.getBalanceFive() }}</li>
+
+                                getCurrentAccount
+
+                            {% endfor %}
+                            </ul>
+
+
+                        </div>
+                    </div>
+                    <!-- END OFFCANVAS DEMO LEFT -->
+
+                </div><!--end .offcanvas-->
+                <!-- END OFFCANVAS LEFT -->
+
+
+
                 <div class="alert alert-callout alert-info">
-                   Доход по всем портфелям за последний месяц составил + 5.2 %
+                    Все средства по всем портфелям в обороте и свободные средства c учетом прибыли: <b> {{ balanceAll.balanceAll  }} </b> USD
+                    <br />
+                    Доход {{ profitSummAll }}
+                    <br />
+
+
+                    {#<a class="btn btn-raised ink-reaction btn-default-dark" href="#offcanvas-demo-left" data-toggle="offcanvas">#}
+                        {#<i class="md md-arrow-back"></i>#}
+                        {#Open left off-canvas#}
+                    {#</a>#}
+
+                    {#<div id="chart_div" style="width: 900px; height: 500px;"></div>#}
+                </div>
+
+
+
+
+
+
+                <div class="_col-md-3">
+                    <div class="card ">
+                        {#<div class="row">#}
+                            {#<div class="_col-md-4">#}
+                                {#<div class="card-head">#}
+                                    {#<header> Кривая доходности </header>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                        <div id="chart_div" style="width: 100%; height: 100%;"></div></center>
+                    </div>
                 </div>
 
                 <!-- BEGIN SITE ACTIVITY -->
@@ -454,6 +582,21 @@
 
 
 
+
+
+
+                {#<div class="col-md-3">#}
+                    {#<div class="card ">#}
+                        {#<div class="row">#}
+                            {#<div class="_col-md-4">#}
+                                {#<div class="card-head">#}
+                                    {#<header> График доходности </header>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                        {#<div id="chart_div" style="width: 100%; height: 100%;"></div></center>#}
+                    {#</div>#}
+                {#</div>#}
 
 
 

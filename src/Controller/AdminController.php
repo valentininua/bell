@@ -70,7 +70,16 @@ class AdminController extends AbstractController
         $arHash[] = $m_key;
         $sign = strtoupper(hash('sha256', implode(':', $arHash)));
 
+
+
+
+
+    // dump( $this->reportService->getProfitAllReport($user) ); exit;
+
         return $this->render('admin/admin.html.twig', array(
+            'profitAll' => $this->reportService->getProfitAllReport($user),
+            'profitSummAll' => $this->reportService->getProfitSummAllReport($user),
+            'balanceAll'=> $this->reportService->getBalanceAllReport($user),
             'exchangeRates' => $this->userService->getExchangeRates(),
             'user' => $user,
             'report' => $this->reportService->getReport($user),

@@ -23,6 +23,14 @@ class Report
      */
     protected $uid;
 
+
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $isProfit;
+
+
     /**
      * @var string
      * @ORM\Column(type="decimal", precision=65, scale=2, options={"default" : 0}, nullable=true)
@@ -76,6 +84,15 @@ class Report
     }
 
     /**
+     * @return \DateTime
+     */
+    public function getCreatedAt(): ?\DateTime
+    {
+        return $this->createdAt;
+    }
+
+
+    /**
      * @return mixed
      */
     public function getUid()
@@ -94,7 +111,7 @@ class Report
     /**
      * @return string
      */
-    public function getBalanceIpo(): string
+    public function getBalanceIpo():?string
     {
         return $this->balanceIpo;
     }
@@ -110,7 +127,7 @@ class Report
     /**
      * @return string
      */
-    public function getBalanceConservative(): string
+    public function getBalanceConservative(): ?string
     {
         return $this->balanceConservative;
     }
@@ -126,7 +143,7 @@ class Report
     /**
      * @return string
      */
-    public function getBalance04(): string
+    public function getBalance04(): ?string
     {
         return $this->balance04;
     }
@@ -143,7 +160,7 @@ class Report
     /**
      * @return string
      */
-    public function getCurrentAccount(): string
+    public function getCurrentAccount(): ?string
     {
         return $this->currentAccount;
     }
@@ -159,7 +176,7 @@ class Report
     /**
      * @return string
      */
-    public function getBalanceFive(): string
+    public function getBalanceFive(): ?string
     {
         return $this->balanceFive;
     }
@@ -170,6 +187,22 @@ class Report
     public function setBalanceFive(string $balanceFive): void
     {
         $this->balanceFive = $balanceFive;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getisProfit()
+    {
+        return $this->isProfit;
+    }
+
+    /**
+     * @param mixed $isProfit
+     */
+    public function setIsProfit($isProfit): void
+    {
+        $this->isProfit = $isProfit;
     }
 
 

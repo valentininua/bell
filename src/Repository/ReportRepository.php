@@ -30,4 +30,32 @@ class ReportRepository extends ServiceEntityRepository
             ->getResult()[0];
     }
 
+    public function getBalanceAllReport($id): array
+    {
+        return $this->createQueryBuilder("r")
+            ->select('
+                (SUM(r.balanceFive) +
+                SUM(r.balanceIpo)+ 
+                SUM(r.balanceConservative) + 
+                SUM(r.balance04) +
+                SUM(r.currentAccount) ) as balanceAll
+            ')
+            ->andWhere('r.uid = :reportUid')
+            ->setParameter('reportUid', $id)
+            ->getQuery()
+            ->getResult()[0];
+    }
+
+
+    public function getProfitAllReport($id): array
+    {
+        return  $this->createQueryBuilder("r")
+            ->select()
+            ->andWhere('r.uid = :reportUid')
+            ->andWhere('r.isProfit = 1')
+            ->setParameter('reportUid', $id)
+            ->getQuery()
+            ->getResult();
+    }
+
 }
