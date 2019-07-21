@@ -42,6 +42,8 @@
                     }
 
                     $.post( "/admin/ajax/invest", { idValue: idValue, id: id }, function( e ) {
+
+
                         document.getElementById('balance').innerHTML = currency(currencyBalance, { separator: ' ' }).format();
                         document.getElementById('available_funds').innerHTML = currency(currencyBalance, { separator: ' ' }).format();
                         App.balance = currencyBalance;

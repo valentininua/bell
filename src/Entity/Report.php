@@ -26,7 +26,7 @@ class Report
 
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", options={"default" : 0} ,  nullable=true)
      */
     protected $isProfit;
 
