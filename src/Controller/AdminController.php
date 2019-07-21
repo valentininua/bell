@@ -74,7 +74,7 @@ class AdminController extends AbstractController
 
 
 
-    // dump( $this->reportService->getProfitAllReport($user) ); exit;
+//   dump(  $this->reportService->getReport($user)  ); exit;
 
         return $this->render('admin/admin.html.twig', array(
             'profitAll' => $this->reportService->getProfitAllReport($user),

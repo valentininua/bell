@@ -34,11 +34,11 @@ class ReportRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder("r")
             ->select('
-                (SUM(r.balanceFive) +
-                SUM(r.balanceIpo)+ 
-                SUM(r.balanceConservative) + 
-                SUM(r.balance04) +
-                SUM(r.currentAccount) ) as balanceAll
+                SUM(r.balanceFive) as five,
+                SUM(r.balanceIpo) as ipo, 
+                SUM(r.balanceConservative) as conservative, 
+                SUM(r.balance04) as balance04, 
+                SUM(r.currentAccount) as available_funds
             ')
             ->andWhere('r.uid = :reportUid')
             ->setParameter('reportUid', $id)

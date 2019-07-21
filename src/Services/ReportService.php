@@ -45,7 +45,18 @@ class ReportService
         if (!$user) {
             return 0;
         }
-        return $this->report->getBalanceAllReport($user->getId());
+
+        if (!$user) {
+            return 0;
+        }
+        $arr = $this->report->getBalanceAllReport($user->getId());
+
+        $summ = 0;
+        foreach ($arr as $key=>$value) {
+            $summ +=$value;
+        }
+        return $summ;
+
     }
 
     /**
