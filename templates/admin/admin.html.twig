@@ -228,7 +228,7 @@
 
                     function drawChart() {
                         var data = google.visualization.arrayToDataTable([
-                            ['Месяц', 'IPO' , "Валютый робот", "getBalanceFive","getBalance04" ],
+                            ['Месяц', 'IPO' , "Валютый робот", "Фондовый","Хэдж-фонд" ],
                             ['',0,0,0,0],
                             {% for profit in profitAll %}
                                 [
@@ -316,7 +316,7 @@
                 <div class="alert alert-callout alert-info">
                     Все средства по всем портфелям в обороте и свободные средства c учетом прибыли: <b> {{ balanceAll.balanceAll  }} </b> USD
                     <br />
-                    Доход {{ profitSummAll }}
+                    <span class="badge style-danger"  style="  padding-bottom: 5px; background-color: #335f29;">   <i class="md md-account-balance-wallet"></i>   Доход за все время   {{ profitSummAll }}   USD </span>
                     <br />
 
 
