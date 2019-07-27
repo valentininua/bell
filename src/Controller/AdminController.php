@@ -363,7 +363,7 @@ class AdminController extends AbstractController
                     "name"=>"Статистика IPO июнь 2019"
                 ]
             ];
-        } else if (4 == (int) $id) {
+        } else if (5 == (int) $id) {
             $arr = [
                 [
                     "url"=>"/docs/statistic/june_2019_results.txt.zip",
