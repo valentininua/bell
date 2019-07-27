@@ -215,13 +215,8 @@
             <div class="row" style="padding-top: 40px;">
 
 
-
-
-
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
                 <script type="text/javascript">
-
 
                     google.charts.load('current', {'packages':['corechart']});
                     google.charts.setOnLoadCallback(drawChart);
@@ -233,15 +228,15 @@
                             {% for profit in profitAll %}
                                 [
                                     '{{ profit.getCreatedAt().date|date("m/d/Y")  }}',
-                                    {{profit.getBalanceIpo()|number_format}},
-                                    {{ profit.getBalanceConservative()|number_format }},
-                                    {{ profit.getBalanceFive()|number_format }},
-                                    {{ profit.getBalance04()|number_format }},
+                                    {{profit.getBalanceIpo()?profit.getBalanceIpo():0}},
+                                    {{ profit.getBalanceConservative()? profit.getBalanceConservative():0 }},
+                                    {{ profit.getBalanceFive()?profit.getBalanceFive():0 }},
+                                    {{ profit.getBalance04()?profit.getBalance04():0}},
                                 ],
                             {% endfor %}
                         ]);
                         var options = {
-                            title: 'Кривая доходности',
+                            title: 'Кривая доходности (зароботок  по месяцам по каждому портвелю)',
                             curveType: 'function',
                             legend: { position: 'bottom' }
                         };
@@ -267,7 +262,23 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="offcanvas-body">
+
+
+
+
+                        {#['Месяц', 'IPO' , "Валютый робот", "Фондовый","Хэдж-фонд" ],#}
+
+                        {#{% for profit in profitAll %}#}
+                            {#[#}
+                            {#'{{ profit.getCreatedAt().date|date("m/d/Y")  }}',#}
+                            {#{{profit.getBalanceIpo()?profit.getBalanceIpo():0}},#}
+                            {#{{ profit.getBalanceConservative()? profit.getBalanceConservative():0 }},#}
+                            {#{{ profit.getBalanceFive()?profit.getBalanceFive():0 }},#}
+                            {#{{ profit.getBalance04()?profit.getBalance04():0}},#}
+                            {#],#}
+                        {#{% endfor %}#}
+
+                                        <div class="offcanvas-body">
                             {#<p>#}
                                 {#Ваша прибыль:#}
                             {#</p>#}
