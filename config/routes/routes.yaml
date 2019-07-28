@@ -55,6 +55,9 @@ app_index_payeer_status:
 app_services_thailandPropertyInvestments:
     path: /services/thailand/property-investments
     controller: App\Controller\ServicesController::thailandPropertyInvestments
+app_services_hedgeFund:
+    path: /services/hedge-fund
+    controller: App\Controller\ServicesController::hedgeFund
 app_services_ipo:
     path: /services/ipo
     controller: App\Controller\ServicesController::ipo

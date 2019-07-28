@@ -94,4 +94,23 @@ class ServicesController extends AbstractController
             ]);
     }
 
+    /**
+     * @return Response
+     */
+    public function hedgeFund()
+    {
+        $user = $this->getUser();
+        return $this->render('services/hedgeFund.html.twig',
+            [
+                'user' => $user,
+                'report' => $this->reportService->getReport($user),
+            ]);
+    }
+
+
+
+
+
+
+
 }
