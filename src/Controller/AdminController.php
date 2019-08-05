@@ -368,15 +368,17 @@ class AdminController extends AbstractController
                 [
                     "url"=>"/docs/statistic/june_2019_results.txt.zip",
                     "name"=>"Отчет за июнь 2019 года"
-                ]
-            ];
-
-        } else if (4 == (int) $id) {
-            $arr = [
+                ],
                 [
                     "url"=>"/docs/statistic/July2019Report.docx",
                     "name"=>"Отчет за июль 2019 года.docx"
                 ]
+
+            ];
+
+        } else if (4 == (int) $id) {
+            $arr = [
+
             ];
 
         }
