@@ -371,7 +371,21 @@ class AdminController extends AbstractController
                 ]
             ];
 
+        } else if (4 == (int) $id) {
+            $arr = [
+                [
+                    "url"=>"/docs/statistic/July2019Report.docx",
+                    "name"=>"Отчет за июль 2019 года.docx"
+                ]
+            ];
+
         }
+
+
+
+
+
+
         return $this->render('admin/statistics.html.twig',[
             'user' => $user,
             'report' => $this->reportService->getReport($user),
