@@ -361,7 +361,11 @@ class AdminController extends AbstractController
                 [
                     "url"=>"/docs/statistic/1_IPOstatisticsJune2019.zip",
                     "name"=>"Статистика IPO июнь 2019"
-                ]
+                ],
+                [
+                    "url"=>"/docs/statistic/August2019Report.docx",
+                    "name"=>"Отчет за август 2019 года"
+                ],
             ];
         } else if (5 == (int) $id) {
             $arr = [
@@ -372,13 +376,20 @@ class AdminController extends AbstractController
                 [
                     "url"=>"/docs/statistic/July2019Report.docx",
                     "name"=>"Отчет за июль 2019 года.docx"
-                ]
+                ],
+                [
+                    "url"=>"/docs/statistic/August2019Report.docx",
+                    "name"=>"Отчет за август 2019 года"
+                ],
 
             ];
 
         } else if (4 == (int) $id) {
             $arr = [
-
+                [
+                    "url"=>"/docs/statistic/August2019Report.docx",
+                    "name"=>"Отчет за август 2019 года"
+                ],
             ];
 
         }
