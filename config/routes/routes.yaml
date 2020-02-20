@@ -87,4 +87,24 @@ app_admin_root_user_id:
     controller: App\Controller\RootController::user
 
 
+#new#############
+app_services_one:
+    path: /services/1
+    controller: App\Controller\ServicesController::one
+app_services_two:
+    path: /services/2
+    controller: App\Controller\ServicesController::two
+app_services_three:
+    path: /services/3
+    controller: App\Controller\ServicesController::three
+app_services_four:
+    path: /services/4
+    controller: App\Controller\ServicesController::four
+##################
+
+
+
+
+
+
 

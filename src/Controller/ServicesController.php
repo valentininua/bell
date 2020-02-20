@@ -108,9 +108,59 @@ class ServicesController extends AbstractController
     }
 
 
+    /**
+     * @return Response
+     */
+    public function one()
+    {
+        $user = $this->getUser();
+        return $this->render('services/1-geka.html.twig',
+            [
+                'user' => $user,
+                'report' => $this->reportService->getReport($user),
+            ]);
+    }
+
+     /**
+     * @return Response
+     */
+    public function two()
+    {
+        $user = $this->getUser();
+        return $this->render('services/2-zeus.html.twig',
+            [
+                'user' => $user,
+                'report' => $this->reportService->getReport($user),
+            ]);
+    }
+
+    /**
+     * @return Response
+     */
+    public function three()
+    {
+        $user = $this->getUser();
+        return $this->render('services/3-balanced.html.twig',
+            [
+                'user' => $user,
+                'report' => $this->reportService->getReport($user),
+            ]);
+    }
 
 
 
+    /**
+     * @return Response
+     */
+    public function four()
+    {
+        $user = $this->getUser();
+        return $this->render('services/4-credit.html.twig',
+            [
+                'user' => $user,
+                'report' => $this->reportService->getReport($user),
+            ]);
+    }
 
 
 }

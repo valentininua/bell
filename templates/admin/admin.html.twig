@@ -16,7 +16,7 @@
                                     background-color: #4caf50;
                                     border-color: #4caf50;"
                                  type="button" class=" btn btn-block ink-reaction btn-default-bright"  data-toggle="modal" data-target="#PortfolioOneModal">
-                            Фондовый
+                            GERA  
                         </button>
                     </div><!--end .card -->
                 </div><!--end .col -->
@@ -26,7 +26,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <button type="button" class=" btn btn-block ink-reaction btn-default-bright"  data-toggle="modal" data-target="#ConservativeModal">
-                            Валютый робот
+                            ZEUS
                         </button>
                     </div><!--end .card -->
                 </div><!--end .col -->
@@ -35,7 +35,7 @@
                 <!-- BEGIN BUTTON -->
                 <div class="col-md-3">
                     <div class="card">
-                        <button type="button" class=" btn btn-block ink-reaction btn-info " data-toggle="modal" data-target="#balance04Modal" >Хэдж-фонд</button>
+                        <button type="button" class=" btn btn-block ink-reaction btn-info " data-toggle="modal" data-target="#balance04Modal" >Cбалансированная</button>
                     </div><!--end .card -->
                 </div><!--end .col -->
                 <!-- END BUTTON -->
@@ -43,7 +43,7 @@
                 <!-- BEGIN BUTTON -->
                 <div class="col-md-3">
                     <div class="card">
-                        <button type="button" class="btn btn-block ink-reaction btn-warning"  data-toggle="modal" data-target="#IPOModal" >IPO </button>
+                        <button type="button" class="btn btn-block ink-reaction btn-warning"  data-toggle="modal" data-target="#IPOModal" >Кредит </button>
                     </div><!--end .card -->
                 </div><!--end .col -->
                 <!-- END BUTTON -->
@@ -197,7 +197,7 @@
 
                     function drawChart() {
                         var data = google.visualization.arrayToDataTable([
-                            ['Месяц', 'IPO' , "Валютый робот", "Фондовый","Хэдж-фонд" ],
+                            ['Месяц', 'GERA' , "ZEUS", "Cбалансированная","Кредит под залог недвижимости" ],
                             ['',0,0,0,0],
                             {% for profit in profitAll %}
                                 [
@@ -256,10 +256,10 @@
                                                 <thead>
                                                 <tr>
                                                     <th>Месяц</th>
-                                                    <th>IPO</th>
-                                                    <th>Валютый робот</th>
-                                                    <th>Фондовый</th>
-                                                    <th>Хэдж-фонд</th>
+                                                    <th>GERA</th>
+                                                    <th>ZEUS</th>
+                                                    <th>Cбалансированная</th>
+                                                    <th>Кредит под залог недвижимости</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -326,7 +326,7 @@
                                 </div>
                                 <div class="card-body height-8">
 
-                                    Роботизированная торговля   (валютый робот)  <strong  style="text-align: right;" id="balance-Conservative">{{ report.conservative }}</strong> USD
+                                    GERA  <strong  style="text-align: right;" id="balance-Conservative">{{ report.conservative }}</strong> USD
 
                                     {#<span class="pull-right text-success text-sm">0% <i class="md md-trending-up"></i></span>#}
                                     <span class="pull-right text-success text-sm">
@@ -340,7 +340,7 @@
                                     <div class="progress progress-hairline">
                                         <div class="progress-bar progress-bar-primary-dark" style="width:0%"></div>
                                     </div>
-                                    Хэдж-фонд <strong id="balance-balance04">{{ report.balance04 }}</strong> USD
+                                    ZEUS <strong id="balance-balance04">{{ report.balance04 }}</strong> USD
 
 
                                     <span class="pull-right text-success text-sm">
@@ -355,7 +355,7 @@
                                     <div class="progress progress-hairline">
                                         <div class="progress-bar progress-bar-primary-dark" style="width:0%"></div>
                                     </div>
-                                    IPO <strong id="balance-IPO">{{ report.ipo }}</strong> USD
+                                    Cбалансированная <strong id="balance-IPO">{{ report.ipo }}</strong> USD
 
 
                                     <span class="pull-right text-success text-sm">
@@ -373,7 +373,7 @@
                                     <div class="progress progress-hairline">
                                         <div class="progress-bar progress-bar-primary-dark" style="width:0%"></div>
                                     </div>
-                                    Фондовый <strong id="balance-five">{{ report.five }}</strong> USD
+                                    Кредит под залог недвижимости <strong id="balance-five">{{ report.five }}</strong> USD
 
 
 
@@ -527,7 +527,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">  Роботизированная торговля   (валютый робот)   </h5>
+                    <h5 class="modal-title" id="exampleModalLabel">  ZEUS </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -546,16 +546,16 @@
                                     <table class="table table-striped">
                                         <tbody>
                                         <tr>
-                                            <td>Форма проведения:</td>
-                                            <td>3 видео урок.</td>
+                                            <td>Объем минимальной инвестиции</td>
+                                            <td>1 000 ye</td>
                                         </tr>
                                         <tr>
-                                            <td>Oбъем услуг</td>
-                                            <td>Роботизированная торговля   (валютый робот)</td>
+                                            <td>Доходность</td>
+                                            <td>Возможная до  800%</td>
                                         </tr>
                                         <tr>
-                                            <td>Содержание</td>
-                                            <td>Инвестиции</td>
+                                            <td>Рекомендуемый инвестиционный период</td>
+                                            <td>1 год</td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -563,12 +563,12 @@
 
 
 
-                                    <form class="form">
+                                     <form class="form">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="valueConservativeModal"  placeholder="0" />
                                             <label>Сума за которую вы покупаете услугу $ </label>
                                         </div>
-                                    </form>
+                                    </form> 
                                 </div><!--end .card-body -->
                             </div><!--end .card -->
                         </div><!--end .col -->
@@ -588,7 +588,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">    Хэдж-фонд  </h5>
+                    <h5 class="modal-title"> Cбалансированная </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -605,13 +605,13 @@
 
                                     <table class="table table-striped">
                                         <tbody>
-                                        <tr>
+                                       <!--  <tr>
                                             <td>Форма проведения:</td>
                                             <td>3 видео урок.</td>
-                                        </tr>
+                                        </tr> -->
                                         <tr>
-                                            <td>Oбъем услуг</td>
-                                            <td>Хэдж-фонд</td>
+                                            <td>Доходность</td>
+                                            <td>Ожидаемая доходность до 70% годовых</td>
                                         </tr>
                                         <tr>
                                             <td>Содержание</td>
@@ -647,7 +647,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="IPOModalLabel">     IPO  </h5>
+                    <h5 class="modal-title" id="IPOModalLabel">  Кредит под залог недвижимости  </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -666,16 +666,16 @@
                                     <table class="table table-striped">
                                         <tbody>
                                         <tr>
-                                            <td>Форма проведения:</td>
-                                            <td>3 видео урок.</td>
+                                            <td>Ежемесячная доходность:</td>
+                                            <td> 2% </td>
                                         </tr>
                                         <tr>
-                                            <td>Oбъем услуг</td>
-                                            <td>IPO</td>
+                                            <td>Комиссия за управление/год</td>
+                                            <td>Нет</td>
                                         </tr>
                                         <tr>
-                                            <td>Содержание</td>
-                                            <td>Инвестиции</td>
+                                            <td>Объем минимальной инвестиции </td>
+                                            <td> 500 000 руб</td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -709,7 +709,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="PortfolioOneModalLabel">     Фондовый  </h5>
+                    <h5 class="modal-title" id="PortfolioOneModalLabel">  GERA  </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -718,7 +718,7 @@
                     <!-- BEGIN SPINNERS -->
                     <div class="row">
                         <div class="col-lg-12">
-                            <h4> Фондовый </h4>
+                            <h4> GERA </h4>
                         </div><!--end .col -->
                         <div class="">
                             <div class="card">
@@ -726,7 +726,7 @@
                                     {#<form class="form">#}
                                         <div class="form-group">
                                             {#<input type="text" class="form-control"  id="valueIPOModal" placeholder="0" />#}
-                                            <label>Фондовый</label>
+                                            <label>GERA</label>
                                         </div>
                                     {#</form>#}
 
@@ -743,47 +743,30 @@
                                         <tr>
                                             <th scope="row">1</th>
                                             <td>Доходность</td>
-                                            <td>30-50%-годовых</td>
+                                            <td>Ожидаемая доходность до 100% </td>
 
                                         </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Риск</td>
-                                            <td>до 10-20% от депо</td>
+                                                    <!-- <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Риск</td>
+                                                        <td>до 10-20% от депо</td>
 
-                                        </tr>
+                                                    </tr> -->
                                         <tr>
                                             <th scope="row">3</th>
                                             <td>Минимальная сумма входа</td>
-                                            <td>100$</td>
+                                            <td>Объем минимальной инвестиции 1 000 уе</td>
 
                                         </tr>
 
 
                                         <tr>
                                             <th scope="row">3</th>
-                                            <td>Частота выплат</td>
-                                            <td>1 раз в квартал, с 1-5 число следующего месяца</td>
+                                            <td>Рекомендуемый инвестиционный период</td>
+                                            <td>1 год с возможностью выхода из стратегии 1 раз в месяц</td>
 
                                         </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Минимальный срок работы портфеля</td>
-                                            <td>любой</td>
-
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5</th>
-                                            <td>Вывод тела депозита</td>
-                                            <td>да</td>
-
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">6</th>
-                                            <td>Стратегия инвестирования</td>
-                                            <td>долгосрочная</td>
-
-                                        </tr>
+                                       
                                         </tbody>
                                     </table>
 
@@ -796,9 +779,9 @@
                     <!-- END SPINNERS -->
                 </div>
                 <div class="modal-footer">
-					 <a href="https://my.broker.ru/login/" class="btn  btn-success" target="_blank" > Ваш БКС брокер </a>
+				<!-- 	 <a href="https://my.broker.ru/login/" class="btn  btn-success" target="_blank" > Ваш БКС брокер </a>
                     <a href="/docs/1.docx"  class="btn btn-info"titile='Как зарегистрироваться в портфеле-инструкция'> Инструкция </a>
-                    {#<button type="button" class="btn ink-reaction btn-raised btn-primary" onclick="App.Invest('IPO') " >Инвестировать</button>#}
+                    {#<button type="button" class="btn ink-reaction btn-raised btn-primary" onclick="App.Invest('IPO') " >Инвестировать</button>#} -->
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
                     {#<a href="#" class="btn btn-link">Подробней</a>#}
                 </div>
