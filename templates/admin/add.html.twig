@@ -21,9 +21,10 @@
         <div class="card tabs-left style-default-light">
             <ul class="card-head nav nav-tabs" data-toggle="tabs">
                 {#<li class=""> <a href="#first5"> <i class="fa fa-money"></i>  24paybank  </a></li>#}
-                <li class="active"><a href="#second5">  <i class="fa fa-money"></i> payeer </a></li>
-                <li><a href="#second6">  <i class="fa fa-money"></i> MKB </a></li>
-                {#<li class=""><a href="#third5">THE THIRD</a></li>#}
+                <li class=""><a href="#second5">  <i class="fa fa-money"></i> payeer </a></li>
+                <li class="active"><a href="#btc">  <i class="fa fa-money"></i> BTC  </a></li>
+                {# <li><a href="#second6">  <i class="fa fa-money"></i> MKB </a></li>
+                 <li class=""><a href="#third5">THE THIRD</a></li>#}
             </ul>
             <div class="card-body tab-content style-default-bright">
 
@@ -76,8 +77,7 @@ function openurlbank() {
     myWindow = window.open("https://pay.mkb.ru/","", "width=800, height=800");
     if(_hasPopupBlocker(myWindow) ) { location.href="https://pay.mkb.ru/"; }
 
-}
-
+} 
 
 </script>
 
@@ -132,6 +132,75 @@ function openurlbank() {
 
 
 
+<!-- *********************************************** -->
+
+                <div class="tab-pane active" id="btc">
+                    <div class="row card">
+                        <div class="_col-md-4">
+                            <div class="card-head">
+
+                                <header> Пополнить  BTC <!-- img style=" width: 100px;" src="/main/img/mkblogo.svg" alt="MKB" title="MKB"/ --> </header>
+
+
+                            </div>
+                            <div class="card-body height-8">
+                                <center>
+
+
+<script> 
+function openurl100monetpro() {
+    myWindow = window.open("https://100monet.top/ru/sberbank-rur-bitcoins-btc","", "width=800, height=800");
+    if(_hasPopupBlocker(myWindow) ) { location.href="https://100monet.top/ru/sberbank-rur-bitcoins-btc"; }
+
+}  
+</script>
+
+
+
+
+
+                                    {% if 1 == 0 %}
+
+
+                                            <p>Внимание! Для совершения обмена в данном направлении требуется верификация карты. Выполнение этого правила необходимо, чтобы мошенники не совершали переводы без согласия владельца карты. Процесс верификации займет несколько минут и требуется лишь единожды на каждую новую карту.</p>
+                                            <p><b> Требование к фотографии: </b></p>
+                                            <p><b> На фотографии карты должно быть видно первые и последние 4 цифры карты, а также ФИО владельца, если карта именная. Остальные данные можно закрыть </b></p>
+                                            <p><b> На заднем фоне (за картой) должен быть виден монитор с открытой вкладкой сайта http://globalbigbell.com  </b></p>
+                                            <p><b> Bыслать все документы на адрес globalbigbell@rambler.ru с email с которого вы зарегестрировались в системе  </b></p>
+                                            <p><b> Также необходимо выполнить  верификацию аккаунта  <a href="https://globalbigbell.com/admin/verify" style="color: #0a6ebd">Верификация аккаунта</a>   </b> </p>
+
+
+
+
+
+                                             {% else %}
+
+                                           <p> Кошелек , на который необходимо перевести Ваши средства:  <b>  1MLh9AZRfbCtfUHNW9qbmCvvjiGPDucAoT </b> </p>
+
+                                            {#<p>  Ваш  кошелек   <b>  {{ user.bankcard  }} </b> </p>#}
+
+
+                                                 {#<a href="https://pay.mkb.ru/" class="btn btn-success btn-primary btn-labeled" style="background-color: #2196f3;">  Пополнить ТУТ </a>#}
+
+
+                                                 <a href="#"  onclick='openurl100monetpro()' class="btn btn-success btn-primary btn-labeled" style="background-color: #2196f3;">  Пополнить ТУТ </a>
+
+
+
+
+
+                                    {% endif %}
+                                </center>
+                            </div><!--end .card-body -->
+                        </div><!--end .col -->
+                    </div>
+                </div>
+
+
+
+
+<!-- **********************************************  -->
+
                 {#<div class="tab-pane" id="first5">#}
 
 
@@ -165,7 +234,7 @@ function openurlbank() {
  {##}
 
                 {#</div>#}
-                <div class="tab-pane active" id="second5">
+                <div class="tab-pane" id="second5">
 
                     <div class="row card">
                         <div class="_col-md-4">
